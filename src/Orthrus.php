@@ -28,4 +28,9 @@ class Orthrus
     {
         return new Corporation($this, $id);
     }
+
+    public function fleet($id)
+    {
+        return new Fleet($this, $id);
+    }
 }
