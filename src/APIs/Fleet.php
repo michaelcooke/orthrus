@@ -12,7 +12,7 @@ class Fleet extends Api
 
     public function __construct(Orthrus $orthrus, String $id)
     {
-        $this->base = "fleets";
+        $this->base = "/" . "fleets" . "/";
         $this->id = $id;
         $this->orthrus = $orthrus;
     }
@@ -24,7 +24,7 @@ class Fleet extends Api
 
     public function getMembers()
     {
-    	return $this->orthrus->invoke('get', '/fleets/{fleet_id}/members', ['fleet_id' => $this->id]);
+    	return $this->orthrus->invoke('get', $this->base . '{fleet_id}/members/', ['fleet_id' => $this->id]);
     }
 
     public function sendInvite()
@@ -34,7 +34,7 @@ class Fleet extends Api
 
     public function kickMember($charId)
     {
-    	return $this->orthrus->invoke('delete', '/fleets/{fleet_id}/members/{member_id}', ['fleet_id' => $this->id, 'member_id' => $charId]);
+    	return $this->orthrus->invoke('delete', $this->base . '{fleet_id}/members/{member_id}/', ['fleet_id' => $this->id, 'member_id' => $charId]);
     }
 
     public function moveMember($charId)
