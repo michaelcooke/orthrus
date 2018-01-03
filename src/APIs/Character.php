@@ -18,4 +18,9 @@ class Character extends Api
         $this->id = $id;
         $this->orthrus = $orthrus;
     }
+
+    public function getChatChannels()
+    {
+    	return $this->orthrus->invoke("get", "/character/" . $this->id . "/" . "chat_channels/");
+    }
 }
