@@ -1,0 +1,32 @@
+{
+    "name": "michaelcooke/orthrus",
+    "description": "A simple opinionated implementation of ESI for Laravel",
+    "keywords": ["laravel", "laravel-5", "esi", "eseye", "eve", "eve-online"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Cooke",
+            "email": "michael.frank.cooke@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "laravel/framework": "~5.5",
+        "michaelcooke/laravel-eseye": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "MichaelCooke\\Orthrus\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MichaelCooke\\Orthrus\\OrthrusServiceProvider"
+            ],
+            "aliases": {
+                "ESI": "MichaelCooke\\Orthrus\\Facades\\Esi"
+            }
+        }
+    }
+}
