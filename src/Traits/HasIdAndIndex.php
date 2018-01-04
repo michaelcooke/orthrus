@@ -2,8 +2,10 @@
 
 namespace MichaelCooke\Orthrus\Traits;
 
-trait HasIndex
+trait HasIdAndIndex
 {
+	private $id = null;
+
     public function get()
     {
         if ($this->id == null) {
