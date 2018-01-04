@@ -9,17 +9,28 @@ use MichaelCooke\Orthrus\Apis\Corporation;
 
 class Orthrus
 {
-    public function invoke(String $verb, String $endpoint, array $variables = null, array $body = null, array $query = null)
+    protected $eseye;
+
+    public function __construct()
     {
-        if ($body != null && $query != null) {
-            return Eseye::setBody($body)->setQueryString($query)->invoke($verb, $endpoint, $variables);
-        } elseif ($body != null) {
-            return Eseye::setBody($body)->invoke($verb, $endpoint, $variables);
-        } elseif ($query != null) {
-            return Eseye::setQueryString($query)->invoke($verb, $endpoint, $variables);
-        } else {
-            return Eseye::invoke($verb, $endpoint, $variables);
+        $this->eseye = new Eseye;
+    }
+
+    public function invoke(String $verb, String $endpoint, array $uri_data = null, array $body = null, array $query = null)
+    {
+        if ($body != null) {
+            $this->eseye::setBody($body);
         }
+
+        if ($query != null) {
+            $this->eseye::setQueryString($query);
+        }
+
+        if ($uri_data != null) {
+            return $this->eseye::invoke($verb, $endpoint, $uri_data);
+        }
+
+        return $this->eseye::invoke($verb, $endpoint);
     }
 
     public function __call($method, $arguments)
