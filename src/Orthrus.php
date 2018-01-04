@@ -2,6 +2,7 @@
 
 namespace MichaelCooke\Orthrus;
 
+use Eseye;
 use MichaelCooke\Orthrus\Apis\Alliance;
 use MichaelCooke\Orthrus\Apis\Character;
 use MichaelCooke\Orthrus\Apis\Corporation;
