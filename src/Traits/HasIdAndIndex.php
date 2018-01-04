@@ -4,14 +4,16 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasIdAndIndex
 {
-	private $id = null;
+    protected $id = null;
 
-    public function get()
+    protected function get()
     {
+        $this->verb = "get";
+        
         if ($this->id == null) {
-            return $this->orthrus->invoke("get", $this->base);
+            $this->endpoint = "";
         } else {
-            return $this->orthrus->invoke("get", $this->base . $this->id . "/");
+            $this->endpoint = $this->id;
         }
     }
 }
