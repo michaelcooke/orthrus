@@ -9,19 +9,18 @@ use MichaelCooke\Orthrus\Apis\Corporation;
 
 class Orthrus
 {
-    public function invoke(String $queryType, String $endPoint)
+    public function invoke(String $verb, String $endpoint, array $body = null)
     {
-        return Eseye::invoke($queryType, $endPoint);
+        if ($body != null) {
+            return Eseye::setBody($body)->invoke($verb, $endpoint);
+        } else {
+            return Eseye::invoke($verb, $endpoint);
+        }
     }
 
     public function __call($method, $arguments)
     {
         $class = "MichaelCooke\\Orthrus\\APIs\\" . ucfirst($method);
         return new $class($this, ...$arguments);
-    }
-
-    public function fleet($id)
-    {
-        return new Fleet($this, $id);
     }
 }
