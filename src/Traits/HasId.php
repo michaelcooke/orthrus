@@ -8,6 +8,6 @@ trait HasId
 
     public function get()
     {
-        return $this->orthrus->invoke("get", "/" . $this->base . "/" . $this->id . "/");
+        return $this->orthrus->invoke("get", $this->base . $this->id . "/");
     }
 }

@@ -16,7 +16,7 @@ class Alliance extends Api
 
     public function __construct(Orthrus $orthrus, String $id = null)
     {
-        $this->base = "alliances";
+        $this->base = "/" . "alliances" . "/";
         $this->id = $id;
         $this->orthrus = $orthrus;
     }
