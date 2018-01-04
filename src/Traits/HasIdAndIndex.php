@@ -11,7 +11,7 @@ trait HasIdAndIndex
         $this->verb = "get";
         
         if ($this->id == null) {
-            $this->endpoint = "";
+            $this->index = true;
         } else {
             $this->endpoint = $this->id;
         }
