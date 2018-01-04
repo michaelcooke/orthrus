@@ -6,13 +6,16 @@ trait HasEditableId
 {
     private $id = null;
 
-    public function get()
+    protected function get()
     {
-        return $this->orthrus->invoke("get", $this->base . $this->id . "/");
+        $this->verb = "get";
+    	$this->endpoint = $this->id;
     }
 
-    public function put( $new_settings )
+    protected function put( $new_settings )
     {
-    	return $this->orthrus->invoke("put", $this->base . $this->id . "/")->setBody(json_encode(["new_settings" => $new_settings]));
+    	$this->verb = "put";
+    	$this->endpoint = $this->id;
+    	$this->body = $new_settings;
     }
 }

@@ -12,68 +12,114 @@ class Fleet extends Api
 
     public function __construct(Orthrus $orthrus, String $id)
     {
-        $this->base = "/" . "fleets" . "/";
+        $this->base = "fleets";
         $this->id = $id;
         $this->orthrus = $orthrus;
     }
 
-    public function setFleetSettings($motd, $is_free_move)
+    protected function setFleetSettings($motd, $is_free_move)
     {
-    	return $this->put(["motd" => $motd, "is_free_move" => $is_free_move]);
+    	$this->verb = "put";
+    	$this->endpoint = $this->id;
+    	$this->body = ['motd' => $motd, 'is_free_move' => $is_free_move];
     }
 
-    public function getMembers()
+    protected function getMembers()
     {
-    	return $this->orthrus->invoke('get', $this->base . '{fleet_id}/members/', ['fleet_id' => $this->id]);
+    	$this->verb = "get";
+    	$this->endpoint = $this->id . "/members";
     }
 
-    public function sendInvite()
+    /*
+     * If a character is invited with the fleet_commander role, neither wing_id or squad_id
+     * should be specified. If a character is moved to the wing_commander role, only
+     * wing_id should be specified. If a character is moved to the squad_commander role,
+     * both wing_id and squad_id should be specified. If a character is moved to the
+     * squad_member role, both wing_id and squad_id should be specified.
+     */
+    protected function sendInvite($charId, $role, $wing = null, $squad = null)
     {
-    	//
+    	$this->verb = "post";
+    	$this->endpoint = $this->id . "/members";
+    	$this->body = [
+            'character_id' => $charId,
+            'role'         => $role,
+    	    ];
+    	if ($wing) {
+    		$this->body['wing_id'] = $wing;
+    	}
+    	if ($squad) {
+    		$this->body['squad_id'] = $squad;
+    	}
     }
 
-    public function kickMember($charId)
+    protected function kickMember($charId)
     {
-    	return $this->orthrus->invoke('delete', $this->base . '{fleet_id}/members/{member_id}/', ['fleet_id' => $this->id, 'member_id' => $charId]);
+    	$this->verb = "delete";
+        $this->endpoint = $this->id . "/members/" . $charId . "/";
     }
 
-    public function moveMember($charId)
+    /*
+     * If a character is moved to the fleet_commander role, neither wing_id or squad_id
+     * should be specified. If a character is moved to the wing_commander role, only
+     * wing_id should be specified. If a character is moved to the squad_commander role,
+     * both wing_id and squad_id should be specified. If a character is moved to the
+     * squad_member role, both wing_id and squad_id should be specified.
+     */
+    protected function moveMember($charId, $role, $wing = null, $squad = null)
     {
-    	// put - needs body
+    	$this->verb = "delete";
+        $this->endpoint = $this->id . "/members/" . $charId . "/";
+        $this->body = [ 'role' => $role ];
+    	if ($wing) {
+    		$this->body['wing_id'] = $wing;
+    	}
+    	if ($squad) {
+    		$this->body['squad_id'] = $squad;
+    	}
     }
 
-    public function createSquad($wingId)
+    protected function createSquad($wingId)
     {
-    	//
+    	$this->verb = "post";
+    	$this->endpoint = $this->id . "/wings/" . $wingId . "/squads";
     }
 
-    public function deleteSquad($squadId)
+    protected function deleteSquad($squadId)
     {
-    	//
+    	$this->verb = "delete";
+    	$this->endpoint = $this->id . "/squads/" . $squadId;
     }
 
-    public function renameSquad($squadId)
+    protected function renameSquad($squadId, $name)
     {
-    	//
+    	$this->verb = "put";
+    	$this->endpoint = $this->id . "/squads/" . $squadId;
+    	$this->body = ['name' => $name]
     }
 
-    public function getWings()
+    protected function getWings()
     {
-    	//
+    	$this->verb = "get";
+    	$this->endpoint = $this->id . "/wings";
     }
 
-    public function createWing()
+    protected function createWing()
     {
-    	//
+    	$this->verb = "post";
+    	$this->endpoint = $this->id . "/wings";
     }
 
-    public function deleteWing($wingId)
+    protected function deleteWing($wingId)
     {
-    	//
+    	$this->verb = "delete";
+    	$this->endpoint = $this->id . "/wings/" . $wingId;
     }
 
-    public function renameWing($wingId)
+    protected function renameWing($wingId, $name)
     {
-    	//
+    	$this->verb = "put";
+    	$this->endpoint = $this->id . "/wings/" . $wingId;
+    	$this->body = ['name' => $name]
     }
 }
