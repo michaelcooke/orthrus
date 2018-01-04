@@ -9,12 +9,16 @@ use MichaelCooke\Orthrus\Apis\Corporation;
 
 class Orthrus
 {
-    public function invoke(String $verb, String $endpoint, array $body = null)
+    public function invoke(String $verb, String $endpoint, array $uri_data = null, array $body = null, array $query = null)
     {
-        if ($body != null) {
-            return Eseye::setBody($body)->invoke($verb, $endpoint);
+        if ($body != null && $query != null) {
+            return Eseye::setBody($body)->setQueryString($query)->invoke($verb, $endpoint, $uri_data);
+        } elseif ($body != null) {
+            return Eseye::setBody($body)->invoke($verb, $endpoint, $uri_data);
+        } elseif ($query != null) {
+            return Eseye::setQueryString($query)->invoke($verb, $endpoint, $uri_data);
         } else {
-            return Eseye::invoke($verb, $endpoint);
+            return Eseye::invoke($verb, $endpoint, $uri_data);
         }
     }
 

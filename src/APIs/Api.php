@@ -9,6 +9,8 @@ class Api
 {
     protected $base = null;
     protected $body = null;
+    protected $query = null;
+    protected $variables = null;
     protected $verb = null;
     protected $index = false;
     protected $orthrus = null;
@@ -21,9 +23,9 @@ class Api
         }
 
         if ($this->index) {
-            return $this->orthrus->invoke($this->verb, "/" . $this->base . "/", $this->body);
+            return $this->orthrus->invoke($this->verb, "/" . $this->base . "/", $this->variables, $this->body, $this->query);
         }
 
-        return $this->orthrus->invoke($this->verb, "/" . $this->base . "/" . $this->endpoint . "/", $this->body);
+        return $this->orthrus->invoke($this->verb, "/" . $this->base . "/" . $this->endpoint . "/", $this->variables, $this->body, $this->query);
     }
 }
