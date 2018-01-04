@@ -14,7 +14,7 @@ class Corporation extends Api
 
     public function __construct(Orthrus $orthrus, String $id)
     {
-        $this->base = "/" . "corporations" . "/";
+        $this->base = "corporations";
         $this->id = $id;
         $this->orthrus = $orthrus;
     }
