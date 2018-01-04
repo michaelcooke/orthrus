@@ -8,7 +8,9 @@ use MichaelCooke\Orthrus\Orthrus;
 class Api
 {
     protected $base = null;
+    protected $body = null;
     protected $verb = null;
+    protected $index = false;
     protected $orthrus = null;
     protected $endpoint = null;
 
@@ -18,6 +20,10 @@ class Api
             call_user_func_array(array($this, $method), $arguments);
         }
 
-        return $this->orthrus->invoke($this->verb, "/" . $this->base . "/" . $this->endpoint);
+        if ($this->index) {
+            return $this->orthrus->invoke($this->verb, "/" . $this->base . "/", $this->body);
+        }
+
+        return $this->orthrus->invoke($this->verb, "/" . $this->base . "/" . $this->endpoint . "/", $this->body);
     }
 }
