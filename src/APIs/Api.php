@@ -8,11 +8,11 @@ use MichaelCooke\Orthrus\Orthrus;
 class Api
 {
     protected $base = null;
+    protected $body = null;
     protected $verb = null;
     protected $index = false;
     protected $orthrus = null;
     protected $endpoint = null;
-    protected $arguments = null;
 
     public function __call($method, $arguments)
     {
@@ -21,9 +21,9 @@ class Api
         }
 
         if ($this->index) {
-            return $this->orthrus->invoke($this->verb, "/" . $this->base . "/");
+            return $this->orthrus->invoke($this->verb, "/" . $this->base . "/", $this->body);
         }
 
-        return $this->orthrus->invoke($this->verb, "/" . $this->base . "/" . $this->endpoint . "/");
+        return $this->orthrus->invoke($this->verb, "/" . $this->base . "/" . $this->endpoint . "/", $this->body);
     }
 }
