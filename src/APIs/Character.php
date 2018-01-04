@@ -7,10 +7,11 @@ use MichaelCooke\Orthrus\Apis\Api;
 use MichaelCooke\Orthrus\Traits\HasId;
 use MichaelCooke\Orthrus\Traits\HasContacts;
 use MichaelCooke\Orthrus\Traits\HasBookmarks;
+use MichaelCooke\Orthrus\Traits\HasFittings;
 
 class Character extends Api
 {
-    use HasId, HasBookmarks, HasContacts;
+    use HasId, HasBookmarks, HasContacts, HasFittings;
 
     public function __construct(Orthrus $orthrus, String $id)
     {
