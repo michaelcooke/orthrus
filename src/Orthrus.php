@@ -5,7 +5,6 @@ namespace MichaelCooke\Orthrus;
 use MichaelCooke\Orthrus\Apis\Alliance;
 use MichaelCooke\Orthrus\Apis\Character;
 use MichaelCooke\Orthrus\Apis\Corporation;
-use MichaelCooke\LaravelEseye\Facades\Eseye;
 
 class Orthrus
 {
@@ -14,19 +13,10 @@ class Orthrus
         return Eseye::invoke($queryType, $endPoint);
     }
 
-    public function alliance($id = null)
+    public function __call($method, $arguments)
     {
-        return new Alliance($this, $id);
-    }
-
-    public function character($id)
-    {
-        return new Character($this, $id);
-    }
-
-    public function corporation($id)
-    {
-        return new Corporation($this, $id);
+        $class = "MichaelCooke\\Orthrus\\APIs\\" . ucfirst($method);
+        return new $class($this, ...$arguments);
     }
 
     public function fleet($id)

@@ -10,11 +10,11 @@ use MichaelCooke\Orthrus\Traits\HasBookmarks;
 
 class Character extends Api
 {
-    use HasId, HasContacts, HasBookmarks;
+    use HasId, HasBookmarks, HasContacts;
 
     public function __construct(Orthrus $orthrus, String $id)
     {
-        $this->base = "/" . "characters" . "/";
+        $this->base = "characters";
         $this->id = $id;
         $this->orthrus = $orthrus;
     }

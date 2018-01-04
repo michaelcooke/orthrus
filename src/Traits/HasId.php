@@ -4,10 +4,11 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasId
 {
-    private $id = null;
+    protected $id = null;
 
-    public function get()
+    protected function get()
     {
-        return $this->orthrus->invoke("get", $this->base . $this->id . "/");
+        $this->verb = "get";
+        $this->endpoint = $this->id;
     }
 }

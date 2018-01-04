@@ -4,13 +4,15 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasBookmarks
 {
-    public function getBookmarks()
+    protected function getBookmarks()
     {
-        return $this->orthrus->invoke("get", $this->base . $this->id . "/" . "bookmarks/");
+        $this->verb = "get";
+        $this->endpoint = $this->id . "/bookmarks";
     }
 
-    public function getBookmarkFolders()
+    protected function getBookmarkFolders()
     {
-        return $this->orthrus->invoke("get", $this->base . $this->id . "/" . "bookmarks/folders/");
+        $this->verb = "get";
+        $this->endpoint = $this->id . "/bookmarks/folders";
     }
 }
