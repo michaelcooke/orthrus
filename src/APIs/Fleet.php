@@ -4,7 +4,7 @@ namespace MichaelCooke\Orthrus\Apis;
 
 use MichaelCooke\Orthrus\Orthrus;
 use MichaelCooke\Orthrus\Apis\Api;
-use MichaelCooke\Orthrus\Traits\HasId;
+use MichaelCooke\Orthrus\Traits\HasEditableId;
 
 class Fleet extends Api
 {
@@ -19,15 +19,15 @@ class Fleet extends Api
 
     protected function setFleetSettings($motd, $is_free_move)
     {
-    	$this->verb = "put";
-    	$this->endpoint = $this->id;
-    	$this->body = ['motd' => $motd, 'is_free_move' => $is_free_move];
+        $this->verb = "put";
+        $this->endpoint = $this->id;
+        $this->body = ['motd' => $motd, 'is_free_move' => $is_free_move];
     }
 
     protected function getMembers()
     {
-    	$this->verb = "get";
-    	$this->endpoint = $this->id . "/members";
+        $this->verb = "get";
+        $this->endpoint = $this->id . "/members";
     }
 
     /*
@@ -39,24 +39,24 @@ class Fleet extends Api
      */
     protected function sendInvite($charId, $role, $wing = null, $squad = null)
     {
-    	$this->verb = "post";
-    	$this->endpoint = $this->id . "/members";
-    	$this->body = [
+        $this->verb = "post";
+        $this->endpoint = $this->id . "/members";
+        $this->body = [
             'character_id' => $charId,
             'role'         => $role,
-    	    ];
-    	if ($wing) {
-    		$this->body['wing_id'] = $wing;
-    	}
-    	if ($squad) {
-    		$this->body['squad_id'] = $squad;
-    	}
+        ];
+        if ($wing != null) {
+            $this->body['wing_id'] = $wing;
+        }
+        if ($squad != null) {
+            $this->body['squad_id'] = $squad;
+        }
     }
 
     protected function kickMember($charId)
     {
-    	$this->verb = "delete";
-        $this->endpoint = $this->id . "/members/" . $charId . "/";
+        $this->verb = "delete";
+        $this->endpoint = $this->id . "/members/" . $charId;
     }
 
     /*
@@ -68,58 +68,58 @@ class Fleet extends Api
      */
     protected function moveMember($charId, $role, $wing = null, $squad = null)
     {
-    	$this->verb = "delete";
-        $this->endpoint = $this->id . "/members/" . $charId . "/";
+        $this->verb = "put";
+        $this->endpoint = $this->id . "/members/" . $charId;
         $this->body = [ 'role' => $role ];
-    	if ($wing) {
-    		$this->body['wing_id'] = $wing;
-    	}
-    	if ($squad) {
-    		$this->body['squad_id'] = $squad;
-    	}
+        if ($wing != null) {
+            $this->body['wing_id'] = $wing;
+        }
+        if ($squad != null) {
+            $this->body['squad_id'] = $squad;
+        }
     }
 
     protected function createSquad($wingId)
     {
-    	$this->verb = "post";
-    	$this->endpoint = $this->id . "/wings/" . $wingId . "/squads";
+        $this->verb = "post";
+        $this->endpoint = $this->id . "/wings/" . $wingId . "/squads";
     }
 
     protected function deleteSquad($squadId)
     {
-    	$this->verb = "delete";
-    	$this->endpoint = $this->id . "/squads/" . $squadId;
+        $this->verb = "delete";
+        $this->endpoint = $this->id . "/squads/" . $squadId;
     }
 
     protected function renameSquad($squadId, $name)
     {
-    	$this->verb = "put";
-    	$this->endpoint = $this->id . "/squads/" . $squadId;
-    	$this->body = ['name' => $name]
+        $this->verb = "put";
+        $this->endpoint = $this->id . "/squads/" . $squadId;
+        $this->body = ['name' => $name];
     }
 
     protected function getWings()
     {
-    	$this->verb = "get";
-    	$this->endpoint = $this->id . "/wings";
+        $this->verb = "get";
+        $this->endpoint = $this->id . "/wings";
     }
 
     protected function createWing()
     {
-    	$this->verb = "post";
-    	$this->endpoint = $this->id . "/wings";
+        $this->verb = "post";
+        $this->endpoint = $this->id . "/wings";
     }
 
     protected function deleteWing($wingId)
     {
-    	$this->verb = "delete";
-    	$this->endpoint = $this->id . "/wings/" . $wingId;
+        $this->verb = "delete";
+        $this->endpoint = $this->id . "/wings/" . $wingId;
     }
 
     protected function renameWing($wingId, $name)
     {
-    	$this->verb = "put";
-    	$this->endpoint = $this->id . "/wings/" . $wingId;
-    	$this->body = ['name' => $name]
+        $this->verb = "put";
+        $this->endpoint = $this->id . "/wings/" . $wingId;
+        $this->body = ['name' => $name];
     }
 }
