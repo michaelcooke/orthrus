@@ -18,4 +18,10 @@ class Character extends Api
         $this->id = $id;
         $this->orthrus = $orthrus;
     }
+
+    protected function getChatChannels()
+	{
+	    $this->verb = "get";
+	    $this->endpoint = $this->id . "/chat_channels";
+	}
 }
