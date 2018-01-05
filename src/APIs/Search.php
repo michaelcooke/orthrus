@@ -5,18 +5,14 @@ namespace MichaelCooke\Orthrus\Apis;
 use MichaelCooke\Orthrus\Orthrus;
 use MichaelCooke\Orthrus\Apis\Api;
 
-class Alliance extends Api
+class Search extends Api
 {
-    public function __construct(Orthrus $orthrus)
+    public function __construct(Orthrus $orthrus, array $categories, String $search, $strict = false)
     {
         $this->base = "search";
         $this->orthrus = $orthrus;
-    }
-
-    protected function search(array $categories, String $search, $strict = false)
-    {
-    	$this->verb = "get";
-    	$this->index = true;
-    	$this->query = ['categories' => $categories, 'search' => $search, 'strict' => $strict];
+        $this->verb = "get";
+        $this->index = true;
+        $this->query = ['categories' => $categories, 'search' => $search, 'strict' => $strict];
     }
 }
