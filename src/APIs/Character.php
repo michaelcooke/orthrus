@@ -12,7 +12,7 @@ class Character extends Api
 {
     use HasId, HasBookmarks, HasContacts;
 
-    public function __construct(Orthrus $orthrus, String $id)
+    public function __construct(Orthrus $orthrus, String $id = null)
     {
         $this->base = "characters";
         $this->id = $id;
@@ -27,7 +27,7 @@ class Character extends Api
 
     protected function getResearchAgents()
     {
-        $this->getAgentsResearch()
+        $this->getAgentsResearch();
     }
 
     protected function getBlueprints()
@@ -113,16 +113,16 @@ class Character extends Api
         $this->endpoint = $this->id . "/stats";
     }
 
+    protected function getTitles()
+    {
+        $this->verb = "get";
+        $this->endpoint = $this->id . "/titles";
+    }
+
     protected function getAffiliation($characters)
     {
         $this->verb = "post";
         $this->body = $characters;
-        $this->endpoint = "/affiliation";
-    }
-
-    protected function getNotifications()
-    {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/notifications";
+        $this->endpoint = "affiliation";
     }
 }
