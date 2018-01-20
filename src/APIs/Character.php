@@ -10,7 +10,9 @@ use MichaelCooke\Orthrus\Traits\HasBookmarks;
 
 class Character extends Api
 {
-    use HasId, HasBookmarks, HasContacts;
+    use HasId,
+        HasContacts,
+        HasBookmarks;
 
     public function __construct(Orthrus $orthrus, String $id = null)
     {
