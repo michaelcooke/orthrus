@@ -13,18 +13,19 @@ trait HasCalendar
     protected function getCalendarEvent($event)
     {
         $this->verb = "get";
-        $this->endpoint = $this->id . "/calendar/event/" . $event;
+        $this->endpoint = $this->id . "/calendar/" . $event;
     }
 
-    protected function respondToEvent($event)
+    protected function respondToEvent($event, $response)
     {
         $this->verb = "put";
-        $this->endpoint = $this->id . "/calendar/event/" . $event;
+        $this->body = ["response" => $response];
+        $this->endpoint = $this->id . "/calendar/" . $event;
     }
 
     protected function getEventAttendees($event)
     {
         $this->verb = "get";
-        $this->endpoint = $this->id . "/calendar/event/" . $event . "/attendees";
+        $this->endpoint = $this->id . "/calendar/" . $event . "/attendees";
     }
 }
