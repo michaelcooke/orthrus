@@ -2,7 +2,7 @@
 
 namespace MichaelCooke\Orthrus\Traits;
 
-trait HasIcon
+trait HasIcons
 {
     protected function getIcons()
     {
