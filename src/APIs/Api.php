@@ -23,9 +23,13 @@ class Api
         }
 
         if ($this->index) {
-            return $this->orthrus->invoke($this->verb, "/" . $this->base . "/", $this->variables, $this->body, $this->query);
+            $response = $this->orthrus->invoke($this->verb, "/" . $this->base . "/", $this->variables, $this->body, $this->query);
+        } else {
+            $response = $this->orthrus->invoke($this->verb, "/" . $this->base . "/" . $this->endpoint . "/", $this->variables, $this->body, $this->query);
         }
 
-        return $this->orthrus->invoke($this->verb, "/" . $this->base . "/" . $this->endpoint . "/", $this->variables, $this->body, $this->query);
+        $this->orthrus->resetRefreshToken();
+
+        return $response;
     }
 }

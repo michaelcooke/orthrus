@@ -10,10 +10,33 @@ use MichaelCooke\Orthrus\Apis\Corporation;
 class Orthrus
 {
     protected $eseye;
+    protected $resetRefreshToken = false;
 
     public function __construct()
     {
         $this->eseye = new Eseye;
+    }
+
+    public function setRefreshToken(String $token)
+    {
+        $this->eseye::setRefreshToken($token);
+        return $this;
+    }
+
+    public function withRefreshToken(String $token)
+    {
+        $this->resetRefreshToken = true;
+        return $this->setRefreshToken($token);
+    }
+
+    public function resetRefreshToken()
+    {
+        if ($this->resetRefreshToken) {
+            $this->setRefreshToken(config('eseye.refresh_token'));
+            return true;
+        }
+
+        return false;
     }
 
     public function invoke(String $verb, String $endpoint, array $uri_data = null, array $body = null, array $query = null)
