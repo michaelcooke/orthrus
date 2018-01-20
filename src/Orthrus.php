@@ -9,13 +9,51 @@ use MichaelCooke\Orthrus\Apis\Corporation;
 
 class Orthrus
 {
-    public function invoke(String $verb, String $endpoint, array $body = null)
+    protected $eseye;
+    protected $resetRefreshToken = false;
+
+    public function __construct()
+    {
+        $this->eseye = new Eseye;
+    }
+
+    public function setRefreshToken(String $token)
+    {
+        $this->eseye::setRefreshToken($token);
+        return $this;
+    }
+
+    public function withRefreshToken(String $token)
+    {
+        $this->resetRefreshToken = true;
+        return $this->setRefreshToken($token);
+    }
+
+    public function resetRefreshToken()
+    {
+        if ($this->resetRefreshToken) {
+            $this->setRefreshToken(config('eseye.refresh_token'));
+            return true;
+        }
+
+        return false;
+    }
+
+    public function invoke(String $verb, String $endpoint, array $uri_data = null, array $body = null, array $query = null)
     {
         if ($body != null) {
-            return Eseye::setBody($body)->invoke($verb, $endpoint);
-        } else {
-            return Eseye::invoke($verb, $endpoint);
+            $this->eseye::setBody($body);
         }
+
+        if ($query != null) {
+            $this->eseye::setQueryString($query);
+        }
+
+        if ($uri_data != null) {
+            return $this->eseye::invoke($verb, $endpoint, $uri_data);
+        }
+
+        return $this->eseye::invoke($verb, $endpoint);
     }
 
     public function __call($method, $arguments)
