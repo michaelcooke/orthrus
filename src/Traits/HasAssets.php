@@ -10,15 +10,17 @@ trait HasAssets
         $this->endpoint = $this->id . "/assets";
     }
 
-    protected function getAssetLocations()
+    protected function getAssetLocations($assets)
     {
         $this->verb = "post";
+        $this->body = $assets;
         $this->endpoint = $this->id . "/assets/locations";
     }
 
-    protected function getAssetNames()
+    protected function getAssetNames($assets)
     {
         $this->verb = "post";
+        $this->body = $assets;
         $this->endpoint = $this->id . "/assets/names";
     }
 }
