@@ -11,7 +11,10 @@ use MichaelCooke\Orthrus\Traits\HasCorporations;
 
 class Alliance extends Api
 {
-    use HasIdAndIndex, HasCorporations, HasContacts, HasNames;
+    use HasNames,
+        HasContacts,
+        HasIdAndIndex,
+        HasCorporations;
 
     public function __construct(Orthrus $orthrus, String $id = null)
     {
