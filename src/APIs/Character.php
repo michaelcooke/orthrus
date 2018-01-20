@@ -12,6 +12,7 @@ use MichaelCooke\Orthrus\Traits\HasBookmarks;
 class Character extends Api
 {
     use HasId,
+        HasAssets,
         HasContacts,
         HasBookmarks;
 
