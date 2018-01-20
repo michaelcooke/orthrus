@@ -5,6 +5,7 @@ namespace MichaelCooke\Orthrus\Apis;
 use MichaelCooke\Orthrus\Orthrus;
 use MichaelCooke\Orthrus\Apis\Api;
 use MichaelCooke\Orthrus\Traits\HasId;
+use MichaelCooke\Orthrus\Traits\HasAssets;
 use MichaelCooke\Orthrus\Traits\HasContacts;
 use MichaelCooke\Orthrus\Traits\HasBookmarks;
 
