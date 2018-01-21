@@ -143,4 +143,33 @@ class Character extends Api
         $this->verb = "get";
         $this->endpoint = $this->id . "/implants";
     }
+
+    protected function deleteContacts($contactIds)
+    {
+        $this->verb = "delete";
+        $this->query = $contactIds;
+        $this->endpoint = $this->id . "/contacts";
+    }
+
+    protected function addContacts($contactIds, $standing)
+    {
+        $this->verb = "post";
+        $this->body = $contactIds;
+        $this->query = $standing;
+        $this->endpoint = $this->id . "/contacts";
+    }
+
+    protected function editContacts($contactIds, $standing)
+    {
+        $this->verb = "put";
+        $this->body = $contactIds;
+        $this->query = $standing;
+        $this->endpoint = $this->id . "/contacts";
+    }
+
+    protected function getContactLabels()
+    {
+        $this->verb = "get";
+        $this->endpoint = $this->id . "/contacts/labels";
+    }
 }
