@@ -135,12 +135,12 @@ class Character extends Api
     protected function getClones()
     {
         $this->verb = "get";
-        $this->endpoint = "clones";
+        $this->endpoint = $this->id . "/clones";
     }
 
     protected function getImplants()
     {
         $this->verb = "get";
-        $this->endpoint = "implants";
+        $this->endpoint = $this->id . "/implants";
     }
 }
