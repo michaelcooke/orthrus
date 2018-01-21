@@ -8,6 +8,7 @@ use MichaelCooke\Orthrus\Traits\HasId;
 use MichaelCooke\Orthrus\Traits\HasAssets;
 use MichaelCooke\Orthrus\Traits\HasCalendar;
 use MichaelCooke\Orthrus\Traits\HasContacts;
+use MichaelCooke\Orthrus\Traits\HasContracts;
 use MichaelCooke\Orthrus\Traits\HasBookmarks;
 
 class Character extends Api
@@ -16,6 +17,7 @@ class Character extends Api
         HasAssets,
         HasCalendar,
         HasContacts,
+        HasContracts,
         HasBookmarks;
 
     public function __construct(Orthrus $orthrus, String $id = null)
