@@ -5,20 +5,30 @@ namespace MichaelCooke\Orthrus\Apis;
 use MichaelCooke\Orthrus\Orthrus;
 use MichaelCooke\Orthrus\Apis\Api;
 use MichaelCooke\Orthrus\Traits\HasId;
+use MichaelCooke\Orthrus\Traits\HasRoles;
 use MichaelCooke\Orthrus\Traits\HasAssets;
+use MichaelCooke\Orthrus\Traits\HasMedals;
+use MichaelCooke\Orthrus\Traits\HasTitles;
 use MichaelCooke\Orthrus\Traits\HasCalendar;
 use MichaelCooke\Orthrus\Traits\HasContacts;
-use MichaelCooke\Orthrus\Traits\HasContracts;
 use MichaelCooke\Orthrus\Traits\HasBookmarks;
+use MichaelCooke\Orthrus\Traits\HasContracts;
+use MichaelCooke\Orthrus\Traits\HasStandings;
+use MichaelCooke\Orthrus\Traits\HasBlueprints;
 
 class Character extends Api
 {
     use HasId,
+        HasRoles,
         HasAssets,
+        HasMedals,
+        HasTitles,
         HasCalendar,
         HasContacts,
+        HasBookmarks,
         HasContracts,
-        HasBookmarks;
+        HasStandings,
+        HasBlueprints;
 
     public function __construct(Orthrus $orthrus, String $id = null)
     {
@@ -36,12 +46,6 @@ class Character extends Api
     protected function getResearchAgents()
     {
         $this->getAgentsResearch();
-    }
-
-    protected function getBlueprints()
-    {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/blueprints";
     }
 
     protected function getChatChannels()
@@ -74,12 +78,6 @@ class Character extends Api
         $this->endpoint = $this->id . "/fatigue";
     }
 
-    protected function getMedals()
-    {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/medals";
-    }
-
     protected function getNotifications()
     {
         $this->verb = "get";
@@ -103,28 +101,10 @@ class Character extends Api
         $this->endpoint = $this->id . "/portrait";
     }
 
-    protected function getRoles()
-    {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/roles";
-    }
-
-    protected function getStandings()
-    {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/standings";
-    }
-
     protected function getStats()
     {
         $this->verb = "get";
         $this->endpoint = $this->id . "/stats";
-    }
-
-    protected function getTitles()
-    {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/titles";
     }
 
     protected function getAffiliation($characters)
