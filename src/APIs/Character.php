@@ -131,4 +131,16 @@ class Character extends Api
         $this->body = $characters;
         $this->endpoint = "affiliation";
     }
+
+    protected function getClones()
+    {
+        $this->verb = "get";
+        $this->endpoint = "clones";
+    }
+
+    protected function getImplants()
+    {
+        $this->verb = "get";
+        $this->endpoint = "implants";
+    }
 }
