@@ -30,6 +30,6 @@ class Api
 
         $this->orthrus->resetRefreshToken();
 
-        return collect(json_decode($response->raw));
+        return $response;
     }
 }
