@@ -129,7 +129,7 @@ class Character extends Api
     protected function deleteContacts($contactIds)
     {
         $this->verb = "delete";
-        $this->query = $contactIds;
+        $this->query = ['contact_ids' => $contactIds];
         $this->endpoint = $this->id . "/contacts";
     }
 
