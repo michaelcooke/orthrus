@@ -15,6 +15,7 @@ class Api
     protected $index = false;
     protected $orthrus = null;
     protected $endpoint = null;
+    protected $getAllPages = null;
 
     public function __call($method, $arguments)
     {
@@ -23,9 +24,23 @@ class Api
         }
 
         if ($this->index) {
-            $response = $this->orthrus->invoke($this->verb, "/" . $this->base . "/", $this->variables, $this->body, $this->query);
+            $arguments = [$this->verb, "/" . $this->base . "/", $this->variables, $this->body, $this->query];
         } else {
-            $response = $this->orthrus->invoke($this->verb, "/" . $this->base . "/" . $this->endpoint . "/", $this->variables, $this->body, $this->query);
+            $arguments = [$this->verb, "/" . $this->base . "/" . $this->endpoint . "/", $this->variables, $this->body, $this->query];
+        }
+
+        $response = $this->orthrus->invoke(...$arguments);
+
+        if ($this->getAllPages) {
+            $totalPages = $response->pages;
+
+            for ($i = 2; $i <= $totalPages; $i++) {
+                $arguments[4] = ['page' => $i];
+                $pageResponse = $this->orthrus->invoke(...$arguments);
+                $response->raw = json_encode(array_merge(json_decode($response->raw, true), json_decode($pageResponse->raw, true)));
+            }
+
+            return $response;
         }
 
         $this->orthrus->resetRefreshToken();
