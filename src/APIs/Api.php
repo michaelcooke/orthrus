@@ -15,6 +15,7 @@ class Api
     protected $index = false;
     protected $orthrus = null;
     protected $endpoint = null;
+    protected $getAllPages = null;
 
     public function __call($method, $arguments)
     {
@@ -29,6 +30,18 @@ class Api
         }
 
         $response = $this->orthrus->invoke(...$arguments);
+
+        if ($this->getAllPages) {
+            $totalPages = $response->pages;
+
+            for ($i = 2; $i <= $totalPages; $i++) {
+                $arguments[4] = ['page' => $i];
+                $pageResponse = $this->orthrus->invoke(...$arguments);
+                $response->raw = json_encode(array_merge(json_decode($response->raw, true), json_decode($pageResponse->raw, true)));
+            }
+
+            return $response;
+        }
 
         $this->orthrus->resetRefreshToken();
 
