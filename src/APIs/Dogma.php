@@ -34,6 +34,6 @@ class Dogma extends Api
     protected function getEffect($effect)
     {
         $this->verb = "get";
-        $this->endpoint = "getEffect/" . $effect;
+        $this->endpoint = "effect/" . $effect;
     }
 }
