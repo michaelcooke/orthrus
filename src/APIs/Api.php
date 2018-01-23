@@ -23,10 +23,12 @@ class Api
         }
 
         if ($this->index) {
-            $response = $this->orthrus->invoke($this->verb, "/" . $this->base . "/", $this->variables, $this->body, $this->query);
+            $arguments = [$this->verb, "/" . $this->base . "/", $this->variables, $this->body, $this->query];
         } else {
-            $response = $this->orthrus->invoke($this->verb, "/" . $this->base . "/" . $this->endpoint . "/", $this->variables, $this->body, $this->query);
+            $arguments = [$this->verb, "/" . $this->base . "/" . $this->endpoint . "/", $this->variables, $this->body, $this->query];
         }
+
+        $response = $this->orthrus->invoke(...$arguments);
 
         $this->orthrus->resetRefreshToken();
 
