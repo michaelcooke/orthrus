@@ -15,6 +15,7 @@ use MichaelCooke\Orthrus\Traits\HasContacts;
 use MichaelCooke\Orthrus\Traits\HasFittings;
 use MichaelCooke\Orthrus\Traits\HasBookmarks;
 use MichaelCooke\Orthrus\Traits\HasContracts;
+use MichaelCooke\Orthrus\Traits\HasKillmails;
 use MichaelCooke\Orthrus\Traits\HasStandings;
 use MichaelCooke\Orthrus\Traits\HasBlueprints;
 use MichaelCooke\Orthrus\Traits\HasFactionWarfareStats;
@@ -32,6 +33,7 @@ class Character extends Api
         HasFittings,
         HasBookmarks,
         HasContracts,
+        HasKillmails,
         HasStandings,
         HasBlueprints,
         HasFactionWarfareStats;

@@ -13,6 +13,7 @@ use MichaelCooke\Orthrus\Traits\HasTitles;
 use MichaelCooke\Orthrus\Traits\HasContacts;
 use MichaelCooke\Orthrus\Traits\HasBookmarks;
 use MichaelCooke\Orthrus\Traits\HasContracts;
+use MichaelCooke\Orthrus\Traits\HasKillmails;
 use MichaelCooke\Orthrus\Traits\HasStandings;
 use MichaelCooke\Orthrus\Traits\HasBlueprints;
 use MichaelCooke\Orthrus\Traits\HasFactionWarfareStats;
@@ -28,6 +29,7 @@ class Corporation extends Api
         HasContacts,
         HasBookmarks,
         HasContracts,
+        HasKillmails,
         HasStandings,
         HasBlueprints,
         HasFactionWarfareStats;
