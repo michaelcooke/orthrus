@@ -30,7 +30,7 @@ class Corporation extends Api
         HasStandings,
         HasBlueprints;
 
-    public function __construct(Orthrus $orthrus, String $id)
+    public function __construct(Orthrus $orthrus, String $id = null)
     {
         $this->base = "corporations";
         $this->id = $id;
