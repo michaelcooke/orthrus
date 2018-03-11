@@ -15,6 +15,7 @@ use MichaelCooke\Orthrus\Traits\HasBookmarks;
 use MichaelCooke\Orthrus\Traits\HasContracts;
 use MichaelCooke\Orthrus\Traits\HasStandings;
 use MichaelCooke\Orthrus\Traits\HasBlueprints;
+use MichaelCooke\Orthrus\Traits\HasFactionWarfareStats;
 
 class Corporation extends Api
 {
@@ -28,7 +29,8 @@ class Corporation extends Api
         HasBookmarks,
         HasContracts,
         HasStandings,
-        HasBlueprints;
+        HasBlueprints,
+        HasFactionWarfareStats;
 
     public function __construct(Orthrus $orthrus, String $id = null)
     {
