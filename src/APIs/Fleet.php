@@ -94,8 +94,8 @@ class Fleet extends Api
     protected function renameSquad($squadId, $name)
     {
         $this->verb = "put";
-        $this->endpoint = $this->id . "/squads/" . $squadId;
         $this->body = ['name' => $name];
+        $this->endpoint = $this->id . "/squads/" . $squadId;
     }
 
     protected function getWings()
@@ -119,7 +119,7 @@ class Fleet extends Api
     protected function renameWing($wingId, $name)
     {
         $this->verb = "put";
-        $this->endpoint = $this->id . "/wings/" . $wingId;
         $this->body = ['name' => $name];
+        $this->endpoint = $this->id . "/wings/" . $wingId;
     }
 }
