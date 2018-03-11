@@ -20,8 +20,8 @@ class Fleet extends Api
     protected function setFleetSettings($motd, $is_free_move)
     {
         $this->verb = "put";
-        $this->endpoint = $this->id;
         $this->body = ['motd' => $motd, 'is_free_move' => $is_free_move];
+        $this->endpoint = $this->id;
     }
 
     protected function getMembers()
@@ -45,6 +45,7 @@ class Fleet extends Api
             'character_id' => $charId,
             'role'         => $role,
         ];
+
         if ($wing != null) {
             $this->body['wing_id'] = $wing;
         }
@@ -70,7 +71,8 @@ class Fleet extends Api
     {
         $this->verb = "put";
         $this->endpoint = $this->id . "/members/" . $charId;
-        $this->body = [ 'role' => $role ];
+        $this->body = ['role' => $role];
+
         if ($wing != null) {
             $this->body['wing_id'] = $wing;
         }
