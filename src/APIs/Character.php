@@ -86,6 +86,12 @@ class Character extends Api
         $this->endpoint = $this->id . "/fatigue";
     }
 
+    protected function getLocation()
+    {
+        $this->verb = "get";
+        $this->endpoint = $this->id . "/location";
+    }
+
     protected function getNotifications()
     {
         $this->verb = "get";
@@ -96,6 +102,12 @@ class Character extends Api
     {
         $this->verb = "get";
         $this->endpoint = $this->id . "/notifications/contacts";
+    }
+
+    protected function getOnline()
+    {
+        $this->verb = "get";
+        $this->endpoint = $this->id . "/online";
     }
 
     protected function getContactNotifications()
@@ -132,6 +144,12 @@ class Character extends Api
     {
         $this->verb = "get";
         $this->endpoint = $this->id . "/implants";
+    }
+
+    protected function getShip()
+    {
+        $this->verb = "get";
+        $this->endpoint = $this->id . "/ship";
     }
 
     protected function deleteContacts($contactIds)
