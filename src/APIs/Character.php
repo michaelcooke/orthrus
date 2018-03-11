@@ -11,10 +11,12 @@ use MichaelCooke\Orthrus\Traits\HasMedals;
 use MichaelCooke\Orthrus\Traits\HasTitles;
 use MichaelCooke\Orthrus\Traits\HasCalendar;
 use MichaelCooke\Orthrus\Traits\HasContacts;
+use MichaelCooke\Orthrus\Traits\HasFittings;
 use MichaelCooke\Orthrus\Traits\HasBookmarks;
 use MichaelCooke\Orthrus\Traits\HasContracts;
 use MichaelCooke\Orthrus\Traits\HasStandings;
 use MichaelCooke\Orthrus\Traits\HasBlueprints;
+use MichaelCooke\Orthrus\Traits\HasFactionWarfareStats;
 
 class Character extends Api
 {
@@ -25,10 +27,12 @@ class Character extends Api
         HasTitles,
         HasCalendar,
         HasContacts,
+        HasFittings,
         HasBookmarks,
         HasContracts,
         HasStandings,
-        HasBlueprints;
+        HasBlueprints,
+        HasFactionWarfareStats;
 
     public function __construct(Orthrus $orthrus, String $id = null)
     {
