@@ -92,6 +92,12 @@ class Character extends Api
         $this->endpoint = $this->id . "/location";
     }
 
+    protected function getLoyaltyPoints()
+    {
+        $this->verb = "get";
+        $this->endpoint = $this->id . "/loyalty/points";
+    }
+
     protected function getNotifications()
     {
         $this->verb = "get";
