@@ -11,6 +11,7 @@ use MichaelCooke\Orthrus\Traits\HasMedals;
 use MichaelCooke\Orthrus\Traits\HasTitles;
 use MichaelCooke\Orthrus\Traits\HasCalendar;
 use MichaelCooke\Orthrus\Traits\HasContacts;
+use MichaelCooke\Orthrus\Traits\HasFittings;
 use MichaelCooke\Orthrus\Traits\HasBookmarks;
 use MichaelCooke\Orthrus\Traits\HasContracts;
 use MichaelCooke\Orthrus\Traits\HasStandings;
@@ -25,6 +26,7 @@ class Character extends Api
         HasTitles,
         HasCalendar,
         HasContacts,
+        HasFittings,
         HasBookmarks,
         HasContracts,
         HasStandings,
