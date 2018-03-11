@@ -12,9 +12,9 @@ trait HasFittings
 
     protected function createFitting($fitting)
     {
-        $this->verb = "push";
-        $this->endpoint = $this->id . "/fittings";
+        $this->verb = "post";
         $this->body = $fitting;
+        $this->endpoint = $this->id . "/fittings";
     }
 
     protected function deleteFitting($fittingId)
