@@ -11,6 +11,7 @@ use MichaelCooke\Orthrus\Traits\HasAssets;
 use MichaelCooke\Orthrus\Traits\HasMedals;
 use MichaelCooke\Orthrus\Traits\HasTitles;
 use MichaelCooke\Orthrus\Traits\HasContacts;
+use MichaelCooke\Orthrus\Traits\HasIndustry;
 use MichaelCooke\Orthrus\Traits\HasBookmarks;
 use MichaelCooke\Orthrus\Traits\HasContracts;
 use MichaelCooke\Orthrus\Traits\HasKillmails;
@@ -28,6 +29,7 @@ class Corporation extends Api
         HasMedals,
         HasTitles,
         HasContacts,
+        HasIndustry,
         HasBookmarks,
         HasContracts,
         HasKillmails,
