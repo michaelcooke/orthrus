@@ -6,7 +6,7 @@ trait HasFactionWarfareStats
 {
     protected function getFactionWarfareStats()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/fw/stats";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/fw/stats';
     }
 }

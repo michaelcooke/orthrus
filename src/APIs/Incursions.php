@@ -9,8 +9,8 @@ class Incursions extends Api
 {
     public function __construct(Orthrus $orthrus)
     {
-        $this->base = "incursions";
+        $this->base = 'incursions';
         $this->orthrus = $orthrus;
-        $this->verb = "get";
+        $this->verb = 'get';
     }
 }

@@ -6,7 +6,7 @@ trait HasKillmails
 {
     protected function getKillmails()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/killmails/recent";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/killmails/recent';
     }
 }

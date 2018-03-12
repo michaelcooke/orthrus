@@ -18,15 +18,15 @@ class Alliance extends Api
 
     public function __construct(Orthrus $orthrus, String $id = null)
     {
-        $this->base = "alliances";
+        $this->base = 'alliances';
         $this->id = $id;
         $this->orthrus = $orthrus;
     }
 
     protected function getNames($alliances)
     {
-        $this->verb = "get";
+        $this->verb = 'get';
         $this->query = ['alliance_ids' => $alliances];
-        $this->endpoint = "names";
+        $this->endpoint = 'names';
     }
 }

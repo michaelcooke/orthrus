@@ -9,13 +9,13 @@ class Killmail extends Api
 {
     public function __construct(Orthrus $orthrus)
     {
-        $this->base = "killmails";
+        $this->base = 'killmails';
         $this->orthrus = $orthrus;
     }
 
     protected function get($id, $hash)
     {
-        $this->verb = "get";
-        $this->endpoint = $id . "/" . $hash;
+        $this->verb = 'get';
+        $this->endpoint = $id . '/' . $hash;
     }
 }

@@ -9,19 +9,19 @@ class Industry extends Api
 {
     public function __construct(Orthrus $orthrus)
     {
-        $this->base = "industry";
+        $this->base = 'industry';
         $this->orthrus = $orthrus;
     }
 
     protected function getFacilities()
     {
-        $this->verb = "get";
-        $this->endpoint = "facilities";
+        $this->verb = 'get';
+        $this->endpoint = 'facilities';
     }
 
     protected function getCostIndices()
     {
-        $this->verb = "get";
-        $this->endpoint = "systems";
+        $this->verb = 'get';
+        $this->endpoint = 'systems';
     }
 }

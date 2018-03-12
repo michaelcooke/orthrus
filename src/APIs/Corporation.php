@@ -38,149 +38,149 @@ class Corporation extends Api
 
     public function __construct(Orthrus $orthrus, String $id = null)
     {
-        $this->base = "corporations";
+        $this->base = 'corporations';
         $this->id = $id;
         $this->orthrus = $orthrus;
     }
 
     protected function getAllianceHistory()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/alliancehistory";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/alliancehistory';
     }
 
     protected function getContainerLogs()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/containers/logs";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/containers/logs';
     }
 
     protected function getDivisions()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/divisions";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/divisions';
     }
 
     protected function getFacilities()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/facilities";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/facilities';
     }
 
     protected function getIssuedMedals()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/medals/issued";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/medals/issued';
     }
 
     protected function getMembers()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/members";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/members';
     }
 
     protected function getMemberLimit()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/members/limit";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/members/limit';
     }
 
     protected function getMemberTitles()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/members/titles";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/members/titles';
     }
 
     protected function getMemberTracking()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/membertracking";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/membertracking';
     }
 
     protected function getOutposts()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/outposts";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/outposts';
     }
 
     protected function getOutpost($outpostId)
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/outposts/" . $outpostId;
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/outposts/' . $outpostId;
     }
 
     protected function getRoleHistory()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/roles/history";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/roles/history';
     }
 
     protected function getShareholders()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/shareholders";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/shareholders';
     }
 
     protected function getStarbases()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/starbases";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/starbases';
     }
 
     protected function getStarbase($starbaseId, $systemId)
     {
-        $this->verb = "get";
+        $this->verb = 'get';
         $this->query = ['system_id' => $systemId];
-        $this->endpoint = $this->id . "/starbases/" . $starbaseId;
+        $this->endpoint = $this->id . '/starbases/' . $starbaseId;
     }
 
     protected function getStructures()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/structures";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/structures';
     }
 
     protected function updateStructureVulnerability($structureId, $newSchedule)
     {
-        $this->verb = "put";
+        $this->verb = 'put';
         $this->body = $newSchedule;
-        $this->endpoint = $this->id . "/structures/" . $structureId;
+        $this->endpoint = $this->id . '/structures/' . $structureId;
     }
 
     protected function getNames($corporationIds)
     {
-        $this->verb = "get";
+        $this->verb = 'get';
         $this->query = ['corporation_ids' => $corporationIds];
-        $this->endpoint = "names";
+        $this->endpoint = 'names';
     }
 
     protected function getNpcCorporations()
     {
-        $this->verb = "get";
-        $this->endpoint = "npccorps";
+        $this->verb = 'get';
+        $this->endpoint = 'npccorps';
     }
 
     protected function getCustomsOffices()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/customs_offices";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/customs_offices';
     }
 
     protected function getWallets()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/wallets";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/wallets';
     }
 
     protected function getWalletJournal(Int $walletId)
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/wallets/" . $walletId . "/journal";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/wallets/' . $walletId . '/journal';
     }
 
     protected function getWalletTransactions(Int $walletId)
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/wallets/" . $walletId . "/transactions";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/wallets/' . $walletId . '/transactions';
     }
 }

@@ -9,9 +9,9 @@ class Route extends Api
 {
     public function __construct(Orthrus $orthrus, Int $originId, Int $destinationId)
     {
-        $this->base = "route";
+        $this->base = 'route';
         $this->orthrus = $orthrus;
-        $this->verb = "get";
-        $this->endpoint = $originId . "/" . $destinationId;
+        $this->verb = 'get';
+        $this->endpoint = $originId . '/' . $destinationId;
     }
 }

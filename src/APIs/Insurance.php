@@ -9,13 +9,13 @@ class Insurance extends Api
 {
     public function __construct(Orthrus $orthrus)
     {
-        $this->base = "insurance";
+        $this->base = 'insurance';
         $this->orthrus = $orthrus;
     }
 
     protected function getPrices()
     {
-        $this->verb = "get";
-        $this->endpoint = "prices";
+        $this->verb = 'get';
+        $this->endpoint = 'prices';
     }
 }

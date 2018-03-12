@@ -6,7 +6,7 @@ trait HasMedals
 {
     protected function getMedals()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/medals";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/medals';
     }
 }

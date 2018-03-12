@@ -6,7 +6,7 @@ trait HasStandings
 {
     protected function getStandings()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/standings";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/standings';
     }
 }

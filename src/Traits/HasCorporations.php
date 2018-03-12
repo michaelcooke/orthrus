@@ -6,7 +6,7 @@ trait HasCorporations
 {
     protected function getCorporations()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/corporations";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/corporations';
     }
 }

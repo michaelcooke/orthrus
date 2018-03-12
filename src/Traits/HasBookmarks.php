@@ -6,13 +6,13 @@ trait HasBookmarks
 {
     protected function getBookmarks()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/bookmarks";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/bookmarks';
     }
 
     protected function getBookmarkFolders()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/bookmarks/folders";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/bookmarks/folders';
     }
 }

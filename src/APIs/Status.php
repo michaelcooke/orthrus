@@ -9,8 +9,8 @@ class Status extends Api
 {
     public function __construct(Orthrus $orthrus)
     {
-        $this->base = "status";
+        $this->base = 'status';
         $this->orthrus = $orthrus;
-        $this->verb = "get";
+        $this->verb = 'get';
     }
 }

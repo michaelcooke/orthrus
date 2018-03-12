@@ -48,15 +48,15 @@ class Character extends Api
 
     public function __construct(Orthrus $orthrus, String $id = null)
     {
-        $this->base = "characters";
+        $this->base = 'characters';
         $this->id = $id;
         $this->orthrus = $orthrus;
     }
 
     protected function getAgentsResearch()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/agents_research";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/agents_research';
     }
 
     protected function getResearchAgents()
@@ -66,14 +66,14 @@ class Character extends Api
 
     protected function getChatChannels()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/chat_channels";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/chat_channels';
     }
 
     protected function getCorporationHistory()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/corporationhistory";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/corporationhistory';
     }
 
     protected function getEmploymentHistory()
@@ -83,45 +83,45 @@ class Character extends Api
 
     protected function calculateCSPA($characters)
     {
-        $this->verb = "post";
+        $this->verb = 'post';
         $this->body = $characters;
-        $this->endpoint = $this->id . "/cspa";
+        $this->endpoint = $this->id . '/cspa';
     }
 
     protected function getFatigue()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/fatigue";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/fatigue';
     }
 
     protected function getLocation()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/location";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/location';
     }
 
     protected function getLoyaltyPoints()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/loyalty/points";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/loyalty/points';
     }
 
     protected function getNotifications()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/notifications";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/notifications';
     }
 
     protected function getNotificationsContacts()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/notifications/contacts";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/notifications/contacts';
     }
 
     protected function getOnline()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/online";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/online';
     }
 
     protected function getContactNotifications()
@@ -131,103 +131,103 @@ class Character extends Api
 
     protected function getPortrait()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/portrait";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/portrait';
     }
 
     protected function getStats()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/stats";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/stats';
     }
 
     protected function getAffiliation($characters)
     {
-        $this->verb = "post";
+        $this->verb = 'post';
         $this->body = $characters;
-        $this->endpoint = "affiliation";
+        $this->endpoint = 'affiliation';
     }
 
     protected function getClones()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/clones";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/clones';
     }
 
     protected function getImplants()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/implants";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/implants';
     }
 
     protected function getShip()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/ship";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/ship';
     }
 
     protected function deleteContacts($contactIds)
     {
-        $this->verb = "delete";
+        $this->verb = 'delete';
         $this->query = ['contact_ids' => $contactIds];
-        $this->endpoint = $this->id . "/contacts";
+        $this->endpoint = $this->id . '/contacts';
     }
 
     protected function addContacts($contactIds, $standing)
     {
-        $this->verb = "post";
+        $this->verb = 'post';
         $this->body = $contactIds;
         $this->query = $standing;
-        $this->endpoint = $this->id . "/contacts";
+        $this->endpoint = $this->id . '/contacts';
     }
 
     protected function editContacts($contactIds, $standing)
     {
-        $this->verb = "put";
+        $this->verb = 'put';
         $this->body = $contactIds;
         $this->query = $standing;
-        $this->endpoint = $this->id . "/contacts";
+        $this->endpoint = $this->id . '/contacts';
     }
 
     protected function getContactLabels()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/contacts/labels";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/contacts/labels';
     }
 
     protected function getCompletedOpportunities()
     {
-        $this->verb = "get";
+        $this->verb = 'get';
         $this->endpoint = $this->id . '/opportunities';
     }
 
     protected function getPlanets()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/planets";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/planets';
     }
 
     protected function getPlanet(Int $planetId)
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/planets/" . $planetId;
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/planets/' . $planetId;
     }
 
     protected function getWallet()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/wallet";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/wallet';
     }
 
     protected function getWalletJournal()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/wallet/journal";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/wallet/journal';
     }
 
     protected function getWalletTransactions()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/wallet/transactions";
+        $this->verb = 'get';
+        $this->endpoint = $this->id . '/wallet/transactions';
     }
 }

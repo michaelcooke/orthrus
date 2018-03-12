@@ -9,13 +9,13 @@ class Loyalty extends Api
 {
     public function __construct(Orthrus $orthrus)
     {
-        $this->base = "loyalty";
+        $this->base = 'loyalty';
         $this->orthrus = $orthrus;
     }
 
     protected function getOffers($id)
     {
-        $this->verb = "get";
-        $this->endpoint = "stores/" . $id . "/offers";
+        $this->verb = 'get';
+        $this->endpoint = 'stores/' . $id . '/offers';
     }
 }

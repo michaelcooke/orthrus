@@ -9,43 +9,43 @@ class FactionWarfare extends Api
 {
     public function __construct(Orthrus $orthrus)
     {
-        $this->base = "fw";
+        $this->base = 'fw';
         $this->orthrus = $orthrus;
     }
 
     protected function getWars()
     {
-        $this->verb = "get";
-        $this->endpoint = "wars";
+        $this->verb = 'get';
+        $this->endpoint = 'wars';
     }
 
     protected function getStats()
     {
-        $this->verb = "get";
-        $this->endpoint = "stats";
+        $this->verb = 'get';
+        $this->endpoint = 'stats';
     }
 
     protected function getSystems()
     {
-        $this->verb = "get";
-        $this->endpoint = "systems";
+        $this->verb = 'get';
+        $this->endpoint = 'systems';
     }
 
     protected function getLeaderboards()
     {
-        $this->verb = "get";
-        $this->endpoint = "leaderboards";
+        $this->verb = 'get';
+        $this->endpoint = 'leaderboards';
     }
 
     protected function getCharacterLeaderboards()
     {
-        $this->verb = "get";
-        $this->endpoint = "leaderboards/characters";
+        $this->verb = 'get';
+        $this->endpoint = 'leaderboards/characters';
     }
 
     protected function getCorporationLeaderboards()
     {
-        $this->verb = "get";
-        $this->endpoint = "leaderboards/corporations";
+        $this->verb = 'get';
+        $this->endpoint = 'leaderboards/corporations';
     }
 }

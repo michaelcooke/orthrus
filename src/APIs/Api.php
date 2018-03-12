@@ -24,11 +24,11 @@ class Api
         }
 
         if ($this->index) {
-            $arguments = [$this->verb, "/" . $this->base . "/", $this->variables, $this->body, $this->query];
+            $arguments = [$this->verb, '/' . $this->base . '/', $this->variables, $this->body, $this->query];
         } elseif ($this->endpoint == null) {
-            $arguments = [$this->verb, "/" . $this->base . "/", $this->variables, $this->body, $this->query];
+            $arguments = [$this->verb, '/' . $this->base . '/', $this->variables, $this->body, $this->query];
         } else {
-            $arguments = [$this->verb, "/" . $this->base . "/" . $this->endpoint . "/", $this->variables, $this->body, $this->query];
+            $arguments = [$this->verb, '/' . $this->base . '/' . $this->endpoint . '/', $this->variables, $this->body, $this->query];
         }
 
         $response = $this->orthrus->invoke(...$arguments);

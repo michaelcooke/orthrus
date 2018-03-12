@@ -8,13 +8,13 @@ trait HasEditableId
 
     protected function get()
     {
-        $this->verb = "get";
+        $this->verb = 'get';
         $this->endpoint = $this->id;
     }
 
     protected function put($new_settings)
     {
-        $this->verb = "put";
+        $this->verb = 'put';
         $this->endpoint = $this->id;
         $this->body = $new_settings;
     }
