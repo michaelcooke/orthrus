@@ -212,4 +212,22 @@ class Character extends Api
         $this->verb = "get";
         $this->endpoint = $this->id . "/planets/" . $planetId;
     }
+
+    protected function getWallet()
+    {
+        $this->verb = "get";
+        $this->endpoint = $this->id . "/wallet";
+    }
+
+    protected function getWalletJournal()
+    {
+        $this->verb = "get";
+        $this->endpoint = $this->id . "/wallet/journal";
+    }
+
+    protected function getWalletTransactions()
+    {
+        $this->verb = "get";
+        $this->endpoint = $this->id . "/wallet/transactions";
+    }
 }

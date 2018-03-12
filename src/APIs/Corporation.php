@@ -165,4 +165,22 @@ class Corporation extends Api
         $this->verb = "get";
         $this->endpoint = $this->id . "/customs_offices";
     }
+
+    protected function getWallets()
+    {
+        $this->verb = "get";
+        $this->endpoint = $this->id . "/wallets";
+    }
+
+    protected function getWalletJournal(Int $walletId)
+    {
+        $this->verb = "get";
+        $this->endpoint = $this->id . "/wallets/" . $walletId . "/journal";
+    }
+
+    protected function getWalletTransactions(Int $walletId)
+    {
+        $this->verb = "get";
+        $this->endpoint = $this->id . "/wallets/" . $walletId . "/transactions";
+    }
 }
