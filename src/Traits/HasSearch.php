@@ -4,10 +4,14 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasSearch
 {
-    protected function search(array $categories, String $search, $strict = false)
+    protected function search(array $categories, String $searchTerm, Bool $strict = false)
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/search";
-        $this->query = ['categories' => $categories, 'search' => $search, 'strict' => $strict];
+        $this->verb = 'get';
+        $this->query = [
+            'categories' => $categories,
+            'search' => $searchTerm,
+            'strict' => $strict
+        ];
+        $this->endpoint = $this->id . '/search';
     }
 }

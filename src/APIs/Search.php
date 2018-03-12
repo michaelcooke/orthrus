@@ -7,12 +7,16 @@ use MichaelCooke\Orthrus\Apis\Api;
 
 class Search extends Api
 {
-    public function __construct(Orthrus $orthrus, array $categories, String $search, $strict = false)
+
+    public function __construct(Orthrus $orthrus, array $categories, String $searchTerm, Bool $strict = false)
     {
-        $this->base = "search";
+        $this->base = 'search';
         $this->orthrus = $orthrus;
-        $this->verb = "get";
-        $this->index = true;
-        $this->query = ['categories' => $categories, 'search' => $search, 'strict' => $strict];
+        $this->verb = 'get';
+        $this->query = [
+            'categories' => $categories,
+            'search' => $searchTerm,
+            'strict' => $strict
+        ];
     }
 }
