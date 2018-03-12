@@ -82,7 +82,7 @@ class Universe extends Api
     protected function getCategories()
     {
         $this->verb = 'get';
-        $this->endpoint = 'categories/' . $categoryId;
+        $this->endpoint = 'categories';
     }
 
     protected function getNames(array $ids)
