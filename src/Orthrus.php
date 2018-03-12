@@ -66,6 +66,21 @@ class Orthrus
         return $this->response;
     }
 
+    public function responseExpires()
+    {
+        return $this->response->expires();
+    }
+
+    public function responseCode()
+    {
+        return $this->response->getErrorCode();
+    }
+
+    public function responseErrorMessage()
+    {
+        return $this->response->error();
+    }
+
     public function __call($method, $arguments)
     {
         $class = 'MichaelCooke\\Orthrus\\APIs\\' . ucfirst($method);
