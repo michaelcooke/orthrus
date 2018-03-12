@@ -6,13 +6,11 @@ trait HasMail
 {
     protected function getMailHeaders()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/mail';
     }
 
     protected function getMailLabels()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/mail/labels';
     }
 
@@ -28,7 +26,6 @@ trait HasMail
 
     protected function getMailingLists()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/mail/lists';
     }
 
@@ -40,7 +37,6 @@ trait HasMail
 
     protected function getMail(Int $id)
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/mail/' . $id;
     }
 

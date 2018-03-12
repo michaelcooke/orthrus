@@ -26,7 +26,6 @@ class Fleet extends Api
 
     protected function getMembers()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/members';
     }
 
@@ -102,7 +101,6 @@ class Fleet extends Api
 
     protected function getWings()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/wings';
     }
 

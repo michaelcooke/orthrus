@@ -11,7 +11,6 @@ class Route extends Api
     {
         $this->base = 'route';
         $this->orthrus = $orthrus;
-        $this->verb = 'get';
         $this->endpoint = $originId . '/' . $destinationId;
     }
 }

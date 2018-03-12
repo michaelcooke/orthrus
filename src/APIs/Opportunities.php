@@ -15,25 +15,21 @@ class Opportunities extends Api
 
     protected function getGroups()
     {
-        $this->verb = 'get';
         $this->endpoint = 'groups';
     }
 
     protected function getGroup(Int $groupId)
     {
-        $this->verb = 'get';
         $this->endpoint = 'groups/' . $groupId;
     }
 
     protected function getTasks()
     {
-        $this->verb = 'get';
         $this->endpoint = 'tasks';
     }
 
     protected function getTask(Int $taskId)
     {
-        $this->verb = 'get';
         $this->endpoint = 'tasks/' . $taskId;
     }
 }

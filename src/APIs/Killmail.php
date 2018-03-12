@@ -15,7 +15,6 @@ class Killmail extends Api
 
     protected function get($id, $hash)
     {
-        $this->verb = 'get';
         $this->endpoint = $id . '/' . $hash;
     }
 }

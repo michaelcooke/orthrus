@@ -20,13 +20,11 @@ class Wars extends Api
 
     protected function getWar(Int $warId)
     {
-        $this->verb = 'get';
         $this->endpoint = $warId;
     }
 
     protected function getWarKillmails(Int $warId)
     {
-        $this->verb = 'get';
         $this->endpoint = $warId . '/killmails';
     }
 }

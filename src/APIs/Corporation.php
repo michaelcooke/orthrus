@@ -47,98 +47,82 @@ class Corporation extends Api
 
     protected function getAllianceHistory()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/alliancehistory';
     }
 
     protected function getContainerLogs()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/containers/logs';
     }
 
     protected function getDivisions()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/divisions';
     }
 
     protected function getFacilities()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/facilities';
     }
 
     protected function getIssuedMedals()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/medals/issued';
     }
 
     protected function getMembers()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/members';
     }
 
     protected function getMemberLimit()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/members/limit';
     }
 
     protected function getMemberTitles()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/members/titles';
     }
 
     protected function getMemberTracking()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/membertracking';
     }
 
     protected function getOutposts()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/outposts';
     }
 
     protected function getOutpost($outpostId)
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/outposts/' . $outpostId;
     }
 
     protected function getRoleHistory()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/roles/history';
     }
 
     protected function getShareholders()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/shareholders';
     }
 
     protected function getStarbases()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/starbases';
     }
 
     protected function getStarbase($starbaseId, $systemId)
     {
-        $this->verb = 'get';
         $this->query = ['system_id' => $systemId];
         $this->endpoint = $this->id . '/starbases/' . $starbaseId;
     }
 
     protected function getStructures()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/structures';
     }
 
@@ -151,56 +135,47 @@ class Corporation extends Api
 
     protected function getNames($corporationIds)
     {
-        $this->verb = 'get';
         $this->query = ['corporation_ids' => $corporationIds];
         $this->endpoint = 'names';
     }
 
     protected function getNpcCorporations()
     {
-        $this->verb = 'get';
         $this->endpoint = 'npccorps';
     }
 
     protected function getCustomsOffices()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/customs_offices';
     }
 
     protected function getWallets()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/wallets';
     }
 
     protected function getWalletJournal(Int $walletId)
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/wallets/' . $walletId . '/journal';
     }
 
     protected function getWalletTransactions(Int $walletId)
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/wallets/' . $walletId . '/transactions';
     }
 
     protected function getMiningObservers()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . 'mining/observers';
     }
 
     protected function getMiningObservers(Int $observerId)
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . 'mining/observers/' . $observerId;
     }
 
     protected function getExtractions()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . 'mining/extractions';
     }
 }

@@ -12,7 +12,6 @@ class Search extends Api
     {
         $this->base = 'search';
         $this->orthrus = $orthrus;
-        $this->verb = 'get';
         $this->query = [
             'categories' => $categories,
             'search' => $searchTerm,

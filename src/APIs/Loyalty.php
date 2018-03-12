@@ -15,7 +15,6 @@ class Loyalty extends Api
 
     protected function getOffers($id)
     {
-        $this->verb = 'get';
         $this->endpoint = 'stores/' . $id . '/offers';
     }
 }

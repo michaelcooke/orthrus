@@ -6,7 +6,6 @@ trait HasFittings
 {
     protected function getFittings()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/fittings';
     }
 

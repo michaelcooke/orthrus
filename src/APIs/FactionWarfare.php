@@ -15,37 +15,31 @@ class FactionWarfare extends Api
 
     protected function getWars()
     {
-        $this->verb = 'get';
         $this->endpoint = 'wars';
     }
 
     protected function getStats()
     {
-        $this->verb = 'get';
         $this->endpoint = 'stats';
     }
 
     protected function getSystems()
     {
-        $this->verb = 'get';
         $this->endpoint = 'systems';
     }
 
     protected function getLeaderboards()
     {
-        $this->verb = 'get';
         $this->endpoint = 'leaderboards';
     }
 
     protected function getCharacterLeaderboards()
     {
-        $this->verb = 'get';
         $this->endpoint = 'leaderboards/characters';
     }
 
     protected function getCorporationLeaderboards()
     {
-        $this->verb = 'get';
         $this->endpoint = 'leaderboards/corporations';
     }
 }

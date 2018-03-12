@@ -25,7 +25,6 @@ class Alliance extends Api
 
     protected function getNames($alliances)
     {
-        $this->verb = 'get';
         $this->query = ['alliance_ids' => $alliances];
         $this->endpoint = 'names';
     }

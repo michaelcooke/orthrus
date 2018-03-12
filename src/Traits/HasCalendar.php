@@ -6,13 +6,11 @@ trait HasCalendar
 {
     protected function getCalendar()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/calendar';
     }
 
     protected function getCalendarEvent($event)
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/calendar/' . $event;
     }
 
@@ -25,7 +23,6 @@ trait HasCalendar
 
     protected function getEventAttendees($event)
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/calendar/' . $event . '/attendees';
     }
 }

@@ -9,7 +9,7 @@ class Api
 {
     protected $base = null;
     protected $body = null;
-    protected $verb = null;
+    protected $verb = 'get';
     protected $query = null;
     protected $index = false;
     protected $orthrus = null;

@@ -8,7 +8,6 @@ trait HasEditableId
 
     protected function get()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id;
     }
 

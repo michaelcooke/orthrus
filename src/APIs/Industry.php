@@ -15,13 +15,11 @@ class Industry extends Api
 
     protected function getFacilities()
     {
-        $this->verb = 'get';
         $this->endpoint = 'facilities';
     }
 
     protected function getCostIndices()
     {
-        $this->verb = 'get';
         $this->endpoint = 'systems';
     }
 }

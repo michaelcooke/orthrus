@@ -8,7 +8,6 @@ trait HasId
 
     protected function get()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id;
     }
 }

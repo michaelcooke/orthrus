@@ -6,7 +6,6 @@ trait HasContacts
 {
     protected function getContacts($page = null)
     {
-        $this->verb = 'get';
         $this->query = ['page' => $page];
         $this->endpoint = $this->id . '/contacts';
 

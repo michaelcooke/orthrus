@@ -6,7 +6,6 @@ trait HasSearch
 {
     protected function search(array $categories, String $searchTerm, Bool $strict = false)
     {
-        $this->verb = 'get';
         $this->query = [
             'categories' => $categories,
             'search' => $searchTerm,

@@ -8,7 +8,6 @@ trait HasIdAndIndex
 
     protected function get()
     {
-        $this->verb = 'get';
         
         if ($this->id == null) {
             $this->index = true;

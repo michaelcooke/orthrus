@@ -15,19 +15,16 @@ class Sovereignty extends Api
 
     protected function getStructures()
     {
-        $this->verb = 'get';
         $this->endpoint = 'structures';
     }
 
     protected function getCampaigns()
     {
-        $this->verb = 'get';
         $this->endpoint = 'campaigns';
     }
 
     protected function getMap()
     {
-        $this->verb = 'get';
         $this->endpoint = 'map';
     }
 

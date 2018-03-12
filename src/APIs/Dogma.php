@@ -15,25 +15,21 @@ class Dogma extends Api
 
     protected function getAttributes()
     {
-        $this->verb = 'get';
         $this->endpoint = 'attributes';
     }
 
     protected function getAttribute($attribute)
     {
-        $this->verb = 'get';
         $this->endpoint = 'attributes/' . $attribute;
     }
 
     protected function getEffects()
     {
-        $this->verb = 'get';
         $this->endpoint = 'effects';
     }
 
     protected function getEffect($effect)
     {
-        $this->verb = 'get';
         $this->endpoint = 'effects/' . $effect;
     }
 }

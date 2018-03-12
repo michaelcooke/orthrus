@@ -57,7 +57,6 @@ class Character extends Api
 
     protected function getAgentsResearch()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/agents_research';
     }
 
@@ -68,13 +67,11 @@ class Character extends Api
 
     protected function getChatChannels()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/chat_channels';
     }
 
     protected function getCorporationHistory()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/corporationhistory';
     }
 
@@ -92,37 +89,31 @@ class Character extends Api
 
     protected function getFatigue()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/fatigue';
     }
 
     protected function getLocation()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/location';
     }
 
     protected function getLoyaltyPoints()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/loyalty/points';
     }
 
     protected function getNotifications()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/notifications';
     }
 
     protected function getNotificationsContacts()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/notifications/contacts';
     }
 
     protected function getOnline()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/online';
     }
 
@@ -133,13 +124,11 @@ class Character extends Api
 
     protected function getPortrait()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/portrait';
     }
 
     protected function getStats()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/stats';
     }
 
@@ -152,19 +141,16 @@ class Character extends Api
 
     protected function getClones()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/clones';
     }
 
     protected function getImplants()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/implants';
     }
 
     protected function getShip()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/ship';
     }
 
@@ -193,49 +179,41 @@ class Character extends Api
 
     protected function getContactLabels()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/contacts/labels';
     }
 
     protected function getCompletedOpportunities()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/opportunities';
     }
 
     protected function getPlanets()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/planets';
     }
 
     protected function getPlanet(Int $planetId)
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/planets/' . $planetId;
     }
 
     protected function getWallet()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/wallet';
     }
 
     protected function getWalletJournal()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/wallet/journal';
     }
 
     protected function getWalletTransactions()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/wallet/transactions';
     }
 
     protected function getMiningLedger()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . 'mining';
     }
 }

@@ -15,7 +15,6 @@ class Insurance extends Api
 
     protected function getPrices()
     {
-        $this->verb = 'get';
         $this->endpoint = 'prices';
     }
 }

@@ -6,7 +6,6 @@ trait HasAssets
 {
     protected function getAssets()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/assets';
     }
 
