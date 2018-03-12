@@ -159,4 +159,10 @@ class Corporation extends Api
         $this->verb = "get";
         $this->endpoint = "npccorps";
     }
+
+    protected function getCustomsOffices()
+    {
+        $this->verb = "get";
+        $this->endpoint = $this->id . "/customs_offices";
+    }
 }

@@ -196,4 +196,16 @@ class Character extends Api
         $this->verb = "get";
         $this->endpoint = $this->id . '/opportunities';
     }
+
+    protected function getPlanets()
+    {
+        $this->verb = "get";
+        $this->endpoint = $this->id . "/planets";
+    }
+
+    protected function getPlanet(Int $planetId)
+    {
+        $this->verb = "get";
+        $this->endpoint = $this->id . "/planets/" . $planetId;
+    }
 }
