@@ -3,11 +3,13 @@
 namespace MichaelCooke\Orthrus;
 
 use Eseye;
+use Seat\Eseye\Containers\EsiResponse;
 
 class Orthrus
 {
     protected $eseye;
     protected $resetRefreshToken = false;
+    protected $response = null;
 
     public function __construct()
     {
@@ -51,6 +53,17 @@ class Orthrus
         }
 
         return $this->eseye::invoke($verb, $endpoint);
+    }
+
+    public function setResponse(EsiResponse $esiResponse)
+    {
+        $this->response = $esiResponse;
+        return true;
+    }
+
+    public function response()
+    {
+        return $this->response;
     }
 
     public function __call($method, $arguments)

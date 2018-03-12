@@ -32,6 +32,7 @@ class Api
         }
 
         $response = $this->orthrus->invoke(...$arguments);
+        $this->orthrus->setResponse($response);
 
         if ($this->getAllPages) {
             $totalPages = $response->pages;
@@ -42,11 +43,11 @@ class Api
                 $response->raw = json_encode(array_merge(json_decode($response->raw, true), json_decode($pageResponse->raw, true)));
             }
 
-            return $response;
+            return $response->raw;
         }
 
         $this->orthrus->resetRefreshToken();
 
-        return $response;
+        return $response->raw;
     }
 }
