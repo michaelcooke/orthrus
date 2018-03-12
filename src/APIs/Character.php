@@ -5,6 +5,8 @@ namespace MichaelCooke\Orthrus\Apis;
 use MichaelCooke\Orthrus\Orthrus;
 use MichaelCooke\Orthrus\Apis\Api;
 use MichaelCooke\Orthrus\Traits\HasId;
+use MichaelCooke\Orthrus\Traits\HasMail;
+use MichaelCooke\Orthrus\Traits\HasFleet;
 use MichaelCooke\Orthrus\Traits\HasRoles;
 use MichaelCooke\Orthrus\Traits\HasAssets;
 use MichaelCooke\Orthrus\Traits\HasMedals;
@@ -12,14 +14,20 @@ use MichaelCooke\Orthrus\Traits\HasSearch;
 use MichaelCooke\Orthrus\Traits\HasTitles;
 use MichaelCooke\Orthrus\Traits\HasCalendar;
 use MichaelCooke\Orthrus\Traits\HasContacts;
+use MichaelCooke\Orthrus\Traits\HasFittings;
 use MichaelCooke\Orthrus\Traits\HasBookmarks;
 use MichaelCooke\Orthrus\Traits\HasContracts;
+use MichaelCooke\Orthrus\Traits\HasKillmails;
 use MichaelCooke\Orthrus\Traits\HasStandings;
 use MichaelCooke\Orthrus\Traits\HasBlueprints;
+use MichaelCooke\Orthrus\Traits\HasMarketOrders;
+use MichaelCooke\Orthrus\Traits\HasFactionWarfareStats;
 
 class Character extends Api
 {
     use HasId,
+        HasMail,
+        HasFleet,
         HasRoles,
         HasAssets,
         HasMedals,
@@ -27,10 +35,14 @@ class Character extends Api
         HasTitles,
         HasCalendar,
         HasContacts,
+        HasFittings,
         HasBookmarks,
         HasContracts,
+        HasKillmails,
         HasStandings,
-        HasBlueprints;
+        HasBlueprints,
+        HasMarketOrders,
+        HasFactionWarfareStats;
 
     public function __construct(Orthrus $orthrus, String $id = null)
     {
@@ -80,6 +92,18 @@ class Character extends Api
         $this->endpoint = $this->id . "/fatigue";
     }
 
+    protected function getLocation()
+    {
+        $this->verb = "get";
+        $this->endpoint = $this->id . "/location";
+    }
+
+    protected function getLoyaltyPoints()
+    {
+        $this->verb = "get";
+        $this->endpoint = $this->id . "/loyalty/points";
+    }
+
     protected function getNotifications()
     {
         $this->verb = "get";
@@ -90,6 +114,12 @@ class Character extends Api
     {
         $this->verb = "get";
         $this->endpoint = $this->id . "/notifications/contacts";
+    }
+
+    protected function getOnline()
+    {
+        $this->verb = "get";
+        $this->endpoint = $this->id . "/online";
     }
 
     protected function getContactNotifications()
@@ -128,6 +158,12 @@ class Character extends Api
         $this->endpoint = $this->id . "/implants";
     }
 
+    protected function getShip()
+    {
+        $this->verb = "get";
+        $this->endpoint = $this->id . "/ship";
+    }
+
     protected function deleteContacts($contactIds)
     {
         $this->verb = "delete";
@@ -155,5 +191,23 @@ class Character extends Api
     {
         $this->verb = "get";
         $this->endpoint = $this->id . "/contacts/labels";
+    }
+
+    protected function getCompletedOpportunities()
+    {
+        $this->verb = "get";
+        $this->endpoint = $this->id . '/opportunities';
+    }
+
+    protected function getPlanets()
+    {
+        $this->verb = "get";
+        $this->endpoint = $this->id . "/planets";
+    }
+
+    protected function getPlanet(Int $planetId)
+    {
+        $this->verb = "get";
+        $this->endpoint = $this->id . "/planets/" . $planetId;
     }
 }

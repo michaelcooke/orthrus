@@ -5,17 +5,16 @@ namespace MichaelCooke\Orthrus\Apis;
 use MichaelCooke\Orthrus\Orthrus;
 use MichaelCooke\Orthrus\Apis\Api;
 
-class Insurance extends Api
+class Incursions extends Api
 {
     public function __construct(Orthrus $orthrus)
     {
-        $this->base = "insurance";
+        $this->base = "incursions";
         $this->orthrus = $orthrus;
     }
 
-    protected function getPrices()
+    protected function get()
     {
         $this->verb = "get";
-        $this->endpoint = "prices";
     }
 }
