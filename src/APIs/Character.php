@@ -5,6 +5,7 @@ namespace MichaelCooke\Orthrus\Apis;
 use MichaelCooke\Orthrus\Orthrus;
 use MichaelCooke\Orthrus\Apis\Api;
 use MichaelCooke\Orthrus\Traits\HasId;
+use MichaelCooke\Orthrus\Traits\HasMail;
 use MichaelCooke\Orthrus\Traits\HasFleet;
 use MichaelCooke\Orthrus\Traits\HasRoles;
 use MichaelCooke\Orthrus\Traits\HasAssets;
@@ -23,6 +24,7 @@ use MichaelCooke\Orthrus\Traits\HasFactionWarfareStats;
 class Character extends Api
 {
     use HasId,
+        HasMail,
         HasFleet,
         HasRoles,
         HasAssets,
