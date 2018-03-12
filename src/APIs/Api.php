@@ -34,6 +34,8 @@ class Api
         $response = ESI::invoke(...$arguments);
         ESI::setResponse($response);
 
+        $response = collect(json_decode($response->raw));
+
         if ($this->getAllPages) {
             $totalPages = $response->pages;
 
@@ -43,11 +45,11 @@ class Api
                 $response->raw = json_encode(array_merge(json_decode($response->raw, true), json_decode($pageResponse->raw, true)));
             }
 
-            return $response->raw;
+            return $response;
         }
 
         ESI::resetRefreshToken();
 
-        return $response->raw;
+        return $response;
     }
 }
