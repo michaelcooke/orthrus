@@ -9,12 +9,12 @@ class Api
 {
     protected $base = null;
     protected $body = null;
-    protected $query = null;
-    protected $variables = null;
     protected $verb = null;
+    protected $query = null;
     protected $index = false;
     protected $orthrus = null;
     protected $endpoint = null;
+    protected $variables = null;
     protected $getAllPages = null;
 
     public function __call($method, $arguments)

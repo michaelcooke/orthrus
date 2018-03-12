@@ -15,8 +15,8 @@ use MichaelCooke\Orthrus\Traits\HasSkills;
 use MichaelCooke\Orthrus\Traits\HasTitles;
 use MichaelCooke\Orthrus\Traits\HasCalendar;
 use MichaelCooke\Orthrus\Traits\HasContacts;
-use MichaelCooke\Orthrus\Traits\HasIndustry;
 use MichaelCooke\Orthrus\Traits\HasFittings;
+use MichaelCooke\Orthrus\Traits\HasIndustry;
 use MichaelCooke\Orthrus\Traits\HasBookmarks;
 use MichaelCooke\Orthrus\Traits\HasContracts;
 use MichaelCooke\Orthrus\Traits\HasKillmails;
@@ -38,8 +38,8 @@ class Character extends Api
         HasTitles,
         HasCalendar,
         HasContacts,
-        HasIndustry,
         HasFittings,
+        HasIndustry,
         HasBookmarks,
         HasContracts,
         HasKillmails,
