@@ -2,6 +2,7 @@
 
 namespace MichaelCooke\Orthrus\Apis;
 
+use ESI;
 use Eseye;
 use MichaelCooke\Orthrus\Orthrus;
 
@@ -9,12 +10,11 @@ class Api
 {
     protected $base = null;
     protected $body = null;
+    protected $verb = 'get';
     protected $query = null;
-    protected $variables = null;
-    protected $verb = null;
     protected $index = false;
-    protected $orthrus = null;
     protected $endpoint = null;
+    protected $variables = null;
     protected $getAllPages = null;
 
     public function __call($method, $arguments)
@@ -24,28 +24,31 @@ class Api
         }
 
         if ($this->index) {
-            $arguments = [$this->verb, "/" . $this->base . "/", $this->variables, $this->body, $this->query];
+            $arguments = [$this->verb, '/' . $this->base . '/', $this->variables, $this->body, $this->query];
         } elseif ($this->endpoint == null) {
-            $arguments = [$this->verb, "/" . $this->base . "/", $this->variables, $this->body, $this->query];
+            $arguments = [$this->verb, '/' . $this->base . '/', $this->variables, $this->body, $this->query];
         } else {
-            $arguments = [$this->verb, "/" . $this->base . "/" . $this->endpoint . "/", $this->variables, $this->body, $this->query];
+            $arguments = [$this->verb, '/' . $this->base . '/' . $this->endpoint . '/', $this->variables, $this->body, $this->query];
         }
 
-        $response = $this->orthrus->invoke(...$arguments);
+        $response = ESI::invoke(...$arguments);
+        ESI::setResponse($response);
+
+        $response = collect(json_decode($response->raw));
 
         if ($this->getAllPages) {
             $totalPages = $response->pages;
 
             for ($i = 2; $i <= $totalPages; $i++) {
                 $arguments[4] = ['page' => $i];
-                $pageResponse = $this->orthrus->invoke(...$arguments);
+                $pageResponse = ESI::invoke(...$arguments);
                 $response->raw = json_encode(array_merge(json_decode($response->raw, true), json_decode($pageResponse->raw, true)));
             }
 
             return $response;
         }
 
-        $this->orthrus->resetRefreshToken();
+        ESI::resetRefreshToken();
 
         return $response;
     }

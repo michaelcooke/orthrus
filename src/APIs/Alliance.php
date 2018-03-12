@@ -16,17 +16,15 @@ class Alliance extends Api
         HasIdAndIndex,
         HasCorporations;
 
-    public function __construct(Orthrus $orthrus, String $id = null)
+    public function __construct(String $id = null)
     {
-        $this->base = "alliances";
+        $this->base = 'alliances';
         $this->id = $id;
-        $this->orthrus = $orthrus;
     }
 
-    protected function getNames($alliances)
+    protected function names($alliances)
     {
-        $this->verb = "get";
         $this->query = ['alliance_ids' => $alliances];
-        $this->endpoint = "names";
+        $this->endpoint = 'names';
     }
 }

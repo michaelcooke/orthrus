@@ -4,15 +4,13 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasMail
 {
-    protected function getMailHeaders()
+    protected function mailHeaders()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/mail';
     }
 
-    protected function getMailLabels()
+    protected function mailLabels()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/mail/labels';
     }
 
@@ -26,9 +24,8 @@ trait HasMail
         $this->endpoint = $this->id . '/mail/labels';
     }
 
-    protected function getMailingLists()
+    protected function mailingLists()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/mail/lists';
     }
 
@@ -38,9 +35,8 @@ trait HasMail
         $this->endpoint = $this->id . '/mail/labels/' . $id;
     }
 
-    protected function getMail(Int $id)
+    protected function mail(Int $id)
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . '/mail/' . $id;
     }
 

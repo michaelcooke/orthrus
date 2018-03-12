@@ -4,28 +4,25 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasCalendar
 {
-    protected function getCalendar()
+    protected function calendar()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/calendar";
+        $this->endpoint = $this->id . '/calendar';
     }
 
-    protected function getCalendarEvent($event)
+    protected function calendarEvent($event)
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/calendar/" . $event;
+        $this->endpoint = $this->id . '/calendar/' . $event;
     }
 
     protected function respondToEvent($event, $response)
     {
-        $this->verb = "put";
-        $this->body = ["response" => $response];
-        $this->endpoint = $this->id . "/calendar/" . $event;
+        $this->verb = 'put';
+        $this->body = ['response' => $response];
+        $this->endpoint = $this->id . '/calendar/' . $event;
     }
 
-    protected function getEventAttendees($event)
+    protected function eventAttendees($event)
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/calendar/" . $event . "/attendees";
+        $this->endpoint = $this->id . '/calendar/' . $event . '/attendees';
     }
 }

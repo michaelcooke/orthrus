@@ -7,15 +7,13 @@ use MichaelCooke\Orthrus\Apis\Api;
 
 class Loyalty extends Api
 {
-    public function __construct(Orthrus $orthrus)
+    public function __construct()
     {
-        $this->base = "loyalty";
-        $this->orthrus = $orthrus;
+        $this->base = 'loyalty';
     }
 
-    protected function getOffers($id)
+    protected function offers($id)
     {
-        $this->verb = "get";
-        $this->endpoint = "stores/" . $id . "/offers";
+        $this->endpoint = 'stores/' . $id . '/offers';
     }
 }

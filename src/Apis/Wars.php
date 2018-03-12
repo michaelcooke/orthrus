@@ -7,10 +7,9 @@ use MichaelCooke\Orthrus\Apis\Api;
 
 class Wars extends Api
 {
-    public function __construct(Orthrus $orthrus)
+    public function __construct()
     {
         $this->base = 'wars';
-        $this->orthrus = $orthrus;
     }
 
     protected function get()
@@ -20,13 +19,11 @@ class Wars extends Api
 
     protected function getWar(Int $warId)
     {
-        $this->verb = 'get';
         $this->endpoint = $warId;
     }
 
-    protected function getWarKillmails(Int $warId)
+    protected function warKillmails(Int $warId)
     {
-        $this->verb = 'get';
         $this->endpoint = $warId . '/killmails';
     }
 }

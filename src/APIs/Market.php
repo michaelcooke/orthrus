@@ -7,52 +7,44 @@ use MichaelCooke\Orthrus\Apis\Api;
 
 class Market extends Api
 {
-    public function __construct(Orthrus $orthrus)
+    public function __construct()
     {
         $this->base = 'markets';
-        $this->orthrus = $orthrus;
     }
 
-    protected function getPrices()
+    protected function prices()
     {
-        $this->verb = 'get';
         $this->endpoint = 'prices';
     }
 
-    protected function getOrders(Int $regionId)
+    protected function orders(Int $regionId)
     {
-        $this->verb = 'get';
         $this->endpoint = $regionId . '/orders';
     }
 
-    protected function getHistory(Int $regionId, Int $typeId)
+    protected function history(Int $regionId, Int $typeId)
     {
-        $this->verb = 'get';
         $this->query = ['type_id' => $typeId];
         $this->endpoint = $regionId . '/history';
     }
 
-    protected function getStructureOrders(Int $structureId)
+    protected function structureOrders(Int $structureId)
     {
-        $this->verb = 'get';
         $this->endpoint = 'structures/' . $structureId;
     }
 
-    protected function getItemGroups()
+    protected function itemGroups()
     {
-        $this->verb = 'get';
         $this->endpoint = 'groups';
     }
 
-    protected function getItemGroup(Int $groupId)
+    protected function itemGroup(Int $groupId)
     {
-        $this->verb = 'get';
         $this->endpoint = 'groups/' . $groupId;
     }
 
-    protected function getItemTypes(Int $regionId)
+    protected function itemTypes(Int $regionId)
     {
-        $this->verb = 'get';
         $this->endpoint = $regionId . '/types';
     }
 }

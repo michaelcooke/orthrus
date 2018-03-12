@@ -7,31 +7,27 @@ use MichaelCooke\Orthrus\Apis\Api;
 
 class Sovereignty extends Api
 {
-    public function __construct(Orthrus $orthrus)
+    public function __construct()
     {
         $this->base = 'sovereignty';
-        $this->orthrus = $orthrus;
     }
 
-    protected function getStructures()
+    protected function structures()
     {
-        $this->verb = 'get';
         $this->endpoint = 'structures';
     }
 
-    protected function getCampaigns()
+    protected function campaigns()
     {
-        $this->verb = 'get';
         $this->endpoint = 'campaigns';
     }
 
-    protected function getMap()
+    protected function map()
     {
-        $this->verb = 'get';
         $this->endpoint = 'map';
     }
 
-    protected function getSystems()
+    protected function systems()
     {
         $this->getMap();
     }

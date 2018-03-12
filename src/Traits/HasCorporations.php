@@ -4,9 +4,8 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasCorporations
 {
-    protected function getCorporations()
+    protected function corporations()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/corporations";
+        $this->endpoint = $this->id . '/corporations';
     }
 }

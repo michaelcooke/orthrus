@@ -15,8 +15,8 @@ use MichaelCooke\Orthrus\Traits\HasSkills;
 use MichaelCooke\Orthrus\Traits\HasTitles;
 use MichaelCooke\Orthrus\Traits\HasCalendar;
 use MichaelCooke\Orthrus\Traits\HasContacts;
-use MichaelCooke\Orthrus\Traits\HasIndustry;
 use MichaelCooke\Orthrus\Traits\HasFittings;
+use MichaelCooke\Orthrus\Traits\HasIndustry;
 use MichaelCooke\Orthrus\Traits\HasBookmarks;
 use MichaelCooke\Orthrus\Traits\HasContracts;
 use MichaelCooke\Orthrus\Traits\HasKillmails;
@@ -38,8 +38,8 @@ class Character extends Api
         HasTitles,
         HasCalendar,
         HasContacts,
-        HasIndustry,
         HasFittings,
+        HasIndustry,
         HasBookmarks,
         HasContracts,
         HasKillmails,
@@ -48,194 +48,171 @@ class Character extends Api
         HasMarketOrders,
         HasFactionWarfareStats;
 
-    public function __construct(Orthrus $orthrus, String $id = null)
+    public function __construct(String $id = null)
     {
-        $this->base = "characters";
+        $this->base = 'characters';
         $this->id = $id;
-        $this->orthrus = $orthrus;
     }
 
-    protected function getAgentsResearch()
+    protected function agentsResearch()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/agents_research";
+        $this->endpoint = $this->id . '/agents_research';
     }
 
-    protected function getResearchAgents()
+    protected function researchAgents()
     {
-        $this->getAgentsResearch();
+        $this->agentsResearch();
     }
 
-    protected function getChatChannels()
+    protected function chatChannels()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/chat_channels";
+        $this->endpoint = $this->id . '/chat_channels';
     }
 
-    protected function getCorporationHistory()
+    protected function corporationHistory()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/corporationhistory";
+        $this->endpoint = $this->id . '/corporationhistory';
     }
 
-    protected function getEmploymentHistory()
+    protected function employmentHistory()
     {
         $this->getCorporationHistory();
     }
 
     protected function calculateCSPA($characters)
     {
-        $this->verb = "post";
+        $this->verb = 'post';
         $this->body = $characters;
-        $this->endpoint = $this->id . "/cspa";
+        $this->endpoint = $this->id . '/cspa';
     }
 
-    protected function getFatigue()
+    protected function fatigue()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/fatigue";
+        $this->endpoint = $this->id . '/fatigue';
     }
 
-    protected function getLocation()
+    protected function location()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/location";
+        $this->endpoint = $this->id . '/location';
     }
 
-    protected function getLoyaltyPoints()
+    protected function loyaltyPoints()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/loyalty/points";
+        $this->endpoint = $this->id . '/loyalty/points';
     }
 
-    protected function getNotifications()
+    protected function notifications()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/notifications";
+        $this->endpoint = $this->id . '/notifications';
     }
 
-    protected function getNotificationsContacts()
+    protected function notificationsContacts()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/notifications/contacts";
+        $this->endpoint = $this->id . '/notifications/contacts';
     }
 
-    protected function getOnline()
+    protected function online()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/online";
+        $this->endpoint = $this->id . '/online';
     }
 
-    protected function getContactNotifications()
+    protected function contactNotifications()
     {
-        $this->getNotificationsContacts();
+        $this->notificationsContacts();
     }
 
-    protected function getPortrait()
+    protected function portrait()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/portrait";
+        $this->endpoint = $this->id . '/portrait';
     }
 
-    protected function getStats()
+    protected function stats()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/stats";
+        $this->endpoint = $this->id . '/stats';
     }
 
-    protected function getAffiliation($characters)
+    protected function affiliation($characters)
     {
-        $this->verb = "post";
+        $this->verb = 'post';
         $this->body = $characters;
-        $this->endpoint = "affiliation";
+        $this->endpoint = 'affiliation';
     }
 
-    protected function getClones()
+    protected function clones()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/clones";
+        $this->endpoint = $this->id . '/clones';
     }
 
-    protected function getImplants()
+    protected function implants()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/implants";
+        $this->endpoint = $this->id . '/implants';
     }
 
-    protected function getShip()
+    protected function ship()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/ship";
+        $this->endpoint = $this->id . '/ship';
     }
 
     protected function deleteContacts($contactIds)
     {
-        $this->verb = "delete";
+        $this->verb = 'delete';
         $this->query = ['contact_ids' => $contactIds];
-        $this->endpoint = $this->id . "/contacts";
+        $this->endpoint = $this->id . '/contacts';
     }
 
     protected function addContacts($contactIds, $standing)
     {
-        $this->verb = "post";
+        $this->verb = 'post';
         $this->body = $contactIds;
         $this->query = $standing;
-        $this->endpoint = $this->id . "/contacts";
+        $this->endpoint = $this->id . '/contacts';
     }
 
     protected function editContacts($contactIds, $standing)
     {
-        $this->verb = "put";
+        $this->verb = 'put';
         $this->body = $contactIds;
         $this->query = $standing;
-        $this->endpoint = $this->id . "/contacts";
+        $this->endpoint = $this->id . '/contacts';
     }
 
-    protected function getContactLabels()
+    protected function contactLabels()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/contacts/labels";
+        $this->endpoint = $this->id . '/contacts/labels';
     }
 
-    protected function getCompletedOpportunities()
+    protected function completedOpportunities()
     {
-        $this->verb = "get";
         $this->endpoint = $this->id . '/opportunities';
     }
 
-    protected function getPlanets()
+    protected function planets()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/planets";
+        $this->endpoint = $this->id . '/planets';
     }
 
-    protected function getPlanet(Int $planetId)
+    protected function planet(Int $planetId)
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/planets/" . $planetId;
+        $this->endpoint = $this->id . '/planets/' . $planetId;
     }
 
-    protected function getWallet()
+    protected function wallet()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/wallet";
+        $this->endpoint = $this->id . '/wallet';
     }
 
-    protected function getWalletJournal()
+    protected function walletJournal()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/wallet/journal";
+        $this->endpoint = $this->id . '/wallet/journal';
     }
 
-    protected function getWalletTransactions()
+    protected function walletTransactions()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/wallet/transactions";
+        $this->endpoint = $this->id . '/wallet/transactions';
     }
 
-    protected function getMiningLedger()
+    protected function miningLedger()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . 'mining';
     }
 }

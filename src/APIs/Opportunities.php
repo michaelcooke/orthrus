@@ -7,33 +7,28 @@ use MichaelCooke\Orthrus\Apis\Api;
 
 class Opportunities extends Api
 {
-    public function __construct(Orthrus $orthrus)
+    public function __construct()
     {
         $this->base = 'opportunities';
-        $this->orthrus = $orthrus;
     }
 
-    protected function getGroups()
+    protected function groups()
     {
-        $this->verb = 'get';
         $this->endpoint = 'groups';
     }
 
-    protected function getGroup(Int $groupId)
+    protected function group(Int $groupId)
     {
-        $this->verb = 'get';
         $this->endpoint = 'groups/' . $groupId;
     }
 
-    protected function getTasks()
+    protected function tasks()
     {
-        $this->verb = 'get';
         $this->endpoint = 'tasks';
     }
 
-    protected function getTask(Int $taskId)
+    protected function task(Int $taskId)
     {
-        $this->verb = 'get';
         $this->endpoint = 'tasks/' . $taskId;
     }
 }

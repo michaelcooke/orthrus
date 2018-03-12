@@ -38,169 +38,143 @@ class Corporation extends Api
         HasMarketOrders,
         HasFactionWarfareStats;
 
-    public function __construct(Orthrus $orthrus, String $id = null)
+    public function __construct(String $id = null)
     {
-        $this->base = "corporations";
+        $this->base = 'corporations';
         $this->id = $id;
-        $this->orthrus = $orthrus;
     }
 
-    protected function getAllianceHistory()
+    protected function allianceHistory()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/alliancehistory";
+        $this->endpoint = $this->id . '/alliancehistory';
     }
 
-    protected function getContainerLogs()
+    protected function containerLogs()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/containers/logs";
+        $this->endpoint = $this->id . '/containers/logs';
     }
 
-    protected function getDivisions()
+    protected function divisions()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/divisions";
+        $this->endpoint = $this->id . '/divisions';
     }
 
-    protected function getFacilities()
+    protected function facilities()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/facilities";
+        $this->endpoint = $this->id . '/facilities';
     }
 
-    protected function getIssuedMedals()
+    protected function issuedMedals()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/medals/issued";
+        $this->endpoint = $this->id . '/medals/issued';
     }
 
-    protected function getMembers()
+    protected function members()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/members";
+        $this->endpoint = $this->id . '/members';
     }
 
-    protected function getMemberLimit()
+    protected function memberLimit()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/members/limit";
+        $this->endpoint = $this->id . '/members/limit';
     }
 
-    protected function getMemberTitles()
+    protected function memberTitles()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/members/titles";
+        $this->endpoint = $this->id . '/members/titles';
     }
 
-    protected function getMemberTracking()
+    protected function memberTracking()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/membertracking";
+        $this->endpoint = $this->id . '/membertracking';
     }
 
-    protected function getOutposts()
+    protected function outposts()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/outposts";
+        $this->endpoint = $this->id . '/outposts';
     }
 
-    protected function getOutpost($outpostId)
+    protected function outpost($outpostId)
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/outposts/" . $outpostId;
+        $this->endpoint = $this->id . '/outposts/' . $outpostId;
     }
 
-    protected function getRoleHistory()
+    protected function roleHistory()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/roles/history";
+        $this->endpoint = $this->id . '/roles/history';
     }
 
-    protected function getShareholders()
+    protected function shareholders()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/shareholders";
+        $this->endpoint = $this->id . '/shareholders';
     }
 
-    protected function getStarbases()
+    protected function starbases()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/starbases";
+        $this->endpoint = $this->id . '/starbases';
     }
 
-    protected function getStarbase($starbaseId, $systemId)
+    protected function starbase($starbaseId, $systemId)
     {
-        $this->verb = "get";
         $this->query = ['system_id' => $systemId];
-        $this->endpoint = $this->id . "/starbases/" . $starbaseId;
+        $this->endpoint = $this->id . '/starbases/' . $starbaseId;
     }
 
-    protected function getStructures()
+    protected function structures()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/structures";
+        $this->endpoint = $this->id . '/structures';
     }
 
-    protected function updateStructureVulnerability($structureId, $newSchedule)
+    protected function structureVulnerability($structureId, $newSchedule)
     {
-        $this->verb = "put";
+        $this->verb = 'put';
         $this->body = $newSchedule;
-        $this->endpoint = $this->id . "/structures/" . $structureId;
+        $this->endpoint = $this->id . '/structures/' . $structureId;
     }
 
-    protected function getNames($corporationIds)
+    protected function names($corporationIds)
     {
-        $this->verb = "get";
         $this->query = ['corporation_ids' => $corporationIds];
-        $this->endpoint = "names";
+        $this->endpoint = 'names';
     }
 
-    protected function getNpcCorporations()
+    protected function npcCorporations()
     {
-        $this->verb = "get";
-        $this->endpoint = "npccorps";
+        $this->endpoint = 'npccorps';
     }
 
-    protected function getCustomsOffices()
+    protected function customsOffices()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/customs_offices";
+        $this->endpoint = $this->id . '/customs_offices';
     }
 
-    protected function getWallets()
+    protected function wallets()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/wallets";
+        $this->endpoint = $this->id . '/wallets';
     }
 
-    protected function getWalletJournal(Int $walletId)
+    protected function walletJournal(Int $walletId)
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/wallets/" . $walletId . "/journal";
+        $this->endpoint = $this->id . '/wallets/' . $walletId . '/journal';
     }
 
-    protected function getWalletTransactions(Int $walletId)
+    protected function walletTransactions(Int $walletId)
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/wallets/" . $walletId . "/transactions";
+        $this->endpoint = $this->id . '/wallets/' . $walletId . '/transactions';
     }
 
-    protected function getMiningObservers()
+    protected function miningObservers()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . 'mining/observers';
     }
 
-    protected function getMiningObservers(Int $observerId)
+    protected function miningObservers(Int $observerId)
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . 'mining/observers/' . $observerId;
     }
 
-    protected function getExtractions()
+    protected function extractions()
     {
-        $this->verb = 'get';
         $this->endpoint = $this->id . 'mining/extractions';
     }
 }

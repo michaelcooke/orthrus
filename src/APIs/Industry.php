@@ -7,21 +7,18 @@ use MichaelCooke\Orthrus\Apis\Api;
 
 class Industry extends Api
 {
-    public function __construct(Orthrus $orthrus)
+    public function __construct()
     {
-        $this->base = "industry";
-        $this->orthrus = $orthrus;
+        $this->base = 'industry';
     }
 
-    protected function getFacilities()
+    protected function facilities()
     {
-        $this->verb = "get";
-        $this->endpoint = "facilities";
+        $this->endpoint = 'facilities';
     }
 
-    protected function getCostIndices()
+    protected function costIndices()
     {
-        $this->verb = "get";
-        $this->endpoint = "systems";
+        $this->endpoint = 'systems';
     }
 }

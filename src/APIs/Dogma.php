@@ -7,33 +7,28 @@ use MichaelCooke\Orthrus\Apis\Api;
 
 class Dogma extends Api
 {
-    public function __construct(Orthrus $orthrus)
+    public function __construct()
     {
-        $this->base = "dogma";
-        $this->orthrus = $orthrus;
+        $this->base = 'dogma';
     }
 
-    protected function getAttributes()
+    protected function attributes()
     {
-        $this->verb = "get";
-        $this->endpoint = "attributes";
+        $this->endpoint = 'attributes';
     }
 
-    protected function getAttribute($attribute)
+    protected function attribute($attribute)
     {
-        $this->verb = "get";
-        $this->endpoint = "attributes/" . $attribute;
+        $this->endpoint = 'attributes/' . $attribute;
     }
 
-    protected function getEffects()
+    protected function effects()
     {
-        $this->verb = "get";
-        $this->endpoint = "effects";
+        $this->endpoint = 'effects';
     }
 
-    protected function getEffect($effect)
+    protected function effect($effect)
     {
-        $this->verb = "get";
-        $this->endpoint = "effects/" . $effect;
+        $this->endpoint = 'effects/' . $effect;
     }
 }

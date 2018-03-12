@@ -10,24 +10,22 @@ class Fleet extends Api
 {
     use HasEditableId;
 
-    public function __construct(Orthrus $orthrus, String $id)
+    public function __construct(String $id)
     {
-        $this->base = "fleets";
+        $this->base = 'fleets';
         $this->id = $id;
-        $this->orthrus = $orthrus;
     }
 
     protected function setFleetSettings($motd, $is_free_move)
     {
-        $this->verb = "put";
+        $this->verb = 'put';
         $this->body = ['motd' => $motd, 'is_free_move' => $is_free_move];
         $this->endpoint = $this->id;
     }
 
-    protected function getMembers()
+    protected function members()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/members";
+        $this->endpoint = $this->id . '/members';
     }
 
     /*
@@ -39,8 +37,8 @@ class Fleet extends Api
      */
     protected function sendInvite($charId, $role, $wing = null, $squad = null)
     {
-        $this->verb = "post";
-        $this->endpoint = $this->id . "/members";
+        $this->verb = 'post';
+        $this->endpoint = $this->id . '/members';
         $this->body = [
             'character_id' => $charId,
             'role'         => $role,
@@ -56,8 +54,8 @@ class Fleet extends Api
 
     protected function kickMember($charId)
     {
-        $this->verb = "delete";
-        $this->endpoint = $this->id . "/members/" . $charId;
+        $this->verb = 'delete';
+        $this->endpoint = $this->id . '/members/' . $charId;
     }
 
     /*
@@ -69,8 +67,8 @@ class Fleet extends Api
      */
     protected function moveMember($charId, $role, $wing = null, $squad = null)
     {
-        $this->verb = "put";
-        $this->endpoint = $this->id . "/members/" . $charId;
+        $this->verb = 'put';
+        $this->endpoint = $this->id . '/members/' . $charId;
         $this->body = ['role' => $role];
 
         if ($wing != null) {
@@ -83,45 +81,44 @@ class Fleet extends Api
 
     protected function createSquad($wingId)
     {
-        $this->verb = "post";
-        $this->endpoint = $this->id . "/wings/" . $wingId . "/squads";
+        $this->verb = 'post';
+        $this->endpoint = $this->id . '/wings/' . $wingId . '/squads';
     }
 
     protected function deleteSquad($squadId)
     {
-        $this->verb = "delete";
-        $this->endpoint = $this->id . "/squads/" . $squadId;
+        $this->verb = 'delete';
+        $this->endpoint = $this->id . '/squads/' . $squadId;
     }
 
     protected function renameSquad($squadId, $name)
     {
-        $this->verb = "put";
+        $this->verb = 'put';
         $this->body = ['name' => $name];
-        $this->endpoint = $this->id . "/squads/" . $squadId;
+        $this->endpoint = $this->id . '/squads/' . $squadId;
     }
 
-    protected function getWings()
+    protected function wings()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/wings";
+        $this->endpoint = $this->id . '/wings';
     }
 
     protected function createWing()
     {
-        $this->verb = "post";
-        $this->endpoint = $this->id . "/wings";
+        $this->verb = 'post';
+        $this->endpoint = $this->id . '/wings';
     }
 
     protected function deleteWing($wingId)
     {
-        $this->verb = "delete";
-        $this->endpoint = $this->id . "/wings/" . $wingId;
+        $this->verb = 'delete';
+        $this->endpoint = $this->id . '/wings/' . $wingId;
     }
 
     protected function renameWing($wingId, $name)
     {
-        $this->verb = "put";
+        $this->verb = 'put';
         $this->body = ['name' => $name];
-        $this->endpoint = $this->id . "/wings/" . $wingId;
+        $this->endpoint = $this->id . '/wings/' . $wingId;
     }
 }

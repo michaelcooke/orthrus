@@ -7,15 +7,13 @@ use MichaelCooke\Orthrus\Apis\Api;
 
 class Insurance extends Api
 {
-    public function __construct(Orthrus $orthrus)
+    public function __construct()
     {
-        $this->base = "insurance";
-        $this->orthrus = $orthrus;
+        $this->base = 'insurance';
     }
 
-    protected function getPrices()
+    protected function prices()
     {
-        $this->verb = "get";
-        $this->endpoint = "prices";
+        $this->endpoint = 'prices';
     }
 }

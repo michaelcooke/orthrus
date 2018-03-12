@@ -7,10 +7,9 @@ use MichaelCooke\Orthrus\Apis\Api;
 
 class Incursions extends Api
 {
-    public function __construct(Orthrus $orthrus)
+    public function __construct()
     {
-        $this->base = "incursions";
-        $this->orthrus = $orthrus;
-        $this->verb = "get";
+        $this->base = 'incursions';
+        $this->verb = 'get';
     }
 }

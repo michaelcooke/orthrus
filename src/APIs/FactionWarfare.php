@@ -7,45 +7,38 @@ use MichaelCooke\Orthrus\Apis\Api;
 
 class FactionWarfare extends Api
 {
-    public function __construct(Orthrus $orthrus)
+    public function __construct()
     {
-        $this->base = "fw";
-        $this->orthrus = $orthrus;
+        $this->base = 'fw';
     }
 
-    protected function getWars()
+    protected function wars()
     {
-        $this->verb = "get";
-        $this->endpoint = "wars";
+        $this->endpoint = 'wars';
     }
 
-    protected function getStats()
+    protected function stats()
     {
-        $this->verb = "get";
-        $this->endpoint = "stats";
+        $this->endpoint = 'stats';
     }
 
-    protected function getSystems()
+    protected function systems()
     {
-        $this->verb = "get";
-        $this->endpoint = "systems";
+        $this->endpoint = 'systems';
     }
 
-    protected function getLeaderboards()
+    protected function leaderboards()
     {
-        $this->verb = "get";
-        $this->endpoint = "leaderboards";
+        $this->endpoint = 'leaderboards';
     }
 
-    protected function getCharacterLeaderboards()
+    protected function characterLeaderboards()
     {
-        $this->verb = "get";
-        $this->endpoint = "leaderboards/characters";
+        $this->endpoint = 'leaderboards/characters';
     }
 
-    protected function getCorporationLeaderboards()
+    protected function corporationLeaderboards()
     {
-        $this->verb = "get";
-        $this->endpoint = "leaderboards/corporations";
+        $this->endpoint = 'leaderboards/corporations';
     }
 }

@@ -4,9 +4,8 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasTitles
 {
-    protected function getTitles()
+    protected function titles()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/titles";
+        $this->endpoint = $this->id . '/titles';
     }
 }

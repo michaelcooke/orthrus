@@ -4,9 +4,8 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasRoles
 {
-    protected function getRoles()
+    protected function roles()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/roles";
+        $this->endpoint = $this->id . '/roles';
     }
 }

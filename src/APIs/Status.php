@@ -7,10 +7,9 @@ use MichaelCooke\Orthrus\Apis\Api;
 
 class Status extends Api
 {
-    public function __construct(Orthrus $orthrus)
+    public function __construct()
     {
-        $this->base = "status";
-        $this->orthrus = $orthrus;
-        $this->verb = "get";
+        $this->base = 'status';
+        $this->verb = 'get';
     }
 }

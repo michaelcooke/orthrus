@@ -4,9 +4,8 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasBlueprints
 {
-    protected function getBlueprints()
+    protected function blueprints()
     {
-        $this->verb = "get";
-        $this->endpoint = $this->id . "/blueprints";
+        $this->endpoint = $this->id . '/blueprints';
     }
 }

@@ -3,14 +3,13 @@
 namespace MichaelCooke\Orthrus;
 
 use Eseye;
-use MichaelCooke\Orthrus\Apis\Alliance;
-use MichaelCooke\Orthrus\Apis\Character;
-use MichaelCooke\Orthrus\Apis\Corporation;
+use Seat\Eseye\Containers\EsiResponse;
 
 class Orthrus
 {
     protected $eseye;
     protected $resetRefreshToken = false;
+    protected $response = null;
 
     public function __construct()
     {
@@ -56,15 +55,41 @@ class Orthrus
         return $this->eseye::invoke($verb, $endpoint);
     }
 
+    public function setResponse(EsiResponse $esiResponse)
+    {
+        $this->response = $esiResponse;
+        return true;
+    }
+
+    public function response()
+    {
+        return $this->response;
+    }
+
+    public function responseExpires()
+    {
+        return $this->response->expires();
+    }
+
+    public function responseCode()
+    {
+        return $this->response->getErrorCode();
+    }
+
+    public function responseErrorMessage()
+    {
+        return $this->response->error();
+    }
+
     public function __call($method, $arguments)
     {
-        $class = "MichaelCooke\\Orthrus\\APIs\\" . ucfirst($method);
-        $api = new $class($this, ...$arguments);
+        $class = 'MichaelCooke\\Orthrus\\APIs\\' . ucfirst($method);
+        $api = new $class(...$arguments);
 
-        if ($method == "search" ||
-            $method == "status" ||
-            $method == "route" ||
-            $method == "incursions") {
+        if ($method == 'search' ||
+            $method == 'status' ||
+            $method == 'route' ||
+            $method == 'incursions') {
             return $api->execute();
         }
 
