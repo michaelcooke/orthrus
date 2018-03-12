@@ -62,6 +62,7 @@ class Orthrus
         $api = new $class($this, ...$arguments);
 
         if ($method == "search" ||
+            $method == "status" ||
             $method == "incursions") {
             return $api->execute();
         }
