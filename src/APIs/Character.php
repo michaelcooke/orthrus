@@ -19,6 +19,7 @@ use MichaelCooke\Orthrus\Traits\HasContracts;
 use MichaelCooke\Orthrus\Traits\HasKillmails;
 use MichaelCooke\Orthrus\Traits\HasStandings;
 use MichaelCooke\Orthrus\Traits\HasBlueprints;
+use MichaelCooke\Orthrus\Traits\HasMarketOrders;
 use MichaelCooke\Orthrus\Traits\HasFactionWarfareStats;
 
 class Character extends Api
@@ -38,6 +39,7 @@ class Character extends Api
         HasKillmails,
         HasStandings,
         HasBlueprints,
+        HasMarketOrders,
         HasFactionWarfareStats;
 
     public function __construct(Orthrus $orthrus, String $id = null)
