@@ -10,6 +10,7 @@ use MichaelCooke\Orthrus\Traits\HasFleet;
 use MichaelCooke\Orthrus\Traits\HasRoles;
 use MichaelCooke\Orthrus\Traits\HasAssets;
 use MichaelCooke\Orthrus\Traits\HasMedals;
+use MichaelCooke\Orthrus\Traits\HasSearch;
 use MichaelCooke\Orthrus\Traits\HasTitles;
 use MichaelCooke\Orthrus\Traits\HasCalendar;
 use MichaelCooke\Orthrus\Traits\HasContacts;
@@ -30,6 +31,7 @@ class Character extends Api
         HasRoles,
         HasAssets,
         HasMedals,
+        HasSearch,
         HasTitles,
         HasCalendar,
         HasContacts,

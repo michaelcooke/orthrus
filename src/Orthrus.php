@@ -59,6 +59,13 @@ class Orthrus
     public function __call($method, $arguments)
     {
         $class = "MichaelCooke\\Orthrus\\APIs\\" . ucfirst($method);
-        return new $class($this, ...$arguments);
+        $api = new $class($this, ...$arguments);
+
+        if ($method == "search" ||
+            $method == "incursions") {
+            return $api->execute();
+        }
+
+        return $api;
     }
 }

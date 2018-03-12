@@ -11,10 +11,6 @@ class Incursions extends Api
     {
         $this->base = "incursions";
         $this->orthrus = $orthrus;
-    }
-
-    protected function get()
-    {
         $this->verb = "get";
     }
 }

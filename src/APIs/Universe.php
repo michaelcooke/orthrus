@@ -8,10 +8,9 @@ use MichaelCooke\Orthrus\Apis\Api;
 class Universe extends Api
 {
 
-    public function __construct(Orthrus $orthrus, String $id = null)
+    public function __construct(Orthrus $orthrus)
     {
         $this->base = 'universe';
-        $this->id = $id;
         $this->orthrus = $orthrus;
     }
 
