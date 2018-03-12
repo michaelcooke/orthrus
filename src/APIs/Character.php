@@ -232,4 +232,10 @@ class Character extends Api
         $this->verb = "get";
         $this->endpoint = $this->id . "/wallet/transactions";
     }
+
+    protected function getMiningLedger()
+    {
+        $this->verb = 'get';
+        $this->endpoint = $this->id . 'mining';
+    }
 }

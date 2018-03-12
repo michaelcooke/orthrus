@@ -185,4 +185,22 @@ class Corporation extends Api
         $this->verb = "get";
         $this->endpoint = $this->id . "/wallets/" . $walletId . "/transactions";
     }
+
+    protected function getMiningObservers()
+    {
+        $this->verb = 'get';
+        $this->endpoint = $this->id . 'mining/observers';
+    }
+
+    protected function getMiningObservers(Int $observerId)
+    {
+        $this->verb = 'get';
+        $this->endpoint = $this->id . 'mining/observers/' . $observerId;
+    }
+
+    protected function getExtractions()
+    {
+        $this->verb = 'get';
+        $this->endpoint = $this->id . 'mining/extractions';
+    }
 }
