@@ -4,12 +4,12 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasMarketOrders
 {
-    protected function getMarketOrders()
+    protected function marketOrders()
     {
         $this->endpoint = $this->id . '/orders';
     }
 
-    protected function getMarketOrderHistory()
+    protected function marketOrderHistory()
     {
         $this->endpoint = $this->id . '/orders/history';
     }

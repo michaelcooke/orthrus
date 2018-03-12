@@ -4,7 +4,7 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasFittings
 {
-    protected function getFittings()
+    protected function fittings()
     {
         $this->endpoint = $this->id . '/fittings';
     }

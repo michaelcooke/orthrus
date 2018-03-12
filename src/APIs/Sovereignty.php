@@ -13,22 +13,22 @@ class Sovereignty extends Api
         $this->orthrus = $orthrus;
     }
 
-    protected function getStructures()
+    protected function structures()
     {
         $this->endpoint = 'structures';
     }
 
-    protected function getCampaigns()
+    protected function campaigns()
     {
         $this->endpoint = 'campaigns';
     }
 
-    protected function getMap()
+    protected function map()
     {
         $this->endpoint = 'map';
     }
 
-    protected function getSystems()
+    protected function systems()
     {
         $this->getMap();
     }

@@ -13,154 +13,154 @@ class Universe extends Api
         $this->orthrus = $orthrus;
     }
 
-    protected function getSchematic(Int $schematicId)
+    protected function schematic(Int $schematicId)
     {
         $this->endpoint = 'schematics/' . $schematicId;
     }
 
-    protected function getPlanet(Int $planetId)
+    protected function planet(Int $planetId)
     {
         $this->endpoint = 'planets/' . $planetId;
     }
 
-    protected function getStation(Int $stationId)
+    protected function station(Int $stationId)
     {
         $this->endpoint = 'stations/' . $stationId;
     }
 
-    protected function getStructure(Int $structureId)
+    protected function structure(Int $structureId)
     {
         $this->endpoint = 'structures/' . $planetId;
     }
 
-    protected function getSystem(Int $systemId)
+    protected function system(Int $systemId)
     {
         $this->endpoint = 'systems/' . $systemId;
     }
 
-    protected function getSystems()
+    protected function systems()
     {
         $this->endpoint = 'systems';
     }
 
-    protected function getType(Int $typeId)
+    protected function type(Int $typeId)
     {
         $this->endpoint = 'types/' . $typeId;
     }
 
-    protected function getTypes()
+    protected function types()
     {
         $this->endpoint = 'types';
     }
 
-    protected function getGroup(Int $groupId)
+    protected function group(Int $groupId)
     {
         $this->endpoint = 'groups/' . $groupId;
     }
 
-    protected function getGroups()
+    protected function groups()
     {
         $this->endpoint = 'groups';
     }
 
-    protected function getCategory(Int $categoryId)
+    protected function category(Int $categoryId)
     {
         $this->endpoint = 'category/' . $categoryId;
     }
 
-    protected function getCategories()
+    protected function categories()
     {
         $this->endpoint = 'categories';
     }
 
-    protected function getNames(array $ids)
+    protected function names(array $ids)
     {
         $this->verb = 'post';
         $this->body = $ids;
         $this->endpoint = 'names';
     }
 
-    protected function getStructures()
+    protected function structures()
     {
         $this->endpoint = 'structures';
     }
 
-    protected function getRaces()
+    protected function races()
     {
         $this->endpoint = 'races';
     }
 
-    protected function getFactions()
+    protected function factions()
     {
         $this->endpoint = 'factions';
     }
 
-    protected function getBloodlines()
+    protected function bloodlines()
     {
         $this->endpoint = 'bloodlines';
     }
 
-    protected function getRegions()
+    protected function regions()
     {
         $this->endpoint = 'regions';
     }
 
-    protected function getRegion(Int $regionId)
+    protected function region(Int $regionId)
     {
         $this->endpoint = 'regions/' . $regionId;
     }
 
-    protected function getConstellations()
+    protected function constellations()
     {
         $this->endpoint = 'constellations';
     }
 
-    protected function getConstellation(Int $constellationId)
+    protected function constellation(Int $constellationId)
     {
         $this->endpoint = 'constellations/' . $constellationId;
     }
 
-    protected function getMoon(Int $moonId)
+    protected function moon(Int $moonId)
     {
         $this->endpoint = 'moons/' . $moonId;
     }
 
-    protected function getStargate(Int $stargateId)
+    protected function stargate(Int $stargateId)
     {
         $this->endpoint = 'stargates/' . $starGateId;
     }
 
-    protected function getGraphics()
+    protected function graphics()
     {
         $this->endpoint = 'graphics';
     }
 
-    protected function getGraphic(Int $graphicId)
+    protected function graphic(Int $graphicId)
     {
         $this->endpoint = 'graphics/' . $graphicId;
     }
 
-    protected function getSystemJumps()
+    protected function systemJumps()
     {
         $this->endpoint = 'system_jumps';
     }
 
-    protected function getSystemKills()
+    protected function systemKills()
     {
         $this->endpoint = 'system_kills';
     }
 
-    protected function getStar(Int $starId)
+    protected function star(Int $starId)
     {
         $this->endpoint = 'stars/' . $starId;
     }
 
-    protected function getAncestries()
+    protected function ancestries()
     {
         $this->endpoint = 'ancestries';
     }
 
-    protected function getIds(array $names)
+    protected function ids(array $names)
     {
         $this->verb = 'post';
         $this->body = $names;

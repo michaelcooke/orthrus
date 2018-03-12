@@ -55,27 +55,27 @@ class Character extends Api
         $this->orthrus = $orthrus;
     }
 
-    protected function getAgentsResearch()
+    protected function agentsResearch()
     {
         $this->endpoint = $this->id . '/agents_research';
     }
 
-    protected function getResearchAgents()
+    protected function researchAgents()
     {
-        $this->getAgentsResearch();
+        $this->agentsResearch();
     }
 
-    protected function getChatChannels()
+    protected function chatChannels()
     {
         $this->endpoint = $this->id . '/chat_channels';
     }
 
-    protected function getCorporationHistory()
+    protected function corporationHistory()
     {
         $this->endpoint = $this->id . '/corporationhistory';
     }
 
-    protected function getEmploymentHistory()
+    protected function employmentHistory()
     {
         $this->getCorporationHistory();
     }
@@ -87,69 +87,69 @@ class Character extends Api
         $this->endpoint = $this->id . '/cspa';
     }
 
-    protected function getFatigue()
+    protected function fatigue()
     {
         $this->endpoint = $this->id . '/fatigue';
     }
 
-    protected function getLocation()
+    protected function location()
     {
         $this->endpoint = $this->id . '/location';
     }
 
-    protected function getLoyaltyPoints()
+    protected function loyaltyPoints()
     {
         $this->endpoint = $this->id . '/loyalty/points';
     }
 
-    protected function getNotifications()
+    protected function notifications()
     {
         $this->endpoint = $this->id . '/notifications';
     }
 
-    protected function getNotificationsContacts()
+    protected function notificationsContacts()
     {
         $this->endpoint = $this->id . '/notifications/contacts';
     }
 
-    protected function getOnline()
+    protected function online()
     {
         $this->endpoint = $this->id . '/online';
     }
 
-    protected function getContactNotifications()
+    protected function contactNotifications()
     {
-        $this->getNotificationsContacts();
+        $this->notificationsContacts();
     }
 
-    protected function getPortrait()
+    protected function portrait()
     {
         $this->endpoint = $this->id . '/portrait';
     }
 
-    protected function getStats()
+    protected function stats()
     {
         $this->endpoint = $this->id . '/stats';
     }
 
-    protected function getAffiliation($characters)
+    protected function affiliation($characters)
     {
         $this->verb = 'post';
         $this->body = $characters;
         $this->endpoint = 'affiliation';
     }
 
-    protected function getClones()
+    protected function clones()
     {
         $this->endpoint = $this->id . '/clones';
     }
 
-    protected function getImplants()
+    protected function implants()
     {
         $this->endpoint = $this->id . '/implants';
     }
 
-    protected function getShip()
+    protected function ship()
     {
         $this->endpoint = $this->id . '/ship';
     }
@@ -177,42 +177,42 @@ class Character extends Api
         $this->endpoint = $this->id . '/contacts';
     }
 
-    protected function getContactLabels()
+    protected function contactLabels()
     {
         $this->endpoint = $this->id . '/contacts/labels';
     }
 
-    protected function getCompletedOpportunities()
+    protected function completedOpportunities()
     {
         $this->endpoint = $this->id . '/opportunities';
     }
 
-    protected function getPlanets()
+    protected function planets()
     {
         $this->endpoint = $this->id . '/planets';
     }
 
-    protected function getPlanet(Int $planetId)
+    protected function planet(Int $planetId)
     {
         $this->endpoint = $this->id . '/planets/' . $planetId;
     }
 
-    protected function getWallet()
+    protected function wallet()
     {
         $this->endpoint = $this->id . '/wallet';
     }
 
-    protected function getWalletJournal()
+    protected function walletJournal()
     {
         $this->endpoint = $this->id . '/wallet/journal';
     }
 
-    protected function getWalletTransactions()
+    protected function walletTransactions()
     {
         $this->endpoint = $this->id . '/wallet/transactions';
     }
 
-    protected function getMiningLedger()
+    protected function miningLedger()
     {
         $this->endpoint = $this->id . 'mining';
     }

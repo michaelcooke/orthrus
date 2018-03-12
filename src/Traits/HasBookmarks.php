@@ -4,12 +4,12 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasBookmarks
 {
-    protected function getBookmarks()
+    protected function bookmarks()
     {
         $this->endpoint = $this->id . '/bookmarks';
     }
 
-    protected function getBookmarkFolders()
+    protected function bookmarkFolders()
     {
         $this->endpoint = $this->id . '/bookmarks/folders';
     }

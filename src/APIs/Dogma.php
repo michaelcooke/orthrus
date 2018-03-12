@@ -13,22 +13,22 @@ class Dogma extends Api
         $this->orthrus = $orthrus;
     }
 
-    protected function getAttributes()
+    protected function attributes()
     {
         $this->endpoint = 'attributes';
     }
 
-    protected function getAttribute($attribute)
+    protected function attribute($attribute)
     {
         $this->endpoint = 'attributes/' . $attribute;
     }
 
-    protected function getEffects()
+    protected function effects()
     {
         $this->endpoint = 'effects';
     }
 
-    protected function getEffect($effect)
+    protected function effect($effect)
     {
         $this->endpoint = 'effects/' . $effect;
     }

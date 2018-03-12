@@ -4,7 +4,7 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasKillmails
 {
-    protected function getKillmails()
+    protected function killmails()
     {
         $this->endpoint = $this->id . '/killmails/recent';
     }

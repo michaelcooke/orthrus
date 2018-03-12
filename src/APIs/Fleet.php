@@ -24,7 +24,7 @@ class Fleet extends Api
         $this->endpoint = $this->id;
     }
 
-    protected function getMembers()
+    protected function members()
     {
         $this->endpoint = $this->id . '/members';
     }
@@ -99,7 +99,7 @@ class Fleet extends Api
         $this->endpoint = $this->id . '/squads/' . $squadId;
     }
 
-    protected function getWings()
+    protected function wings()
     {
         $this->endpoint = $this->id . '/wings';
     }

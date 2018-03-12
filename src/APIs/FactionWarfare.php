@@ -13,32 +13,32 @@ class FactionWarfare extends Api
         $this->orthrus = $orthrus;
     }
 
-    protected function getWars()
+    protected function wars()
     {
         $this->endpoint = 'wars';
     }
 
-    protected function getStats()
+    protected function stats()
     {
         $this->endpoint = 'stats';
     }
 
-    protected function getSystems()
+    protected function systems()
     {
         $this->endpoint = 'systems';
     }
 
-    protected function getLeaderboards()
+    protected function leaderboards()
     {
         $this->endpoint = 'leaderboards';
     }
 
-    protected function getCharacterLeaderboards()
+    protected function characterLeaderboards()
     {
         $this->endpoint = 'leaderboards/characters';
     }
 
-    protected function getCorporationLeaderboards()
+    protected function corporationLeaderboards()
     {
         $this->endpoint = 'leaderboards/corporations';
     }

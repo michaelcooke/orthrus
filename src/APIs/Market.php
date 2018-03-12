@@ -13,38 +13,38 @@ class Market extends Api
         $this->orthrus = $orthrus;
     }
 
-    protected function getPrices()
+    protected function prices()
     {
         $this->endpoint = 'prices';
     }
 
-    protected function getOrders(Int $regionId)
+    protected function orders(Int $regionId)
     {
         $this->endpoint = $regionId . '/orders';
     }
 
-    protected function getHistory(Int $regionId, Int $typeId)
+    protected function history(Int $regionId, Int $typeId)
     {
         $this->query = ['type_id' => $typeId];
         $this->endpoint = $regionId . '/history';
     }
 
-    protected function getStructureOrders(Int $structureId)
+    protected function structureOrders(Int $structureId)
     {
         $this->endpoint = 'structures/' . $structureId;
     }
 
-    protected function getItemGroups()
+    protected function itemGroups()
     {
         $this->endpoint = 'groups';
     }
 
-    protected function getItemGroup(Int $groupId)
+    protected function itemGroup(Int $groupId)
     {
         $this->endpoint = 'groups/' . $groupId;
     }
 
-    protected function getItemTypes(Int $regionId)
+    protected function itemTypes(Int $regionId)
     {
         $this->endpoint = $regionId . '/types';
     }

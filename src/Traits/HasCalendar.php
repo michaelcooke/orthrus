@@ -4,12 +4,12 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasCalendar
 {
-    protected function getCalendar()
+    protected function calendar()
     {
         $this->endpoint = $this->id . '/calendar';
     }
 
-    protected function getCalendarEvent($event)
+    protected function calendarEvent($event)
     {
         $this->endpoint = $this->id . '/calendar/' . $event;
     }
@@ -21,7 +21,7 @@ trait HasCalendar
         $this->endpoint = $this->id . '/calendar/' . $event;
     }
 
-    protected function getEventAttendees($event)
+    protected function eventAttendees($event)
     {
         $this->endpoint = $this->id . '/calendar/' . $event . '/attendees';
     }

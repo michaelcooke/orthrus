@@ -4,7 +4,7 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasStandings
 {
-    protected function getStandings()
+    protected function standings()
     {
         $this->endpoint = $this->id . '/standings';
     }

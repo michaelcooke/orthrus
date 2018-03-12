@@ -13,7 +13,7 @@ class Loyalty extends Api
         $this->orthrus = $orthrus;
     }
 
-    protected function getOffers($id)
+    protected function offers($id)
     {
         $this->endpoint = 'stores/' . $id . '/offers';
     }

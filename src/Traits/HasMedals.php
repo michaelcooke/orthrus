@@ -4,7 +4,7 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasMedals
 {
-    protected function getMedals()
+    protected function medals()
     {
         $this->endpoint = $this->id . '/medals';
     }

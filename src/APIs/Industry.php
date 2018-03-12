@@ -13,12 +13,12 @@ class Industry extends Api
         $this->orthrus = $orthrus;
     }
 
-    protected function getFacilities()
+    protected function facilities()
     {
         $this->endpoint = 'facilities';
     }
 
-    protected function getCostIndices()
+    protected function costIndices()
     {
         $this->endpoint = 'systems';
     }

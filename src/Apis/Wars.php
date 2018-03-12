@@ -23,7 +23,7 @@ class Wars extends Api
         $this->endpoint = $warId;
     }
 
-    protected function getWarKillmails(Int $warId)
+    protected function warKillmails(Int $warId)
     {
         $this->endpoint = $warId . '/killmails';
     }

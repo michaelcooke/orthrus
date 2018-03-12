@@ -4,19 +4,19 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasAssets
 {
-    protected function getAssets()
+    protected function assets()
     {
         $this->endpoint = $this->id . '/assets';
     }
 
-    protected function getAssetLocations($assets)
+    protected function assetLocations($assets)
     {
         $this->verb = 'post';
         $this->body = $assets;
         $this->endpoint = $this->id . '/assets/locations';
     }
 
-    protected function getAssetNames($assets)
+    protected function assetNames($assets)
     {
         $this->verb = 'post';
         $this->body = $assets;

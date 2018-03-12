@@ -13,7 +13,7 @@ class Insurance extends Api
         $this->orthrus = $orthrus;
     }
 
-    protected function getPrices()
+    protected function prices()
     {
         $this->endpoint = 'prices';
     }

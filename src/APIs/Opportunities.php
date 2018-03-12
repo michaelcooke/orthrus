@@ -13,22 +13,22 @@ class Opportunities extends Api
         $this->orthrus = $orthrus;
     }
 
-    protected function getGroups()
+    protected function groups()
     {
         $this->endpoint = 'groups';
     }
 
-    protected function getGroup(Int $groupId)
+    protected function group(Int $groupId)
     {
         $this->endpoint = 'groups/' . $groupId;
     }
 
-    protected function getTasks()
+    protected function tasks()
     {
         $this->endpoint = 'tasks';
     }
 
-    protected function getTask(Int $taskId)
+    protected function task(Int $taskId)
     {
         $this->endpoint = 'tasks/' . $taskId;
     }

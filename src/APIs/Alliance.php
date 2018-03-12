@@ -23,7 +23,7 @@ class Alliance extends Api
         $this->orthrus = $orthrus;
     }
 
-    protected function getNames($alliances)
+    protected function names($alliances)
     {
         $this->query = ['alliance_ids' => $alliances];
         $this->endpoint = 'names';

@@ -4,7 +4,7 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasFleet
 {
-    protected function getFleet()
+    protected function fleet()
     {
         $this->endpoint = $this->id . '/fleet';
     }

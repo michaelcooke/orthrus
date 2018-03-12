@@ -4,7 +4,7 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasFactionWarfareStats
 {
-    protected function getFactionWarfareStats()
+    protected function factionWarfareStats()
     {
         $this->endpoint = $this->id . '/fw/stats';
     }
