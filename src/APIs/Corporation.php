@@ -38,11 +38,10 @@ class Corporation extends Api
         HasMarketOrders,
         HasFactionWarfareStats;
 
-    public function __construct(Orthrus $orthrus, String $id = null)
+    public function __construct(String $id = null)
     {
         $this->base = 'corporations';
         $this->id = $id;
-        $this->orthrus = $orthrus;
     }
 
     protected function allianceHistory()

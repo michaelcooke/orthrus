@@ -7,10 +7,9 @@ use MichaelCooke\Orthrus\Apis\Api;
 
 class Dogma extends Api
 {
-    public function __construct(Orthrus $orthrus)
+    public function __construct()
     {
         $this->base = 'dogma';
-        $this->orthrus = $orthrus;
     }
 
     protected function attributes()

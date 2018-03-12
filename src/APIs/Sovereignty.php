@@ -7,10 +7,9 @@ use MichaelCooke\Orthrus\Apis\Api;
 
 class Sovereignty extends Api
 {
-    public function __construct(Orthrus $orthrus)
+    public function __construct()
     {
         $this->base = 'sovereignty';
-        $this->orthrus = $orthrus;
     }
 
     protected function structures()

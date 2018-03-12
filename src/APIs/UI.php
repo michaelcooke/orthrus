@@ -7,11 +7,10 @@ use MichaelCooke\Orthrus\Apis\Api;
 
 class Wars extends Api
 {
-    public function __construct(Orthrus $orthrus)
+    public function __construct()
     {
         $this->base = 'ui';
         $this->verb = 'post';
-        $this->orthrus = $orthrus;
     }
 
     protected function marketDetails(Int $typeId)

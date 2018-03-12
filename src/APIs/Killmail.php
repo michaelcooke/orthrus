@@ -7,10 +7,9 @@ use MichaelCooke\Orthrus\Apis\Api;
 
 class Killmail extends Api
 {
-    public function __construct(Orthrus $orthrus)
+    public function __construct()
     {
         $this->base = 'killmails';
-        $this->orthrus = $orthrus;
     }
 
     protected function get($id, $hash)

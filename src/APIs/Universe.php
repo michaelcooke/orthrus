@@ -7,10 +7,9 @@ use MichaelCooke\Orthrus\Apis\Api;
 
 class Universe extends Api
 {
-    public function __construct(Orthrus $orthrus)
+    public function __construct()
     {
         $this->base = 'universe';
-        $this->orthrus = $orthrus;
     }
 
     protected function schematic(Int $schematicId)

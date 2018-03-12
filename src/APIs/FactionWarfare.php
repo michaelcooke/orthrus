@@ -7,10 +7,9 @@ use MichaelCooke\Orthrus\Apis\Api;
 
 class FactionWarfare extends Api
 {
-    public function __construct(Orthrus $orthrus)
+    public function __construct()
     {
         $this->base = 'fw';
-        $this->orthrus = $orthrus;
     }
 
     protected function wars()

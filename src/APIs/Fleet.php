@@ -10,11 +10,10 @@ class Fleet extends Api
 {
     use HasEditableId;
 
-    public function __construct(Orthrus $orthrus, String $id)
+    public function __construct(String $id)
     {
         $this->base = 'fleets';
         $this->id = $id;
-        $this->orthrus = $orthrus;
     }
 
     protected function setFleetSettings($motd, $is_free_move)

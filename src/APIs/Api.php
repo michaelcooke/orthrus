@@ -2,6 +2,7 @@
 
 namespace MichaelCooke\Orthrus\Apis;
 
+use ESI;
 use Eseye;
 use MichaelCooke\Orthrus\Orthrus;
 
@@ -12,7 +13,6 @@ class Api
     protected $verb = 'get';
     protected $query = null;
     protected $index = false;
-    protected $orthrus = null;
     protected $endpoint = null;
     protected $variables = null;
     protected $getAllPages = null;
@@ -31,22 +31,22 @@ class Api
             $arguments = [$this->verb, '/' . $this->base . '/' . $this->endpoint . '/', $this->variables, $this->body, $this->query];
         }
 
-        $response = $this->orthrus->invoke(...$arguments);
-        $this->orthrus->setResponse($response);
+        $response = ESI::invoke(...$arguments);
+        ESI::setResponse($response);
 
         if ($this->getAllPages) {
             $totalPages = $response->pages;
 
             for ($i = 2; $i <= $totalPages; $i++) {
                 $arguments[4] = ['page' => $i];
-                $pageResponse = $this->orthrus->invoke(...$arguments);
+                $pageResponse = ESI::invoke(...$arguments);
                 $response->raw = json_encode(array_merge(json_decode($response->raw, true), json_decode($pageResponse->raw, true)));
             }
 
             return $response->raw;
         }
 
-        $this->orthrus->resetRefreshToken();
+        ESI::resetRefreshToken();
 
         return $response->raw;
     }

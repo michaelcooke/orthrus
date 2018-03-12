@@ -7,10 +7,9 @@ use MichaelCooke\Orthrus\Apis\Api;
 
 class Loyalty extends Api
 {
-    public function __construct(Orthrus $orthrus)
+    public function __construct()
     {
         $this->base = 'loyalty';
-        $this->orthrus = $orthrus;
     }
 
     protected function offers($id)

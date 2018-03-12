@@ -7,10 +7,9 @@ use MichaelCooke\Orthrus\Apis\Api;
 
 class Opportunities extends Api
 {
-    public function __construct(Orthrus $orthrus)
+    public function __construct()
     {
         $this->base = 'opportunities';
-        $this->orthrus = $orthrus;
     }
 
     protected function groups()
