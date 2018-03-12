@@ -61,7 +61,8 @@ class Orthrus
         $class = "MichaelCooke\\Orthrus\\APIs\\" . ucfirst($method);
         $api = new $class($this, ...$arguments);
 
-        if ($method == "search") {
+        if ($method == "search" ||
+            $method == "incursions") {
             return $api->execute();
         }
 
