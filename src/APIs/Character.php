@@ -190,4 +190,10 @@ class Character extends Api
         $this->verb = "get";
         $this->endpoint = $this->id . "/contacts/labels";
     }
+
+    protected function getCompletedOpportunities()
+    {
+        $this->verb = "get";
+        $this->endpoint = $this->id . '/opportunities';
+    }
 }
