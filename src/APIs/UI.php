@@ -22,13 +22,13 @@ class Ui extends Api
     protected function contract(Int $contractId)
     {
         $this->query = ['contract_id' => $contractId];
-        $this->endpoint = 'openwindow/marketdetails'
+        $this->endpoint = 'openwindow/marketdetails';
     }
 
     protected function information(Int $typeId)
     {
         $this->query = ['target_id' => $typeId];
-        $this->endpoint = 'openwindow/marketdetails'
+        $this->endpoint = 'openwindow/marketdetails';
     }
 
     protected function autopilot(Int $systemId, Bool $addToBeginning = false, Bool $clearWaypoints = false)
