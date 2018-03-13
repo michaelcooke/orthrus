@@ -10,7 +10,7 @@ class Ui extends Api
         $this->verb = 'post';
     }
 
-    protected function autopilot(Int $systemId, bool $addToBeginning = false, bool $clearWaypoints = false): void
+    protected function autopilot(int $systemId, bool $addToBeginning = false, bool $clearWaypoints = false): void
     {
         $this->query = [
             'destination_id' => $systemId,
@@ -20,19 +20,19 @@ class Ui extends Api
         $this->endpoint = 'autopilot/waypoint';
     }
 
-    protected function contract(Int $contractId): void
+    protected function contract(int $contractId): void
     {
         $this->query = ['contract_id' => $contractId];
         $this->endpoint = 'openwindow/marketdetails';
     }
 
-    protected function information(Int $typeId): void
+    protected function information(int $typeId): void
     {
         $this->query = ['target_id' => $typeId];
         $this->endpoint = 'openwindow/marketdetails';
     }
 
-    protected function marketDetails(Int $typeId): void
+    protected function marketDetails(int $typeId): void
     {
         $this->query = ['type_id' => $typeId];
         $this->endpoint = 'openwindow/marketdetails';

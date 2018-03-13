@@ -9,7 +9,7 @@ trait HasMail
         $this->endpoint = $this->id . '/mail';
     }
 
-    protected function mail(Int $mailId): void
+    protected function mail(int $mailId): void
     {
         $this->endpoint = $this->id . '/mail/' . $mailId;
     }
@@ -26,7 +26,7 @@ trait HasMail
         $this->endpoint = $this->id . '/mail';
     }
 
-    protected function updateMail(Int $mailId, bool $read, array $labels): void
+    protected function updateMail(int $mailId, bool $read, array $labels): void
     {
         $this->verb = 'put';
         $this->body = [
@@ -36,7 +36,7 @@ trait HasMail
         $this->endpoint = $this->id . '/mail/' . $mailId;
     }
 
-    protected function deleteMail(Int $mailId): void
+    protected function deleteMail(int $mailId): void
     {
         $this->verb = 'delete';
         $this->endpoint = $this->id . '/mail/' . $mailId;
@@ -62,7 +62,7 @@ trait HasMail
         $this->endpoint = $this->id . '/mail/labels';
     }
 
-    protected function deleteMailLabel(Int $mailId): void
+    protected function deleteMailLabel(int $mailId): void
     {
         $this->verb = 'delete';
         $this->endpoint = $this->id . '/mail/labels/' . $mailId;

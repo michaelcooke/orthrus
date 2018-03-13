@@ -14,7 +14,7 @@ class Dogma extends Api
         $this->endpoint = 'attributes';
     }
 
-    protected function attribute(Int $attributeId): void
+    protected function attribute(int $attributeId): void
     {
         $this->endpoint = 'attributes/' . $attributeId;
     }
@@ -24,7 +24,7 @@ class Dogma extends Api
         $this->endpoint = 'effects';
     }
 
-    protected function effect(Int $effectId): void
+    protected function effect(int $effectId): void
     {
         $this->endpoint = 'effects/' . $effectId;
     }

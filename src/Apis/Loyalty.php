@@ -9,7 +9,7 @@ class Loyalty extends Api
         $this->base = 'loyalty';
     }
 
-    protected function offers(Int $corporationId): void
+    protected function offers(int $corporationId): void
     {
         $this->endpoint = 'stores/' . $corporationId . '/offers';
     }

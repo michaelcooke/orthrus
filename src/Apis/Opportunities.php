@@ -14,7 +14,7 @@ class Opportunities extends Api
         $this->endpoint = 'groups';
     }
 
-    protected function group(Int $groupId): void
+    protected function group(int $groupId): void
     {
         $this->endpoint = 'groups/' . $groupId;
     }
@@ -24,7 +24,7 @@ class Opportunities extends Api
         $this->endpoint = 'tasks';
     }
 
-    protected function task(Int $taskId): void
+    protected function task(int $taskId): void
     {
         $this->endpoint = 'tasks/' . $taskId;
     }

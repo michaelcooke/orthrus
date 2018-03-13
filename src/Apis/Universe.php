@@ -19,7 +19,7 @@ class Universe extends Api
         $this->endpoint = 'bloodlines';
     }
 
-    protected function category(Int $categoryId): void
+    protected function category(int $categoryId): void
     {
         $this->endpoint = 'category/' . $categoryId;
     }
@@ -34,7 +34,7 @@ class Universe extends Api
         $this->endpoint = 'constellations';
     }
 
-    protected function constellation(Int $constellationId): void
+    protected function constellation(int $constellationId): void
     {
         $this->endpoint = 'constellations/' . $constellationId;
     }
@@ -49,12 +49,12 @@ class Universe extends Api
         $this->endpoint = 'graphics';
     }
 
-    protected function graphic(Int $graphicId): void
+    protected function graphic(int $graphicId): void
     {
         $this->endpoint = 'graphics/' . $graphicId;
     }
 
-    protected function group(Int $groupId): void
+    protected function group(int $groupId): void
     {
         $this->endpoint = 'groups/' . $groupId;
     }
@@ -71,7 +71,7 @@ class Universe extends Api
         $this->endpoint = 'ids';
     }
 
-    protected function moon(Int $moonId): void
+    protected function moon(int $moonId): void
     {
         $this->endpoint = 'moons/' . $moonId;
     }
@@ -83,7 +83,7 @@ class Universe extends Api
         $this->endpoint = 'names';
     }
 
-    protected function planet(Int $planetId): void
+    protected function planet(int $planetId): void
     {
         $this->endpoint = 'planets/' . $planetId;
     }
@@ -98,27 +98,27 @@ class Universe extends Api
         $this->endpoint = 'regions';
     }
 
-    protected function region(Int $regionId): void
+    protected function region(int $regionId): void
     {
         $this->endpoint = 'regions/' . $regionId;
     }
 
-    protected function schematic(Int $schematicId): void
+    protected function schematic(int $schematicId): void
     {
         $this->endpoint = 'schematics/' . $schematicId;
     }
 
-    protected function star(Int $starId): void
+    protected function star(int $starId): void
     {
         $this->endpoint = 'stars/' . $starId;
     }
 
-    protected function stargate(Int $stargateId): void
+    protected function stargate(int $stargateId): void
     {
         $this->endpoint = 'stargates/' . $starGateId;
     }
 
-    protected function station(Int $stationId): void
+    protected function station(int $stationId): void
     {
         $this->endpoint = 'stations/' . $stationId;
     }
@@ -128,12 +128,12 @@ class Universe extends Api
         $this->endpoint = 'structures';
     }
 
-    protected function structure(Int $structureId): void
+    protected function structure(int $structureId): void
     {
         $this->endpoint = 'structures/' . $planetId;
     }
 
-    protected function system(Int $systemId): void
+    protected function system(int $systemId): void
     {
         $this->endpoint = 'systems/' . $systemId;
     }
@@ -158,7 +158,7 @@ class Universe extends Api
         $this->endpoint = 'types';
     }
 
-    protected function type(Int $typeId): void
+    protected function type(int $typeId): void
     {
         $this->endpoint = 'types/' . $typeId;
     }

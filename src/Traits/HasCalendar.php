@@ -9,19 +9,19 @@ trait HasCalendar
         $this->endpoint = $this->id . '/calendar';
     }
 
-    protected function calendarEvent(Int $eventId): void
+    protected function calendarEvent(int $eventId): void
     {
         $this->endpoint = $this->id . '/calendar/' . $eventId;
     }
 
-    protected function respondToEvent(Int $eventId, string $response): void
+    protected function respondToEvent(int $eventId, string $response): void
     {
         $this->verb = 'put';
         $this->body = ['response' => $response];
         $this->endpoint = $this->id . '/calendar/' . $eventId;
     }
 
-    protected function eventAttendees(Int $eventId): void
+    protected function eventAttendees(int $eventId): void
     {
         $this->endpoint = $this->id . '/calendar/' . $eventId . '/attendees';
     }

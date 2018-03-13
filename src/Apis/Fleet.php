@@ -33,7 +33,7 @@ class Fleet extends Api
      * both wing_id and squad_id should be specified. If a character is moved to the
      * squad_member role, both wing_id and squad_id should be specified.
      */
-    protected function sendInvite(Int $characterId, string $role, int $wing = null, int $squad = null): void
+    protected function sendInvite(int $characterId, string $role, int $wing = null, int $squad = null): void
     {
         $this->verb = 'post';
         $this->endpoint = $this->id . '/members';
@@ -57,7 +57,7 @@ class Fleet extends Api
      * both wing_id and squad_id should be specified. If a character is moved to the
      * squad_member role, both wing_id and squad_id should be specified.
      */
-    protected function moveMember(Int $characterId, string $role, int $wing = null, int $squad = null): void
+    protected function moveMember(int $characterId, string $role, int $wing = null, int $squad = null): void
     {
         $this->verb = 'put';
         $this->endpoint = $this->id . '/members/' . $characterId;
@@ -71,26 +71,26 @@ class Fleet extends Api
         }
     }
 
-    protected function kickMember(Int $characterId): void
+    protected function kickMember(int $characterId): void
     {
         $this->verb = 'delete';
         $this->endpoint = $this->id . '/members/' . $charId;
     }
 
-    protected function createSquad(Int $wingId): void
+    protected function createSquad(int $wingId): void
     {
         $this->verb = 'post';
         $this->endpoint = $this->id . '/wings/' . $wingId . '/squads';
     }
 
-    protected function renameSquad(Int $squadId, string $name): void
+    protected function renameSquad(int $squadId, string $name): void
     {
         $this->verb = 'put';
         $this->body = ['name' => $name];
         $this->endpoint = $this->id . '/squads/' . $squadId;
     }
 
-    protected function deleteSquad(Int $squadId): void
+    protected function deleteSquad(int $squadId): void
     {
         $this->verb = 'delete';
         $this->endpoint = $this->id . '/squads/' . $squadId;
@@ -107,14 +107,14 @@ class Fleet extends Api
         $this->endpoint = $this->id . '/wings';
     }
 
-    protected function renameWing(Int $wingId, string $name): void
+    protected function renameWing(int $wingId, string $name): void
     {
         $this->verb = 'put';
         $this->body = ['name' => $name];
         $this->endpoint = $this->id . '/wings/' . $wingId;
     }
 
-    protected function deleteWing(Int $wingId): void
+    protected function deleteWing(int $wingId): void
     {
         $this->verb = 'delete';
         $this->endpoint = $this->id . '/wings/' . $wingId;

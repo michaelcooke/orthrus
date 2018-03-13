@@ -16,7 +16,7 @@ trait HasFittings
         $this->endpoint = $this->id . '/fittings';
     }
 
-    protected function deleteFitting(Int $fittingId): void
+    protected function deleteFitting(int $fittingId): void
     {
         $this->verb = 'delete';
         $this->endpoint = $this->id . '/fittings/' . $fittingId;

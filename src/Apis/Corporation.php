@@ -36,7 +36,7 @@ class Corporation extends Api
         HasMarketOrders,
         HasFactionWarfareStats;
 
-    public function __construct(Int $id = null)
+    public function __construct(int $id = null)
     {
         $this->base = 'corporations';
         $this->id = $id;
@@ -102,7 +102,7 @@ class Corporation extends Api
         $this->endpoint = $this->id . 'mining/observers';
     }
 
-    protected function miningObserver(Int $observerId): void
+    protected function miningObserver(int $observerId): void
     {
         $this->endpoint = $this->id . 'mining/observers/' . $observerId;
     }
@@ -123,7 +123,7 @@ class Corporation extends Api
         $this->endpoint = $this->id . '/outposts';
     }
 
-    protected function outpost(Int $outpostId): void
+    protected function outpost(int $outpostId): void
     {
         $this->endpoint = $this->id . '/outposts/' . $outpostId;
     }
@@ -143,7 +143,7 @@ class Corporation extends Api
         $this->endpoint = $this->id . '/starbases';
     }
 
-    protected function starbase(Int $starbaseId, int $systemId): void
+    protected function starbase(int $starbaseId, int $systemId): void
     {
         $this->query = ['system_id' => $systemId];
         $this->endpoint = $this->id . '/starbases/' . $starbaseId;
@@ -154,7 +154,7 @@ class Corporation extends Api
         $this->endpoint = $this->id . '/structures';
     }
 
-    protected function structureVulnerability(Int $structureId, int $newSchedule): void
+    protected function structureVulnerability(int $structureId, int $newSchedule): void
     {
         $this->verb = 'put';
         $this->body = $newSchedule;
@@ -166,12 +166,12 @@ class Corporation extends Api
         $this->endpoint = $this->id . '/wallets';
     }
 
-    protected function walletJournal(Int $walletId): void
+    protected function walletJournal(int $walletId): void
     {
         $this->endpoint = $this->id . '/wallets/' . $walletId . '/journal';
     }
 
-    protected function walletTransactions(Int $walletId): void
+    protected function walletTransactions(int $walletId): void
     {
         $this->endpoint = $this->id . '/wallets/' . $walletId . '/transactions';
     }

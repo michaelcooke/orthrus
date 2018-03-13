@@ -179,7 +179,7 @@ class Character extends Api
         $this->endpoint = $this->id . '/planets';
     }
 
-    protected function planet(Int $planetId): void
+    protected function planet(int $planetId): void
     {
         $this->endpoint = $this->id . '/planets/' . $planetId;
     }

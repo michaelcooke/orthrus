@@ -9,7 +9,7 @@ class Market extends Api
         $this->base = 'markets';
     }
 
-    protected function history(Int $regionId, int $typeId): void
+    protected function history(int $regionId, int $typeId): void
     {
         $this->query = ['type_id' => $typeId];
         $this->endpoint = $regionId . '/history';
@@ -20,17 +20,17 @@ class Market extends Api
         $this->endpoint = 'groups';
     }
 
-    protected function itemGroup(Int $groupId): void
+    protected function itemGroup(int $groupId): void
     {
         $this->endpoint = 'groups/' . $groupId;
     }
 
-    protected function itemTypes(Int $regionId): void
+    protected function itemTypes(int $regionId): void
     {
         $this->endpoint = $regionId . '/types';
     }
 
-    protected function orders(Int $regionId): void
+    protected function orders(int $regionId): void
     {
         $this->endpoint = $regionId . '/orders';
     }
@@ -40,7 +40,7 @@ class Market extends Api
         $this->endpoint = 'prices';
     }
 
-    protected function structureOrders(Int $structureId): void
+    protected function structureOrders(int $structureId): void
     {
         $this->endpoint = 'structures/' . $structureId;
     }
