@@ -10,10 +10,14 @@ class Ui extends Api
         $this->verb = 'post';
     }
 
-    protected function marketDetails(Int $typeId): void
+    protected function autopilot(Int $systemId, bool $addToBeginning = false, bool $clearWaypoints = false): void
     {
-        $this->query = ['type_id' => $typeId];
-        $this->endpoint = 'openwindow/marketdetails';
+        $this->query = [
+            'destination_id' => $systemId,
+            'add_to_beginning' => $addToBeginning,
+            'clear_other_waypoints' => $clearWaypoints,
+        ];
+        $this->endpoint = 'autopilot/waypoint';
     }
 
     protected function contract(Int $contractId): void
@@ -28,13 +32,9 @@ class Ui extends Api
         $this->endpoint = 'openwindow/marketdetails';
     }
 
-    protected function autopilot(Int $systemId, bool $addToBeginning = false, bool $clearWaypoints = false): void
+    protected function marketDetails(Int $typeId): void
     {
-        $this->query = [
-            'destination_id' => $systemId,
-            'add_to_beginning' => $addToBeginning,
-            'clear_other_waypoints' => $clearWaypoints,
-        ];
-        $this->endpoint = 'autopilot/waypoint';
+        $this->query = ['type_id' => $typeId];
+        $this->endpoint = 'openwindow/marketdetails';
     }
 }

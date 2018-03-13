@@ -50,12 +50,6 @@ class Fleet extends Api
         }
     }
 
-    protected function kickMember(Int $characterId): void
-    {
-        $this->verb = 'delete';
-        $this->endpoint = $this->id . '/members/' . $charId;
-    }
-
     /*
      * If a character is moved to the fleet_commander role, neither wing_id or squad_id
      * should be specified. If a character is moved to the wing_commander role, only
@@ -77,22 +71,28 @@ class Fleet extends Api
         }
     }
 
+    protected function kickMember(Int $characterId): void
+    {
+        $this->verb = 'delete';
+        $this->endpoint = $this->id . '/members/' . $charId;
+    }
+
     protected function createSquad(Int $wingId): void
     {
         $this->verb = 'post';
         $this->endpoint = $this->id . '/wings/' . $wingId . '/squads';
     }
 
-    protected function deleteSquad(Int $squadId): void
-    {
-        $this->verb = 'delete';
-        $this->endpoint = $this->id . '/squads/' . $squadId;
-    }
-
     protected function renameSquad(Int $squadId, string $name): void
     {
         $this->verb = 'put';
         $this->body = ['name' => $name];
+        $this->endpoint = $this->id . '/squads/' . $squadId;
+    }
+
+    protected function deleteSquad(Int $squadId): void
+    {
+        $this->verb = 'delete';
         $this->endpoint = $this->id . '/squads/' . $squadId;
     }
 
@@ -107,16 +107,16 @@ class Fleet extends Api
         $this->endpoint = $this->id . '/wings';
     }
 
-    protected function deleteWing(Int $wingId): void
-    {
-        $this->verb = 'delete';
-        $this->endpoint = $this->id . '/wings/' . $wingId;
-    }
-
     protected function renameWing(Int $wingId, string $name): void
     {
         $this->verb = 'put';
         $this->body = ['name' => $name];
+        $this->endpoint = $this->id . '/wings/' . $wingId;
+    }
+
+    protected function deleteWing(Int $wingId): void
+    {
+        $this->verb = 'delete';
         $this->endpoint = $this->id . '/wings/' . $wingId;
     }
 }

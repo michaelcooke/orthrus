@@ -52,9 +52,19 @@ class Corporation extends Api
         $this->endpoint = $this->id . '/containers/logs';
     }
 
+    protected function customsOffices(): void
+    {
+        $this->endpoint = $this->id . '/customs_offices';
+    }
+
     protected function divisions(): void
     {
         $this->endpoint = $this->id . '/divisions';
+    }
+
+    protected function extractions(): void
+    {
+        $this->endpoint = $this->id . 'mining/extractions';
     }
 
     protected function facilities(): void
@@ -85,6 +95,27 @@ class Corporation extends Api
     protected function memberTracking(): void
     {
         $this->endpoint = $this->id . '/membertracking';
+    }
+
+    protected function miningObservers(): void
+    {
+        $this->endpoint = $this->id . 'mining/observers';
+    }
+
+    protected function miningObserver(Int $observerId): void
+    {
+        $this->endpoint = $this->id . 'mining/observers/' . $observerId;
+    }
+
+    protected function names(array $corporationIds): void
+    {
+        $this->query = ['corporation_ids' => $corporationIds];
+        $this->endpoint = 'names';
+    }
+
+    protected function npcCorporations(): void
+    {
+        $this->endpoint = 'npccorps';
     }
 
     protected function outposts(): void
@@ -130,22 +161,6 @@ class Corporation extends Api
         $this->endpoint = $this->id . '/structures/' . $structureId;
     }
 
-    protected function names(array $corporationIds): void
-    {
-        $this->query = ['corporation_ids' => $corporationIds];
-        $this->endpoint = 'names';
-    }
-
-    protected function npcCorporations(): void
-    {
-        $this->endpoint = 'npccorps';
-    }
-
-    protected function customsOffices(): void
-    {
-        $this->endpoint = $this->id . '/customs_offices';
-    }
-
     protected function wallets(): void
     {
         $this->endpoint = $this->id . '/wallets';
@@ -159,20 +174,5 @@ class Corporation extends Api
     protected function walletTransactions(Int $walletId): void
     {
         $this->endpoint = $this->id . '/wallets/' . $walletId . '/transactions';
-    }
-
-    protected function miningObservers(): void
-    {
-        $this->endpoint = $this->id . 'mining/observers';
-    }
-
-    protected function miningObserver(Int $observerId): void
-    {
-        $this->endpoint = $this->id . 'mining/observers/' . $observerId;
-    }
-
-    protected function extractions(): void
-    {
-        $this->endpoint = $this->id . 'mining/extractions';
     }
 }

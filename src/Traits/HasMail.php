@@ -9,35 +9,21 @@ trait HasMail
         $this->endpoint = $this->id . '/mail';
     }
 
-    protected function mailLabels(): void
-    {
-        $this->endpoint = $this->id . '/mail/labels';
-    }
-
-    protected function createMailLabel(string $name): void
-    {
-        $this->verb = 'post';
-        $this->body = [
-            'name' => $name,
-            'color' => '#ffffff',
-        ];
-        $this->endpoint = $this->id . '/mail/labels';
-    }
-
-    protected function mailingLists(): void
-    {
-        $this->endpoint = $this->id . '/mail/lists';
-    }
-
-    protected function deleteMailLabel(Int $mailId): void
-    {
-        $this->verb = 'delete';
-        $this->endpoint = $this->id . '/mail/labels/' . $mailId;
-    }
-
     protected function mail(Int $mailId): void
     {
         $this->endpoint = $this->id . '/mail/' . $mailId;
+    }
+
+    protected function sendMail(array $recipients, string $subject, string $body, int $approvedCost): void
+    {
+        $this->verb = 'post';
+        $this->body = [
+            'recipients' => $recipients,
+            'subject' => $subject,
+            'body' => $body,
+            'approved_cost' => $approvedCost,
+        ];
+        $this->endpoint = $this->id . '/mail';
     }
 
     protected function updateMail(Int $mailId, bool $read, array $labels): void
@@ -56,15 +42,29 @@ trait HasMail
         $this->endpoint = $this->id . '/mail/' . $mailId;
     }
 
-    protected function sendMail(array $recipients, string $subject, string $body, int $approvedCost): void
+    protected function mailingLists(): void
+    {
+        $this->endpoint = $this->id . '/mail/lists';
+    }
+
+    protected function mailLabels(): void
+    {
+        $this->endpoint = $this->id . '/mail/labels';
+    }
+
+    protected function createMailLabel(string $name): void
     {
         $this->verb = 'post';
         $this->body = [
-            'recipients' => $recipients,
-            'subject' => $subject,
-            'body' => $body,
-            'approved_cost' => $approvedCost,
+            'name' => $name,
+            'color' => '#ffffff',
         ];
-        $this->endpoint = $this->id . '/mail';
+        $this->endpoint = $this->id . '/mail/labels';
+    }
+
+    protected function deleteMailLabel(Int $mailId): void
+    {
+        $this->verb = 'delete';
+        $this->endpoint = $this->id . '/mail/labels/' . $mailId;
     }
 }

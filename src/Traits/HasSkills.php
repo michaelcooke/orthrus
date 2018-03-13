@@ -4,18 +4,18 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasSkills
 {
-    protected function skillQueue(): void
+    protected function attributes(): void
     {
-        $this->endpoint = $this->id . '/skillqueue';
+        $this->endpoint = $this->id . '/attributes';
     }
-
+    
     protected function skills(): void
     {
         $this->endpoint = $this->id . '/skills';
     }
 
-    protected function attributes(): void
+    protected function skillQueue(): void
     {
-        $this->endpoint = $this->id . '/attributes';
+        $this->endpoint = $this->id . '/skillqueue';
     }
 }

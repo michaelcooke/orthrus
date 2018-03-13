@@ -9,9 +9,19 @@ class FactionWarfare extends Api
         $this->base = 'fw';
     }
 
-    protected function wars(): void
+    protected function characterLeaderboards(): void
     {
-        $this->endpoint = 'wars';
+        $this->endpoint = 'leaderboards/characters';
+    }
+
+    protected function corporationLeaderboards(): void
+    {
+        $this->endpoint = 'leaderboards/corporations';
+    }
+
+    protected function leaderboards(): void
+    {
+        $this->endpoint = 'leaderboards';
     }
 
     protected function stats(): void
@@ -24,18 +34,8 @@ class FactionWarfare extends Api
         $this->endpoint = 'systems';
     }
 
-    protected function leaderboards(): void
+    protected function wars(): void
     {
-        $this->endpoint = 'leaderboards';
-    }
-
-    protected function characterLeaderboards(): void
-    {
-        $this->endpoint = 'leaderboards/characters';
-    }
-
-    protected function corporationLeaderboards(): void
-    {
-        $this->endpoint = 'leaderboards/corporations';
+        $this->endpoint = 'wars';
     }
 }
