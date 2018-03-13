@@ -5,7 +5,7 @@ namespace MichaelCooke\Orthrus\Apis;
 use MichaelCooke\Orthrus\Orthrus;
 use MichaelCooke\Orthrus\Apis\Api;
 
-class Wars extends Api
+class Ui extends Api
 {
     public function __construct()
     {
