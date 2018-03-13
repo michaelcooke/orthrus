@@ -168,7 +168,7 @@ class Corporation extends Api
         $this->endpoint = $this->id . 'mining/observers';
     }
 
-    protected function miningObservers(Int $observerId)
+    protected function miningObserver(Int $observerId)
     {
         $this->endpoint = $this->id . 'mining/observers/' . $observerId;
     }
