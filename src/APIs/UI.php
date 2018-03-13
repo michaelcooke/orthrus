@@ -2,9 +2,6 @@
 
 namespace MichaelCooke\Orthrus\Apis;
 
-use MichaelCooke\Orthrus\Orthrus;
-use MichaelCooke\Orthrus\Apis\Api;
-
 class Ui extends Api
 {
     public function __construct()
@@ -36,7 +33,7 @@ class Ui extends Api
         $this->query = [
             'destination_id' => $systemId,
             'add_to_beginning' => $addToBeginning,
-            'clear_other_waypoints' => $clearWaypoints
+            'clear_other_waypoints' => $clearWaypoints,
         ];
         $this->endpoint = 'autopilot/waypoint';
     }
