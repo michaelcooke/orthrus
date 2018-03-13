@@ -46,7 +46,7 @@ class Character extends Api
         HasMarketOrders,
         HasFactionWarfareStats;
 
-    public function __construct(String $id = null)
+    public function __construct(string $id = null)
     {
         $this->base = 'characters';
         $this->id = $id;

@@ -14,7 +14,7 @@ trait HasCalendar
         $this->endpoint = $this->id . '/calendar/' . $eventId;
     }
 
-    protected function respondToEvent(Int $eventId, String $response): void
+    protected function respondToEvent(Int $eventId, string $response): void
     {
         $this->verb = 'put';
         $this->body = ['response' => $response];

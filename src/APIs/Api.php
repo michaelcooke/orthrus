@@ -16,7 +16,7 @@ class Api
     protected $variables = null;
     protected $getAllPages = null;
 
-    public function __call(String $method, array $arguments): Collection
+    public function __call(string $method, array $arguments): Collection
     {
         if (method_exists($this, $method)) {
             call_user_func_array([$this, $method], $arguments);

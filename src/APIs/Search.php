@@ -4,7 +4,7 @@ namespace MichaelCooke\Orthrus\Apis;
 
 class Search extends Api
 {
-    public function __construct(array $categories, String $searchTerm, Bool $strict = false)
+    public function __construct(array $categories, string $searchTerm, bool $strict = false)
     {
         $this->base = 'search';
         $this->query = [

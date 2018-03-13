@@ -17,14 +17,14 @@ class Orthrus
         $this->eseye = new Eseye;
     }
 
-    public function setRefreshToken(String $token): Orthrus
+    public function setRefreshToken(string $token): Orthrus
     {
         $this->eseye::setRefreshToken($token);
 
         return $this;
     }
 
-    public function withRefreshToken(String $token): Orthrus
+    public function withRefreshToken(string $token): Orthrus
     {
         $this->resetRefreshToken = true;
 
@@ -42,14 +42,14 @@ class Orthrus
         return false;
     }
 
-    public function invoke(String $verb, String $endpoint, array $uri_data = null, array $body = null, array $query = null): EsiResponse
+    public function invoke(string $verb, string $endpoint, array $uri_data = null, array $body = null, array $query = null): EsiResponse
     {
         if ($body != null) {
             $this->eseye::setBody($body);
         }
 
         if ($query != null) {
-            $this->eseye::setQueryString($query);
+            $this->eseye::setQuerystring($query);
         }
 
         if ($uri_data != null) {
@@ -76,17 +76,17 @@ class Orthrus
         return $this->response->expires();
     }
 
-    public function responseCode(): Int
+    public function responseCode(): int
     {
         return $this->response->getErrorCode();
     }
 
-    public function responseErrorMessage(): ?String
+    public function responseErrorMessage(): ?string
     {
         return $this->response->error();
     }
 
-    public function __call(String $method, array $arguments)
+    public function __call(string $method, array $arguments)
     {
         $class = 'MichaelCooke\\Orthrus\\APIs\\' . ucfirst($method);
         $api = new $class(...$arguments);

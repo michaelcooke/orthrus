@@ -112,7 +112,7 @@ class Corporation extends Api
         $this->endpoint = $this->id . '/starbases';
     }
 
-    protected function starbase(Int $starbaseId, Int $systemId): void
+    protected function starbase(Int $starbaseId, int $systemId): void
     {
         $this->query = ['system_id' => $systemId];
         $this->endpoint = $this->id . '/starbases/' . $starbaseId;
@@ -123,7 +123,7 @@ class Corporation extends Api
         $this->endpoint = $this->id . '/structures';
     }
 
-    protected function structureVulnerability(Int $structureId, Int $newSchedule): void
+    protected function structureVulnerability(Int $structureId, int $newSchedule): void
     {
         $this->verb = 'put';
         $this->body = $newSchedule;

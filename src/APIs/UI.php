@@ -28,7 +28,7 @@ class Ui extends Api
         $this->endpoint = 'openwindow/marketdetails';
     }
 
-    protected function autopilot(Int $systemId, Bool $addToBeginning = false, Bool $clearWaypoints = false): void
+    protected function autopilot(Int $systemId, bool $addToBeginning = false, bool $clearWaypoints = false): void
     {
         $this->query = [
             'destination_id' => $systemId,

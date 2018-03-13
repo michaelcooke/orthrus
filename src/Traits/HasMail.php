@@ -14,7 +14,7 @@ trait HasMail
         $this->endpoint = $this->id . '/mail/labels';
     }
 
-    protected function createMailLabel(String $name): void
+    protected function createMailLabel(string $name): void
     {
         $this->verb = 'post';
         $this->body = [
@@ -40,7 +40,7 @@ trait HasMail
         $this->endpoint = $this->id . '/mail/' . $mailId;
     }
 
-    protected function updateMail(Int $mailId, Bool $read, array $labels): void
+    protected function updateMail(Int $mailId, bool $read, array $labels): void
     {
         $this->verb = 'put';
         $this->body = [
@@ -56,7 +56,7 @@ trait HasMail
         $this->endpoint = $this->id . '/mail/' . $mailId;
     }
 
-    protected function sendMail(array $recipients, String $subject, String $body, Int $approvedCost): void
+    protected function sendMail(array $recipients, string $subject, string $body, int $approvedCost): void
     {
         $this->verb = 'post';
         $this->body = [

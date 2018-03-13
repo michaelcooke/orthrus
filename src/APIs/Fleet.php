@@ -8,13 +8,13 @@ class Fleet extends Api
 {
     use HasEditableId;
 
-    public function __construct(String $id)
+    public function __construct(string $id)
     {
         $this->base = 'fleets';
         $this->id = $id;
     }
 
-    protected function setFleetSettings(String $motd, bool $freeMove): void
+    protected function setFleetSettings(string $motd, bool $freeMove): void
     {
         $this->verb = 'put';
         $this->body = ['motd' => $motd, 'is_free_move' => $is_free_move];
@@ -33,7 +33,7 @@ class Fleet extends Api
      * both wing_id and squad_id should be specified. If a character is moved to the
      * squad_member role, both wing_id and squad_id should be specified.
      */
-    protected function sendInvite(Int $characterId, String $role, Int $wing = null, Int $squad = null): void
+    protected function sendInvite(Int $characterId, string $role, int $wing = null, int $squad = null): void
     {
         $this->verb = 'post';
         $this->endpoint = $this->id . '/members';
@@ -63,7 +63,7 @@ class Fleet extends Api
      * both wing_id and squad_id should be specified. If a character is moved to the
      * squad_member role, both wing_id and squad_id should be specified.
      */
-    protected function moveMember(Int $characterId, String $role, Int $wing = null, Int $squad = null): void
+    protected function moveMember(Int $characterId, string $role, int $wing = null, int $squad = null): void
     {
         $this->verb = 'put';
         $this->endpoint = $this->id . '/members/' . $characterId;
@@ -89,7 +89,7 @@ class Fleet extends Api
         $this->endpoint = $this->id . '/squads/' . $squadId;
     }
 
-    protected function renameSquad(Int $squadId, String $name): void
+    protected function renameSquad(Int $squadId, string $name): void
     {
         $this->verb = 'put';
         $this->body = ['name' => $name];
@@ -113,7 +113,7 @@ class Fleet extends Api
         $this->endpoint = $this->id . '/wings/' . $wingId;
     }
 
-    protected function renameWing(Int $wingId, String $name): void
+    protected function renameWing(Int $wingId, string $name): void
     {
         $this->verb = 'put';
         $this->body = ['name' => $name];

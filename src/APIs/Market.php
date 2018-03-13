@@ -19,7 +19,7 @@ class Market extends Api
         $this->endpoint = $regionId . '/orders';
     }
 
-    protected function history(Int $regionId, Int $typeId): void
+    protected function history(Int $regionId, int $typeId): void
     {
         $this->query = ['type_id' => $typeId];
         $this->endpoint = $regionId . '/history';

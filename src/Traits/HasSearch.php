@@ -4,7 +4,7 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasSearch
 {
-    protected function search(array $categories, String $searchTerm, Bool $strict = false): void
+    protected function search(array $categories, string $searchTerm, bool $strict = false): void
     {
         $this->query = [
             'categories' => $categories,

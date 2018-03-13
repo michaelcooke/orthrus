@@ -14,7 +14,7 @@ class Alliance extends Api
         HasIdAndIndex,
         HasCorporations;
 
-    public function __construct(String $id = null)
+    public function __construct(string $id = null)
     {
         $this->base = 'alliances';
         $this->id = $id;
