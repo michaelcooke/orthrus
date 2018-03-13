@@ -154,13 +154,6 @@ class Corporation extends Api
         $this->endpoint = $this->id . '/structures';
     }
 
-    protected function structureVulnerability(int $structureId, int $newSchedule): void
-    {
-        $this->verb = 'put';
-        $this->body = $newSchedule;
-        $this->endpoint = $this->id . '/structures/' . $structureId;
-    }
-
     protected function wallets(): void
     {
         $this->endpoint = $this->id . '/wallets';
