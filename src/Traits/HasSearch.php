@@ -9,7 +9,7 @@ trait HasSearch
         $this->query = [
             'categories' => $categories,
             'search' => $searchTerm,
-            'strict' => $strict
+            'strict' => $strict,
         ];
         $this->endpoint = $this->id . '/search';
     }

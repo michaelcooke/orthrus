@@ -3,8 +3,6 @@
 namespace MichaelCooke\Orthrus\Apis;
 
 use ESI;
-use Eseye;
-use MichaelCooke\Orthrus\Orthrus;
 
 class Api
 {
@@ -20,7 +18,7 @@ class Api
     public function __call($method, $arguments)
     {
         if (method_exists($this, $method)) {
-            call_user_func_array(array($this, $method), $arguments);
+            call_user_func_array([$this, $method], $arguments);
         }
 
         if ($this->index) {

@@ -2,7 +2,6 @@
 
 namespace MichaelCooke\Orthrus;
 
-use MichaelCooke\Orthrus\Orthrus;
 use Illuminate\Support\ServiceProvider;
 
 class OrthrusServiceProvider extends ServiceProvider
@@ -24,7 +23,7 @@ class OrthrusServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('esi', function($app) {
+        $this->app->singleton('esi', function ($app) {
             return new Orthrus;
         });
     }
@@ -37,7 +36,7 @@ class OrthrusServiceProvider extends ServiceProvider
     public function provides()
     {
         return [
-            'esi'
+            'esi',
         ];
     }
 }

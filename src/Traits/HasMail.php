@@ -40,12 +40,12 @@ trait HasMail
         $this->endpoint = $this->id . '/mail/' . $id;
     }
 
-    protected function updateMail(Int $id, Bool $read, Array $labels)
+    protected function updateMail(Int $id, Bool $read, array $labels)
     {
         $this->verb = 'put';
         $this->body = [
             'read' => $read,
-            'labels' => $labels
+            'labels' => $labels,
         ];
         $this->endpoint = $this->id . '/mail/' . $id;
     }
@@ -56,7 +56,7 @@ trait HasMail
         $this->endpoint = $this->id . '/mail/' . $id;
     }
 
-    protected function sendMail(Array $recipients, String $subject, String $body, Int $approved_cost)
+    protected function sendMail(array $recipients, String $subject, String $body, Int $approved_cost)
     {
         $this->verb = 'post';
         $this->body = [

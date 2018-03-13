@@ -2,8 +2,6 @@
 
 namespace MichaelCooke\Orthrus\Apis;
 
-use MichaelCooke\Orthrus\Orthrus;
-use MichaelCooke\Orthrus\Apis\Api;
 use MichaelCooke\Orthrus\Traits\HasId;
 use MichaelCooke\Orthrus\Traits\HasMail;
 use MichaelCooke\Orthrus\Traits\HasFleet;

@@ -19,12 +19,14 @@ class Orthrus
     public function setRefreshToken(String $token)
     {
         $this->eseye::setRefreshToken($token);
+
         return $this;
     }
 
     public function withRefreshToken(String $token)
     {
         $this->resetRefreshToken = true;
+
         return $this->setRefreshToken($token);
     }
 
@@ -32,6 +34,7 @@ class Orthrus
     {
         if ($this->resetRefreshToken) {
             $this->setRefreshToken(config('eseye.refresh_token'));
+
             return true;
         }
 
@@ -58,6 +61,7 @@ class Orthrus
     public function setResponse(EsiResponse $esiResponse)
     {
         $this->response = $esiResponse;
+
         return true;
     }
 
