@@ -16,7 +16,7 @@ class Ui extends Api
     protected function marketDetails(Int $typeId)
     {
         $this->query = ['type_id' => $typeId];
-        $this->endpoint = 'openwindow/marketdetails'
+        $this->endpoint = 'openwindow/marketdetails';
     }
 
     protected function contract(Int $contractId)
