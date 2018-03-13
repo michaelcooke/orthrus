@@ -6,7 +6,7 @@ trait HasId
 {
     protected $id = null;
 
-    protected function get()
+    protected function get(): void
     {
         $this->endpoint = $this->id;
     }

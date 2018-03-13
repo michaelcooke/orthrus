@@ -3,6 +3,7 @@
 namespace MichaelCooke\Orthrus;
 
 use Eseye;
+use Carbon\Carbon;
 use Seat\Eseye\Containers\EsiResponse;
 
 class Orthrus
@@ -16,21 +17,21 @@ class Orthrus
         $this->eseye = new Eseye;
     }
 
-    public function setRefreshToken(String $token)
+    public function setRefreshToken(String $token): Orthrus
     {
         $this->eseye::setRefreshToken($token);
 
         return $this;
     }
 
-    public function withRefreshToken(String $token)
+    public function withRefreshToken(String $token): Orthrus
     {
         $this->resetRefreshToken = true;
 
         return $this->setRefreshToken($token);
     }
 
-    public function resetRefreshToken()
+    public function resetRefreshToken(): bool
     {
         if ($this->resetRefreshToken) {
             $this->setRefreshToken(config('eseye.refresh_token'));
@@ -41,7 +42,7 @@ class Orthrus
         return false;
     }
 
-    public function invoke(String $verb, String $endpoint, array $uri_data = null, array $body = null, array $query = null)
+    public function invoke(String $verb, String $endpoint, array $uri_data = null, array $body = null, array $query = null): EsiResponse
     {
         if ($body != null) {
             $this->eseye::setBody($body);
@@ -58,34 +59,34 @@ class Orthrus
         return $this->eseye::invoke($verb, $endpoint);
     }
 
-    public function setResponse(EsiResponse $esiResponse)
+    public function setResponse(EsiResponse $esiResponse): bool
     {
         $this->response = $esiResponse;
 
         return true;
     }
 
-    public function response()
+    public function response(): EsiResponse
     {
         return $this->response;
     }
 
-    public function responseExpires()
+    public function responseExpires(): Carbon
     {
         return $this->response->expires();
     }
 
-    public function responseCode()
+    public function responseCode(): Int
     {
         return $this->response->getErrorCode();
     }
 
-    public function responseErrorMessage()
+    public function responseErrorMessage(): ?String
     {
         return $this->response->error();
     }
 
-    public function __call($method, $arguments)
+    public function __call(String $method, array $arguments)
     {
         $class = 'MichaelCooke\\Orthrus\\APIs\\' . ucfirst($method);
         $api = new $class(...$arguments);

@@ -9,7 +9,7 @@ class Insurance extends Api
         $this->base = 'insurance';
     }
 
-    protected function prices()
+    protected function prices(): void
     {
         $this->endpoint = 'prices';
     }

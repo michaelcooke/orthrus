@@ -9,12 +9,12 @@ class Industry extends Api
         $this->base = 'industry';
     }
 
-    protected function facilities()
+    protected function facilities(): void
     {
         $this->endpoint = 'facilities';
     }
 
-    protected function costIndices()
+    protected function costIndices(): void
     {
         $this->endpoint = 'systems';
     }

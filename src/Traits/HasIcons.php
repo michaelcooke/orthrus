@@ -4,7 +4,7 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasIcons
 {
-    protected function icons()
+    protected function icons(): void
     {
         $this->endpoint = $this->id . '/icons';
     }

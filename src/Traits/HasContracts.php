@@ -4,17 +4,17 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasContracts
 {
-    protected function contracts()
+    protected function contracts(): void
     {
         $this->endpoint = $this->id . '/contracts';
     }
 
-    protected function cntractBids($contractId)
+    protected function cntractBids(Int $contractId): void
     {
         $this->endpoint = $this->id . '/contracts/' . $contractId . '/bids';
     }
 
-    protected function contractItems($contractId)
+    protected function contractItems(Int $contractId): void
     {
         $this->endpoint = $this->id . '/contracts/' . $contractId . '/items';
     }

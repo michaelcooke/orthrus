@@ -9,8 +9,8 @@ class Killmail extends Api
         $this->base = 'killmails';
     }
 
-    protected function get($id, $hash)
+    protected function get(Int $killmailId, String $hash)
     {
-        $this->endpoint = $id . '/' . $hash;
+        $this->endpoint = $killmailId . '/' . $hash;
     }
 }

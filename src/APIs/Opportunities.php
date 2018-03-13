@@ -9,22 +9,22 @@ class Opportunities extends Api
         $this->base = 'opportunities';
     }
 
-    protected function groups()
+    protected function groups(): void
     {
         $this->endpoint = 'groups';
     }
 
-    protected function group(Int $groupId)
+    protected function group(Int $groupId): void
     {
         $this->endpoint = 'groups/' . $groupId;
     }
 
-    protected function tasks()
+    protected function tasks(): void
     {
         $this->endpoint = 'tasks';
     }
 
-    protected function task(Int $taskId)
+    protected function task(Int $taskId): void
     {
         $this->endpoint = 'tasks/' . $taskId;
     }

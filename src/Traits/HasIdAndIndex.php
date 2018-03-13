@@ -6,7 +6,7 @@ trait HasIdAndIndex
 {
     protected $id = null;
 
-    protected function get()
+    protected function get(): void
     {
         if ($this->id == null) {
             $this->index = true;

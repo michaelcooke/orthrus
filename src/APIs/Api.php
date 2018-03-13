@@ -3,6 +3,7 @@
 namespace MichaelCooke\Orthrus\Apis;
 
 use ESI;
+use Illuminate\Support\Collection;
 
 class Api
 {
@@ -15,7 +16,7 @@ class Api
     protected $variables = null;
     protected $getAllPages = null;
 
-    public function __call($method, $arguments)
+    public function __call(String $method, array $arguments): Collection
     {
         if (method_exists($this, $method)) {
             call_user_func_array([$this, $method], $arguments);

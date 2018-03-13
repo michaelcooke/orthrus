@@ -9,22 +9,22 @@ class Sovereignty extends Api
         $this->base = 'sovereignty';
     }
 
-    protected function structures()
+    protected function structures(): void
     {
         $this->endpoint = 'structures';
     }
 
-    protected function campaigns()
+    protected function campaigns(): void
     {
         $this->endpoint = 'campaigns';
     }
 
-    protected function map()
+    protected function map(): void
     {
         $this->endpoint = 'map';
     }
 
-    protected function systems()
+    protected function systems(): void
     {
         $this->getMap();
     }

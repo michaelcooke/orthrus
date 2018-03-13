@@ -4,17 +4,17 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasMail
 {
-    protected function mailHeaders()
+    protected function mailHeaders(): void
     {
         $this->endpoint = $this->id . '/mail';
     }
 
-    protected function mailLabels()
+    protected function mailLabels(): void
     {
         $this->endpoint = $this->id . '/mail/labels';
     }
 
-    protected function createMailLabel(String $name)
+    protected function createMailLabel(String $name): void
     {
         $this->verb = 'post';
         $this->body = [
@@ -24,46 +24,46 @@ trait HasMail
         $this->endpoint = $this->id . '/mail/labels';
     }
 
-    protected function mailingLists()
+    protected function mailingLists(): void
     {
         $this->endpoint = $this->id . '/mail/lists';
     }
 
-    protected function deleteMailLabel(Int $id)
+    protected function deleteMailLabel(Int $mailId): void
     {
         $this->verb = 'delete';
-        $this->endpoint = $this->id . '/mail/labels/' . $id;
+        $this->endpoint = $this->id . '/mail/labels/' . $mailId;
     }
 
-    protected function mail(Int $id)
+    protected function mail(Int $mailId): void
     {
-        $this->endpoint = $this->id . '/mail/' . $id;
+        $this->endpoint = $this->id . '/mail/' . $mailId;
     }
 
-    protected function updateMail(Int $id, Bool $read, array $labels)
+    protected function updateMail(Int $mailId, Bool $read, array $labels): void
     {
         $this->verb = 'put';
         $this->body = [
             'read' => $read,
             'labels' => $labels,
         ];
-        $this->endpoint = $this->id . '/mail/' . $id;
+        $this->endpoint = $this->id . '/mail/' . $mailId;
     }
 
-    protected function deleteMail(Int $id)
+    protected function deleteMail(Int $mailId): void
     {
         $this->verb = 'delete';
-        $this->endpoint = $this->id . '/mail/' . $id;
+        $this->endpoint = $this->id . '/mail/' . $mailId;
     }
 
-    protected function sendMail(array $recipients, String $subject, String $body, Int $approved_cost)
+    protected function sendMail(array $recipients, String $subject, String $body, Int $approvedCost): void
     {
         $this->verb = 'post';
         $this->body = [
             'recipients' => $recipients,
             'subject' => $subject,
             'body' => $body,
-            'approved_cost' => $approved_cost,
+            'approved_cost' => $approvedCost,
         ];
         $this->endpoint = $this->id . '/mail';
     }

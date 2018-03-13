@@ -20,7 +20,7 @@ class Alliance extends Api
         $this->id = $id;
     }
 
-    protected function names($alliances)
+    protected function names($alliances): void
     {
         $this->query = ['alliance_ids' => $alliances];
         $this->endpoint = 'names';

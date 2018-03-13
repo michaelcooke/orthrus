@@ -4,7 +4,7 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasBlueprints
 {
-    protected function blueprints()
+    protected function blueprints(): void
     {
         $this->endpoint = $this->id . '/blueprints';
     }

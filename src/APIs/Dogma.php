@@ -9,23 +9,23 @@ class Dogma extends Api
         $this->base = 'dogma';
     }
 
-    protected function attributes()
+    protected function attributes(): void
     {
         $this->endpoint = 'attributes';
     }
 
-    protected function attribute($attribute)
+    protected function attribute(Int $attributeId): void
     {
-        $this->endpoint = 'attributes/' . $attribute;
+        $this->endpoint = 'attributes/' . $attributeId;
     }
 
-    protected function effects()
+    protected function effects(): void
     {
         $this->endpoint = 'effects';
     }
 
-    protected function effect($effect)
+    protected function effect(Int $effectId): void
     {
-        $this->endpoint = 'effects/' . $effect;
+        $this->endpoint = 'effects/' . $effectId;
     }
 }

@@ -9,17 +9,17 @@ class Wars extends Api
         $this->base = 'wars';
     }
 
-    protected function get()
+    protected function get(): void
     {
         $this->verb = 'get';
     }
 
-    protected function getWar(Int $warId)
+    protected function getWar(Int $warId): void
     {
         $this->endpoint = $warId;
     }
 
-    protected function warKillmails(Int $warId)
+    protected function warKillmails(Int $warId): void
     {
         $this->endpoint = $warId . '/killmails';
     }

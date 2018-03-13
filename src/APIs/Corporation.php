@@ -36,142 +36,142 @@ class Corporation extends Api
         HasMarketOrders,
         HasFactionWarfareStats;
 
-    public function __construct(String $id = null)
+    public function __construct(Int $id = null)
     {
         $this->base = 'corporations';
         $this->id = $id;
     }
 
-    protected function allianceHistory()
+    protected function allianceHistory(): void
     {
         $this->endpoint = $this->id . '/alliancehistory';
     }
 
-    protected function containerLogs()
+    protected function containerLogs(): void
     {
         $this->endpoint = $this->id . '/containers/logs';
     }
 
-    protected function divisions()
+    protected function divisions(): void
     {
         $this->endpoint = $this->id . '/divisions';
     }
 
-    protected function facilities()
+    protected function facilities(): void
     {
         $this->endpoint = $this->id . '/facilities';
     }
 
-    protected function issuedMedals()
+    protected function issuedMedals(): void
     {
         $this->endpoint = $this->id . '/medals/issued';
     }
 
-    protected function members()
+    protected function members(): void
     {
         $this->endpoint = $this->id . '/members';
     }
 
-    protected function memberLimit()
+    protected function memberLimit(): void
     {
         $this->endpoint = $this->id . '/members/limit';
     }
 
-    protected function memberTitles()
+    protected function memberTitles(): void
     {
         $this->endpoint = $this->id . '/members/titles';
     }
 
-    protected function memberTracking()
+    protected function memberTracking(): void
     {
         $this->endpoint = $this->id . '/membertracking';
     }
 
-    protected function outposts()
+    protected function outposts(): void
     {
         $this->endpoint = $this->id . '/outposts';
     }
 
-    protected function outpost($outpostId)
+    protected function outpost(Int $outpostId): void
     {
         $this->endpoint = $this->id . '/outposts/' . $outpostId;
     }
 
-    protected function roleHistory()
+    protected function roleHistory(): void
     {
         $this->endpoint = $this->id . '/roles/history';
     }
 
-    protected function shareholders()
+    protected function shareholders(): void
     {
         $this->endpoint = $this->id . '/shareholders';
     }
 
-    protected function starbases()
+    protected function starbases(): void
     {
         $this->endpoint = $this->id . '/starbases';
     }
 
-    protected function starbase($starbaseId, $systemId)
+    protected function starbase(Int $starbaseId, Int $systemId): void
     {
         $this->query = ['system_id' => $systemId];
         $this->endpoint = $this->id . '/starbases/' . $starbaseId;
     }
 
-    protected function structures()
+    protected function structures(): void
     {
         $this->endpoint = $this->id . '/structures';
     }
 
-    protected function structureVulnerability($structureId, $newSchedule)
+    protected function structureVulnerability(Int $structureId, Int $newSchedule): void
     {
         $this->verb = 'put';
         $this->body = $newSchedule;
         $this->endpoint = $this->id . '/structures/' . $structureId;
     }
 
-    protected function names($corporationIds)
+    protected function names(array $corporationIds): void
     {
         $this->query = ['corporation_ids' => $corporationIds];
         $this->endpoint = 'names';
     }
 
-    protected function npcCorporations()
+    protected function npcCorporations(): void
     {
         $this->endpoint = 'npccorps';
     }
 
-    protected function customsOffices()
+    protected function customsOffices(): void
     {
         $this->endpoint = $this->id . '/customs_offices';
     }
 
-    protected function wallets()
+    protected function wallets(): void
     {
         $this->endpoint = $this->id . '/wallets';
     }
 
-    protected function walletJournal(Int $walletId)
+    protected function walletJournal(Int $walletId): void
     {
         $this->endpoint = $this->id . '/wallets/' . $walletId . '/journal';
     }
 
-    protected function walletTransactions(Int $walletId)
+    protected function walletTransactions(Int $walletId): void
     {
         $this->endpoint = $this->id . '/wallets/' . $walletId . '/transactions';
     }
 
-    protected function miningObservers()
+    protected function miningObservers(): void
     {
         $this->endpoint = $this->id . 'mining/observers';
     }
 
-    protected function miningObserver(Int $observerId)
+    protected function miningObserver(Int $observerId): void
     {
         $this->endpoint = $this->id . 'mining/observers/' . $observerId;
     }
 
-    protected function extractions()
+    protected function extractions(): void
     {
         $this->endpoint = $this->id . 'mining/extractions';
     }

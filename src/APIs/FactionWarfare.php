@@ -9,32 +9,32 @@ class FactionWarfare extends Api
         $this->base = 'fw';
     }
 
-    protected function wars()
+    protected function wars(): void
     {
         $this->endpoint = 'wars';
     }
 
-    protected function stats()
+    protected function stats(): void
     {
         $this->endpoint = 'stats';
     }
 
-    protected function systems()
+    protected function systems(): void
     {
         $this->endpoint = 'systems';
     }
 
-    protected function leaderboards()
+    protected function leaderboards(): void
     {
         $this->endpoint = 'leaderboards';
     }
 
-    protected function characterLeaderboards()
+    protected function characterLeaderboards(): void
     {
         $this->endpoint = 'leaderboards/characters';
     }
 
-    protected function corporationLeaderboards()
+    protected function corporationLeaderboards(): void
     {
         $this->endpoint = 'leaderboards/corporations';
     }

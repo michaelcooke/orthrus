@@ -11,7 +11,7 @@ class OrthrusServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         //
     }
@@ -21,7 +21,7 @@ class OrthrusServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->app->singleton('esi', function ($app) {
             return new Orthrus;
@@ -33,7 +33,7 @@ class OrthrusServiceProvider extends ServiceProvider
      *
      * @return array
      */
-    public function provides()
+    public function provides(): array
     {
         return [
             'esi',

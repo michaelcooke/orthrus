@@ -52,113 +52,113 @@ class Character extends Api
         $this->id = $id;
     }
 
-    protected function agentsResearch()
+    protected function agentsResearch(): void
     {
         $this->endpoint = $this->id . '/agents_research';
     }
 
-    protected function researchAgents()
+    protected function researchAgents(): void
     {
         $this->agentsResearch();
     }
 
-    protected function chatChannels()
+    protected function chatChannels(): void
     {
         $this->endpoint = $this->id . '/chat_channels';
     }
 
-    protected function corporationHistory()
+    protected function corporationHistory(): void
     {
         $this->endpoint = $this->id . '/corporationhistory';
     }
 
-    protected function employmentHistory()
+    protected function employmentHistory(): void
     {
         $this->getCorporationHistory();
     }
 
-    protected function calculateCSPA($characters)
+    protected function calculateCSPA(array $characterIds): void
     {
         $this->verb = 'post';
-        $this->body = $characters;
+        $this->body = $characterIds;
         $this->endpoint = $this->id . '/cspa';
     }
 
-    protected function fatigue()
+    protected function fatigue(): void
     {
         $this->endpoint = $this->id . '/fatigue';
     }
 
-    protected function location()
+    protected function location(): void
     {
         $this->endpoint = $this->id . '/location';
     }
 
-    protected function loyaltyPoints()
+    protected function loyaltyPoints(): void
     {
         $this->endpoint = $this->id . '/loyalty/points';
     }
 
-    protected function notifications()
+    protected function notifications(): void
     {
         $this->endpoint = $this->id . '/notifications';
     }
 
-    protected function notificationsContacts()
+    protected function notificationsContacts(): void
     {
         $this->endpoint = $this->id . '/notifications/contacts';
     }
 
-    protected function online()
+    protected function online(): void
     {
         $this->endpoint = $this->id . '/online';
     }
 
-    protected function contactNotifications()
+    protected function contactNotifications(): void
     {
         $this->notificationsContacts();
     }
 
-    protected function portrait()
+    protected function portrait(): void
     {
         $this->endpoint = $this->id . '/portrait';
     }
 
-    protected function stats()
+    protected function stats(): void
     {
         $this->endpoint = $this->id . '/stats';
     }
 
-    protected function affiliation($characters)
+    protected function affiliation(array $characterIds): void
     {
         $this->verb = 'post';
-        $this->body = $characters;
+        $this->body = $characterIds;
         $this->endpoint = 'affiliation';
     }
 
-    protected function clones()
+    protected function clones(): void
     {
         $this->endpoint = $this->id . '/clones';
     }
 
-    protected function implants()
+    protected function implants(): void
     {
         $this->endpoint = $this->id . '/implants';
     }
 
-    protected function ship()
+    protected function ship(): void
     {
         $this->endpoint = $this->id . '/ship';
     }
 
-    protected function deleteContacts($contactIds)
+    protected function deleteContacts(array $contactIds): void
     {
         $this->verb = 'delete';
         $this->query = ['contact_ids' => $contactIds];
         $this->endpoint = $this->id . '/contacts';
     }
 
-    protected function addContacts($contactIds, $standing)
+    protected function addContacts(array $contactIds, float $standing): void
     {
         $this->verb = 'post';
         $this->body = $contactIds;
@@ -166,7 +166,7 @@ class Character extends Api
         $this->endpoint = $this->id . '/contacts';
     }
 
-    protected function editContacts($contactIds, $standing)
+    protected function editContacts(array $contactIds, float $standing): void
     {
         $this->verb = 'put';
         $this->body = $contactIds;
@@ -174,42 +174,42 @@ class Character extends Api
         $this->endpoint = $this->id . '/contacts';
     }
 
-    protected function contactLabels()
+    protected function contactLabels(): void
     {
         $this->endpoint = $this->id . '/contacts/labels';
     }
 
-    protected function completedOpportunities()
+    protected function completedOpportunities(): void
     {
         $this->endpoint = $this->id . '/opportunities';
     }
 
-    protected function planets()
+    protected function planets(): void
     {
         $this->endpoint = $this->id . '/planets';
     }
 
-    protected function planet(Int $planetId)
+    protected function planet(Int $planetId): void
     {
         $this->endpoint = $this->id . '/planets/' . $planetId;
     }
 
-    protected function wallet()
+    protected function wallet(): void
     {
         $this->endpoint = $this->id . '/wallet';
     }
 
-    protected function walletJournal()
+    protected function walletJournal(): void
     {
         $this->endpoint = $this->id . '/wallet/journal';
     }
 
-    protected function walletTransactions()
+    protected function walletTransactions(): void
     {
         $this->endpoint = $this->id . '/wallet/transactions';
     }
 
-    protected function miningLedger()
+    protected function miningLedger(): void
     {
         $this->endpoint = $this->id . 'mining';
     }
