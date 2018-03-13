@@ -9,7 +9,7 @@ trait HasContracts
         $this->endpoint = $this->id . '/contracts';
     }
 
-    protected function cntractBids(Int $contractId): void
+    protected function contractBids(Int $contractId): void
     {
         $this->endpoint = $this->id . '/contracts/' . $contractId . '/bids';
     }
