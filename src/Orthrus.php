@@ -17,14 +17,14 @@ class Orthrus
         $this->eseye = new Eseye;
     }
 
-    public function setRefreshToken(string $token): Orthrus
+    public function setRefreshToken(string $token): self
     {
         $this->eseye::setRefreshToken($token);
 
         return $this;
     }
 
-    public function withRefreshToken(string $token): Orthrus
+    public function withRefreshToken(string $token): self
     {
         $this->resetRefreshToken = true;
 
