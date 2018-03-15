@@ -4,8 +4,13 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasContacts
 {
-    public function getContacts()
+    protected function contacts(int $page = null): void
     {
-        return $this->orthrus->invoke("get", "/" . $this->base . "/" . $this->id . "/" . "contacts/");
+        $this->query = ['page' => $page];
+        $this->endpoint = $this->id . '/contacts';
+
+        if ($page == null) {
+            $this->getAllPages = true;
+        }
     }
 }

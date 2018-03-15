@@ -2,30 +2,102 @@
 
 namespace MichaelCooke\Orthrus;
 
-use MichaelCooke\Orthrus\Apis\Alliance;
-use MichaelCooke\Orthrus\Apis\Character;
-use MichaelCooke\Orthrus\Apis\Corporation;
-use MichaelCooke\LaravelEseye\Facades\Eseye;
+use Eseye;
+use Carbon\Carbon;
+use Seat\Eseye\Containers\EsiResponse;
 
 class Orthrus
 {
-    public function invoke(String $queryType, String $endPoint)
+    protected $eseye;
+    protected $resetRefreshToken = false;
+    protected $response = null;
+
+    public function __construct()
     {
-        return Eseye::invoke($queryType, $endPoint);
+        $this->eseye = new Eseye;
     }
 
-    public function alliance($id = null)
+    public function __call(string $method, array $arguments)
     {
-        return new Alliance($this, $id);
+        $class = 'MichaelCooke\\Orthrus\\APIs\\' . ucfirst($method);
+        $api = new $class(...$arguments);
+
+        if ($method == 'search' ||
+            $method == 'status' ||
+            $method == 'route' ||
+            $method == 'incursions') {
+            return $api->execute();
+        }
+
+        return $api;
     }
 
-    public function character($id)
+    public function invoke(string $verb, string $endpoint, array $uri_data = null, array $body = null, array $query = null): EsiResponse
     {
-        return new Character($this, $id);
+        if ($body != null) {
+            $this->eseye::setBody($body);
+        }
+
+        if ($query != null) {
+            $this->eseye::setQuerystring($query);
+        }
+
+        if ($uri_data != null) {
+            return $this->eseye::invoke($verb, $endpoint, $uri_data);
+        }
+
+        return $this->eseye::invoke($verb, $endpoint);
     }
 
-    public function corporation($id)
+    public function resetRefreshToken(): bool
     {
-        return new Corporation($this, $id);
+        if ($this->resetRefreshToken) {
+            $this->setRefreshToken(config('eseye.refresh_token'));
+
+            return true;
+        }
+
+        return false;
+    }
+
+    public function response(): EsiResponse
+    {
+        return $this->response;
+    }
+
+    public function responseCode(): int
+    {
+        return $this->response->getErrorCode();
+    }
+
+    public function responseErrorMessage(): ?string
+    {
+        return $this->response->error();
+    }
+
+    public function responseExpires(): Carbon
+    {
+        return $this->response->expires();
+    }
+
+    public function setRefreshToken(string $token): self
+    {
+        $this->eseye::setRefreshToken($token);
+
+        return $this;
+    }
+
+    public function setResponse(EsiResponse $esiResponse): bool
+    {
+        $this->response = $esiResponse;
+
+        return true;
+    }
+
+    public function withRefreshToken(string $token): self
+    {
+        $this->resetRefreshToken = true;
+
+        return $this->setRefreshToken($token);
     }
 }
