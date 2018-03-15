@@ -45,12 +45,9 @@ ESI::character($characterId)->researchAgents();     // GET /character/{$characte
 
 ### Accessing the Response
 
-For convenience, every ESI call made through Orthrus will return an Eloquent collection created from the original JSON response. Information on Eloquent collections can be found in its respective [Laravel documentation page here.](https://laravel.com/docs/5.6/eloquent-collections)
-
+Every ESI call made through Orthrus will return an object decoded from the original JSON response.
 ```
-$characterId = 94087852;
-$esiCharacter = ESI::character($characterId)->get();
-$characterName = $esiCharacter->get('name'); // Michael Mach
+ESI::character(94087852)->get()->name; // Michael Mach
 ```
 
 ## Helper Methods
