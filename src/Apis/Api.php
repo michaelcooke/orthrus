@@ -16,7 +16,7 @@ class Api
     protected $variables = null;
     protected $getAllPages = null;
 
-    public function __call(string $method, array $arguments): Collection
+    public function __call(string $method, array $arguments): \stdClass
     {
         if (method_exists($this, $method)) {
             call_user_func_array([$this, $method], $arguments);
@@ -45,6 +45,6 @@ class Api
 
         ESI::resetRefreshToken();
 
-        return collect(json_decode($response->raw));
+        return json_decode($response->raw);
     }
 }
