@@ -59,6 +59,14 @@ ESI::character(94087852)->get()->name; // Michael Mach
 
 ## Helper Methods
 
+### Set ESI Route Version
+
+By default, Orthrus will use the `/latest/` version route for all ESI calls. You may override this for an ESI call.
+
+```
+ESI::version('v1')->character($characterId)->get();
+```
+
 ### Set/Override Default Refresh Token
 
 You may set or override the default refresh token for all ESI calls made through Orthrus for a request lifecycle.

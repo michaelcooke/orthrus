@@ -44,6 +44,7 @@ class Api
         }
 
         ESI::resetRefreshToken();
+        ESI::resetVersion();
 
         return json_decode($response->raw);
     }
