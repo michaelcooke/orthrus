@@ -63,7 +63,7 @@ class Orthrus
 
     public function resetVersion(): bool
     {
-        if ($this->version) {
+        if ($this->resetRefreshToken) {
             $this->eseye::setVersion('latest');
 
             return true;
