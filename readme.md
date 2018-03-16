@@ -12,7 +12,9 @@ Simply require Orthrus through Composer to pull the package into your project.
 composer require michaelcooke/orthrus
 ```
 
-### Configure ESI Application
+### Configure Eseye
+
+Orthrus depends on [Eseye](https://github.com/eveseat/eseye) to take care of caching, logging, and making ESI requests that Orthrus builds up. Configuring Eseye may be done through your `.env` configuration file, making switching between ESI application details as well as caching and logging mechanisms between production and development environments easy.
 
 Include the following in your `.env` configuration file and add your ESI application client id and key. In addition, you may specify a refresh token to use for all Orthrus ESI calls by default.
 
@@ -20,7 +22,12 @@ Include the following in your `.env` configuration file and add your ESI applica
 ESEYE_CLIENT_ID=
 ESEYE_SECRET_KEY=
 ESEYE_REFRESH_TOKEN=
+ESEYE_DATASOURCE=tranquility
+ESEYE_CACHE=
 ```
+
+`ESEYE_DATASOURCE` may be `tranquility` or `singularity`.
+`ESEYE_CACHE` may be `file`, `redis` or `memcached`, and will attempt to use default configuration options where applicable.
 
 ## Using Orthrus
 
