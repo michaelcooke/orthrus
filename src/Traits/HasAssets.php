@@ -4,9 +4,14 @@ namespace MichaelCooke\Orthrus\Traits;
 
 trait HasAssets
 {
-    protected function assets(): void
+    protected function assets(int $page = null): void
     {
+        $this->query = ['page' => $page];
         $this->endpoint = $this->id . '/assets';
+        
+        if ($page == null) {
+            $this->getAllPages = true;
+        }
     }
 
     protected function assetLocations(array $itemIds): void

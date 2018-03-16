@@ -10,6 +10,7 @@ class Orthrus
 {
     protected $eseye;
     protected $resetRefreshToken = false;
+    protected $resetVersion = false;
     protected $response = null;
 
     public function __construct()
@@ -60,6 +61,17 @@ class Orthrus
         return false;
     }
 
+    public function resetVersion(): bool
+    {
+        if ($this->version) {
+            $this->eseye::setVersion('latest');
+
+            return true;
+        }
+
+        return false;
+    }
+
     public function response(): EsiResponse
     {
         return $this->response;
@@ -92,6 +104,20 @@ class Orthrus
         $this->response = $esiResponse;
 
         return true;
+    }
+
+    public function setVersion(string $esiVersion): self
+    {
+        $this->eseye::setVersion($esiVersion);
+
+        return $this;
+    }
+
+    public function version(string $esiVersion): self
+    {
+        $this->resetVersion = true;
+
+        return $this->setVersion($esiVersion);
     }
 
     public function withRefreshToken(string $token): self
